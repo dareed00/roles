@@ -1,0 +1,41 @@
+Hello {owner_name},<br><br>
+Our automated identity analytics service has identified two <b>{bundle_type}s</b> that you own which are highly similar in their membership. This suggests an opportunity to consolidate or align them to simplify your access model.
+<br><br>
+Please review the side-by-side comparison below.
+<br><br>
+<b>SIMILARITY ANALYSIS</b>
+<table style="width:100%; border-collapse: collapse; border: 1px solid #dddddd;">
+  <tr style="background-color: #f2f2f2;">
+    <th style="padding: 8px; border: 1px solid #dddddd; text-align: left;">Metric</th>
+    <th style="padding: 8px; border: 1px solid #dddddd; text-align: left;">{bundle_A_name}</th>
+    <th style="padding: 8px; border: 1px solid #dddddd; text-align: left;">{bundle_B_name}</th>
+  </tr>
+  <tr>
+    <td style="padding: 8px; border: 1px solid #dddddd; font-weight: bold;">Similarity Score</td>
+    <td colspan="2" style="padding: 8px; border: 1px solid #dddddd; text-align: center; font-weight: bold; font-size: 1.1em;">{jaccard_score_percent}</td>
+  </tr>
+  <tr>
+    <td style="padding: 8px; border: 1px solid #dddddd; font-weight: bold;">Description</td>
+    <td style="padding: 8px; border: 1px solid #dddddd;">{bundle_A_desc}</td>
+    <td style="padding: 8px; border: 1px solid #dddddd;">{bundle_B_desc}</td>
+  </tr>
+  <tr>
+    <td style="padding: 8px; border: 1px solid #dddddd; font-weight: bold;">Current Members</td>
+    <td style="padding: 8px; border: 1px solid #dddddd;">{population_A}</td>
+    <td style="padding: 8px; border: 1px solid #dddddd;">{population_B}</td>
+  </tr>
+</table>
+<br>
+<b>MEMBERSHIP DIFFERENCES (ACTIONABLE INSIGHTS)</b><br>
+<i>The following users are the exceptions to this strong similarity pattern.</i>
+<br><br>
+&#8227; <b>Users in "{bundle_A_name}" but MISSING "{bundle_B_name}" ({delta_A_not_B_count} users):</b>
+{delta_A_users_list}
+<br>
+&#8227; <b>Users in "{bundle_B_name}" but MISSING "{bundle_A_name}" ({delta_B_not_A_count} users):</b>
+{delta_B_users_list}
+<br>
+<b>YOUR ACTION</b><br>
+Please review these two {bundle_type}s. Consider if they can be consolidated, if one should be deprecated in favor of the other, or if their memberships should be aligned.
+<br><br>
+Thank you,<br><b>The Automated Role Mining Service</b>

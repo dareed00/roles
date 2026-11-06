@@ -1,0 +1,43 @@
+Hello {owner_name},<br><br>
+Our automated identity governance service has identified a <b>{bundle_type}</b> you own that has had <b>no definition changes for more than 60 days</b>. This is a proactive check to help ensure your access model remains current and relevant.
+<br><br>
+Please take a moment to review the details below.
+<br><br>
+<b>{bundle_type} DETAILS</b>
+<table style="width:100%; border-collapse: collapse; border: 1px solid #dddddd;">
+  <tr style="background-color: #f2f2f2;">
+    <td style="padding: 8px; border: 1px solid #dddddd; font-weight: bold;">Name</td>
+    <td style="padding: 8px; border: 1px solid #dddddd;">{bundle_name}</td>
+  </tr>
+  <tr>
+    <td style="padding: 8px; border: 1px solid #dddddd; font-weight: bold;">Description</td>
+    <td style="padding: 8px; border: 1px solid #dddddd;">{description}</td>
+  </tr>
+  <tr>
+    <td style="padding: 8px; border: 1px solid #dddddd; font-weight: bold;">Last Modified</td>
+    <td style="padding: 8px; border: 1px solid #dddddd;">{last_modified_date}</td>
+  </tr>
+</table>
+<br>
+<b>COMPOSITION: WHAT'S INSIDE THIS {bundle_type}?</b><br>
+<i>This is the collection of access rights that make up the bundle.</i>
+{composition_html}
+<br>
+<b>CURRENT MEMBERS ({population} Users)</b><br>
+<i>A sample of the users who currently have this {bundle_type}.</i>
+<table style="width:100%; border-collapse: collapse; border: 1px solid #dddddd;">
+  <tr style="background-color: #f2f2f2;">
+    <th style="padding: 8px; border: 1px solid #dddddd; text-align: left;">User Name</th>
+    <th style="padding: 8px; border: 1px solid #dddddd; text-align: left;">Email</th>
+  </tr>
+  {user_table_rows}
+</table>
+<br>
+<b>YOUR ACTION</b><br>
+Please review this {bundle_type} and its composition.
+<ul>
+    <li>If it is still valid and required, <b>no action is needed</b>.</li>
+    <li>If it is obsolete or should be retired, please initiate your organization's process for access retirement.</li>
+</ul>
+<br>
+Thank you,<br><b>The Automated Role Mining Service</b>

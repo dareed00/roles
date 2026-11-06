@@ -1,0 +1,48 @@
+Hello {owner_name},<br><br>
+Our automated identity governance service has identified an entitlement you own that has had <b>no membership changes for more than 10 days</b>. This is a proactive check to ensure all access remains current and necessary.<br><br>
+Please take a moment to review the details below.
+<br><br>
+<b>ENTITLEMENT DETAILS</b>
+<table style="width:100%; border-collapse: collapse; border: 1px solid #dddddd;">
+  <tr style="background-color: #f2f2f2;">
+    <td style="padding: 8px; border: 1px solid #dddddd; font-weight: bold;">Entitlement</td>
+    <td style="padding: 8px; border: 1px solid #dddddd;">{entitlement_name}</td>
+  </tr>
+  <tr>
+    <td style="padding: 8px; border: 1px solid #dddddd; font-weight: bold;">Source</td>
+    <td style="padding: 8px; border: 1px solid #dddddd;">{source_name}</td>
+  </tr>
+  <tr>
+    <td style="padding: 8px; border: 1px solid #dddddd; font-weight: bold;">Created On</td>
+    <td style="padding: 8px; border: 1px solid #dddddd;">{creation_date}</td>
+  </tr>
+  <tr>
+    <td style="padding: 8px; border: 1px solid #dddddd; font-weight: bold;">Description</td>
+    <td style="padding: 8px; border: 1px solid #dddddd;">{description}</td>
+  </tr>
+</table>
+<br>
+<b>ACTIVITY ANALYSIS</b>
+<ul>
+    <li><b>Last Change Date:</b> {last_change_date}</li>
+    <li><b>Last Change Type:</b> {last_change_type}</li>
+</ul>
+<br>
+<b>CURRENT MEMBERS ({population} Users)</b><br>
+<i>A sample of the users who currently hold this entitlement.</i>
+<table style="width:100%; border-collapse: collapse; border: 1px solid #dddddd;">
+  <tr style="background-color: #f2f2f2;">
+    <th style="padding: 8px; border: 1px solid #dddddd; text-align: left;">User Name</th>
+    <th style="padding: 8px; border: 1px solid #dddddd; text-align: left;">Email</th>
+  </tr>
+  {user_table_rows}
+</table>
+<br>
+<b>YOUR ACTION</b><br>
+Please review this entitlement and its user population.
+<ul>
+    <li>If it is still valid and required, <b>no action is needed</b>.</li>
+    <li>If it is obsolete or should be retired, please initiate your organization's process for access retirement.</li>
+</ul>
+<br><br>
+Thank you,<br><b>The Automated Role Mining Service</b>
