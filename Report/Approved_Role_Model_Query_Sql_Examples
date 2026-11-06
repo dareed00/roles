@@ -1,0 +1,191 @@
+1. View Complete Version History for a Specific Role
+
+SELECT 
+    timestamp,
+    version_number,
+    action_type,
+    field_name,
+    old_value,
+    new_value,
+    changed_by,
+    change_reason
+FROM ApprovedRoleModel_AuditLog
+WHERE entity_id = 'BR-0001'
+ORDER BY timestamp DESC, id DESC;
+
+2. View All Roles Modified or Activated in the Last 30 Days
+
+SELECT 
+    id,
+    name,
+    status,
+    version_number,
+    owner_name,
+    activated_timestamp,
+    last_modified_timestamp
+FROM ApprovedRoleModel_Roles
+WHERE last_modified_timestamp >= NOW() - INTERVAL 30 DAY;
+
+3. View All Entitlement Changes Made Across the Entire Program
+
+SELECT 
+    event_id,
+    entity_name,
+    action_type,
+    new_value AS details,
+    changed_by,
+    timestamp
+FROM ApprovedRoleModel_AuditLog
+WHERE action_type IN ('ADD_ENTITLEMENT', 'REMOVE_ENTITLEMENT')
+ORDER BY timestamp DESC;
+
+4. Find All Roles Whose Assignment Rules Were Modified in the Last 30 Days
+
+SELECT 
+    id,
+    name,
+    version_number,
+    assignment_rule,
+    rule_created_timestamp,
+    rule_last_modified_timestamp
+FROM ApprovedRoleModel_Roles
+WHERE rule_last_modified_timestamp >= NOW() - INTERVAL 30 DAY;
+
+5. Trace Every Change Made to a Role's Assignment Rule Over Time
+
+SELECT 
+    timestamp,
+    version_number,
+    action_type,
+    old_value AS previous_rule_logic,
+    new_value AS updated_rule_logic,
+    change_reason,
+    changed_by
+FROM ApprovedRoleModel_AuditLog
+WHERE entity_id = 'BR-0001' 
+  AND action_type IN ('CREATE_RULE', 'MODIFY_RULE')
+ORDER BY timestamp DESC, version_number DESC;
+
+6. Trace Ownership Reassignment History across the Enterprise
+
+SELECT 
+    timestamp,
+    entity_type,
+    entity_id,
+    entity_name,
+    version_number,
+    action_type,
+    old_value AS previous_owner,
+    new_value AS current_owner,
+    changed_by
+FROM ApprovedRoleModel_AuditLog
+WHERE action_type IN ('ASSIGN_OWNER', 'MODIFY_OWNER')
+ORDER BY timestamp DESC;
+
+
+7. Trace Description Changes for a Specific Role
+
+SELECT 
+    timestamp,
+    version_number,
+    action_type,
+    old_value AS previous_description,
+    new_value AS updated_description,
+    changed_by
+FROM ApprovedRoleModel_AuditLog
+WHERE entity_id = 'BR-0001' 
+  AND action_type IN ('CREATE_DESCRIPTION', 'MODIFY_DESCRIPTION')
+ORDER BY timestamp DESC;
+
+8. Business Role to IT overlap: High-Performance SQL Query (Instant Database Lookup)
+SELECT 
+    r.id AS business_role_id,
+    r.name AS business_role_name,
+    ap.id AS it_role_id,
+    ap.name AS it_role_name,
+    ap.primary_source AS it_role_source,
+    -- Overlap Metrics
+    COUNT(DISTINCT re.entitlement_id) AS shared_entitlements_count,
+    (SELECT COUNT(*) FROM ApprovedRoleModel_AccessProfileEntitlements ape_sub WHERE ape_sub.access_profile_id = ap.id) AS it_role_total_entitlements,
+    ROUND(
+        (COUNT(DISTINCT re.entitlement_id) / 
+        (SELECT COUNT(*) FROM ApprovedRoleModel_AccessProfileEntitlements ape_sub WHERE ape_sub.access_profile_id = ap.id)) * 100, 1
+    ) AS containment_percentage,
+    -- Governance Action Classification
+    CASE 
+        WHEN COUNT(DISTINCT re.entitlement_id) = (SELECT COUNT(*) FROM ApprovedRoleModel_AccessProfileEntitlements ape_sub WHERE ape_sub.access_profile_id = ap.id)
+            THEN '🟢 100% FULLY CONTAINED (Replace loose entitlements with IT Role)'
+        WHEN (COUNT(DISTINCT re.entitlement_id) / (SELECT COUNT(*) FROM ApprovedRoleModel_AccessProfileEntitlements ape_sub WHERE ape_sub.access_profile_id = ap.id)) >= 0.75
+            THEN '🟡 PARTIAL OVERLAP (Evaluate adding missing permissions to Business Role)'
+        ELSE '⚪ LOW OVERLAP'
+    END AS architectural_recommendation
+FROM ApprovedRoleModel_Roles r
+JOIN ApprovedRoleModel_RoleEntitlements re ON r.id = re.role_id
+JOIN ApprovedRoleModel_AccessProfileEntitlements ape ON re.entitlement_id = ape.entitlement_id
+JOIN ApprovedRoleModel_AccessProfiles ap ON ape.access_profile_id = ap.id
+GROUP BY 
+    r.id, r.name, 
+    ap.id, ap.name, ap.primary_source
+HAVING containment_percentage >= 75.0
+ORDER BY containment_percentage DESC, shared_entitlements_count DESC;
+
+
+
+How to Execute Lifecycle Operations
+Example 1: Deactivate a Business Role (Temporary Freeze)
+
+
+python3 Deploy/manage_role_lifecycle.py BR-0002 DEACTIVATE \
+  -r "Q4 Departmental restructuring freeze; hold birthright grants" \
+  -u "dana.reed"
+
+
+
+Example 2: Retire / Soft-Delete an IT Access Profile
+
+python3 Deploy/manage_role_lifecycle.py ITR-0003 DELETE \
+  -r "SAP Legacy UI deprecated; replaced by ITR-0012 SAP Fiori Profile" \
+  -u "sjenkins"
+
+Example 3: Reactivate a Suspended Role
+
+python3 Deploy/manage_role_lifecycle.py BR-0002 REACTIVATE \
+  -r "Restructuring complete; resuming automated birthright provisioning" \
+  -u "dana.reed"
+
+
+Query: All Role Deletion & Deactivation Events
+
+SELECT 
+    timestamp,
+    event_id,
+    entity_type,
+    entity_id,
+    entity_name,
+    version_number,
+    action_type,
+    old_value,
+    new_value,
+    changed_by,
+    change_reason
+FROM ApprovedRoleModel_AuditLog
+WHERE action_type IN ('DEACTIVATE_ROLE', 'DELETE_ROLE', 'REACTIVATE_ROLE')
+ORDER BY timestamp DESC;
+
+
+Query: Currently Inactive / Retired Roles
+
+SELECT 
+    id, 
+    name, 
+    status, 
+    version_number, 
+    owner_name, 
+    activated_timestamp, 
+    deactivated_timestamp, 
+    deleted_timestamp
+FROM ApprovedRoleModel_Roles
+WHERE status IN ('DEACTIVATED', 'DELETED')
+ORDER BY last_modified_timestamp DESC;
+
+
