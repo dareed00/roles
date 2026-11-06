@@ -1,0 +1,162 @@
+[
+  {
+    "event_id": "58f9626353bd7bb90f3753b5197e412730ab79dfd074963444af9fa6208ef99c",
+    "technical_name": "ENTITLEMENT_ADD_PASSED",
+    "created_datetime": "2025-08-08T16:17:49.871Z"
+  },
+  {
+    "event_id": "a40f2a483fc56895125e31a845f22385211b0e1778141b09fa104ec74b4b6597",
+    "technical_name": "ENTITLEMENT_ADD_PASSED",
+    "created_datetime": "2025-08-08T16:17:50.001Z"
+  },
+  {
+    "event_id": "022b3e2527a04a238ece3e183c98c23dd658b138c5e8dcf6164d9cbeb6932a41",
+    "technical_name": "ENTITLEMENT_REMOVE_PASSED",
+    "created_datetime": "2025-08-19T12:57:43.256Z"
+  },
+  {
+    "event_id": "01d874c0da1f8af161d0e8a7655b24f04d5064692c0db74663c2bf28d36314b5",
+    "technical_name": "ENTITLEMENT_REMOVE_PASSED",
+    "created_datetime": "2025-08-19T12:57:43.257Z"
+  },
+  {
+    "event_id": "a632bc0dc2b6597df79963ab62a0fb817cd0835ab79c10b78050817499395f8d",
+    "technical_name": "ENTITLEMENT_REMOVE_PASSED",
+    "created_datetime": "2025-08-19T12:57:43.259Z"
+  },
+  {
+    "event_id": "2fa957eea1327890a7365fd30880512a1fd945f888a859d0e1b8460cc2702bf6",
+    "technical_name": "ENTITLEMENT_REMOVE_PASSED",
+    "created_datetime": "2025-08-19T12:57:43.261Z"
+  },
+  {
+    "event_id": "006792eb601ffb60d7f62afa18729bd1676b36ca64a663fd4c67d4ccafa4afe1",
+    "technical_name": "ENTITLEMENT_REMOVE_PASSED",
+    "created_datetime": "2025-08-19T12:57:43.262Z"
+  },
+  {
+    "event_id": "398ee64add6117ad881bd0bc0cd30b68f08574828d1538c30a770edcfb2ecf25",
+    "technical_name": "ENTITLEMENT_ADD_PASSED",
+    "created_datetime": "2025-09-10T19:28:43.326Z"
+  },
+  {
+    "event_id": "c10a39c915dbdd72e0f4ecb4d90875ecc1a29ae93dbee845755c5a32753b712b",
+    "technical_name": "ENTITLEMENT_ADD_PASSED",
+    "created_datetime": "2025-09-10T19:28:43.328Z"
+  },
+  {
+    "event_id": "eb1c6f896be25304fc49aed1f6ad4766d5434be283c9d445755ff87551de5e7d",
+    "technical_name": "ENTITLEMENT_ADD_PASSED",
+    "created_datetime": "2025-09-10T19:28:43.332Z"
+  },
+  {
+    "event_id": "3f302d6cb45d441011f9985c5f6752402ef37179c238f5d510817e6b5a877f3a",
+    "technical_name": "ENTITLEMENT_ADD_PASSED",
+    "created_datetime": "2025-09-10T19:28:43.334Z"
+  },
+  {
+    "event_id": "0d773178f78f285c57ef04392f0c1a4cdea7fe6e663213476e6f7b3683fcf840",
+    "technical_name": "ENTITLEMENT_ADD_PASSED",
+    "created_datetime": "2025-09-10T19:28:43.336Z"
+  },
+  {
+    "event_id": "e7ea9fcbab9f9a9afe445750942f3d9cedbba18cdf6399e816339c5c874d5c94",
+    "technical_name": "ENTITLEMENT_ADD_PASSED",
+    "created_datetime": "2025-09-10T20:41:39.607Z"
+  },
+  {
+    "event_id": "60f3864cf78e64ef3e505c4be10a71d3c8b128593dffb6895e9f20e06046452d",
+    "technical_name": "ENTITLEMENT_ADD_PASSED",
+    "created_datetime": "2025-09-11T17:34:23.113Z"
+  },
+  {
+    "event_id": "e48c55ce699e3222bfb94bff4b8c5827ced309384e037848a2852d9e25a2cd5c",
+    "technical_name": "ENTITLEMENT_ADD_PASSED",
+    "created_datetime": "2025-09-11T17:34:23.115Z"
+  },
+  {
+    "event_id": "ca628e19a924f29f9a0d9de23e805be1d4d5e4320098ea863edaa22394841107",
+    "technical_name": "ENTITLEMENT_ADD_PASSED",
+    "created_datetime": "2025-09-11T17:34:23.117Z"
+  },
+  {
+    "event_id": "4e7cb4b3569dbb1347a3a3dd0cc7cca7743d56bd7411b6057ee8f525a3d4e1d6",
+    "technical_name": "ROLE_ADD_PASSED",
+    "created_datetime": "2025-09-11T17:34:23.921Z"
+  },
+  {
+    "event_id": "48ed3fbd6039cc24c59390c980da1968cef2f768b0ee549d4136e98f4fd804bb",
+    "technical_name": "ENTITLEMENT_ADD_PASSED",
+    "created_datetime": "2025-09-24T14:26:13.348Z"
+  },
+  {
+    "event_id": "cc1cbc6c13a2c7fc9aabc418420ed43d5cb891c3998dae29418e147854418323",
+    "technical_name": "ENTITLEMENT_REMOVE_PASSED",
+    "created_datetime": "2025-09-26T12:54:36.449Z"
+  },
+  {
+    "event_id": "6ac6c87ab5c8cd3539a1a4b3d96b5c7ffe536384da91e114f602790ffec0b19d",
+    "technical_name": "ENTITLEMENT_REMOVE_PASSED",
+    "created_datetime": "2025-09-26T12:54:36.463Z"
+  },
+  {
+    "event_id": "8ea6f912ab235b21c1412ff7e1e88a6166edea6a131448bcf0c00649444ffa72",
+    "technical_name": "ENTITLEMENT_REMOVE_PASSED",
+    "created_datetime": "2025-09-26T12:54:36.509Z"
+  },
+  {
+    "event_id": "f6a1c125b8d779d9c767f1fd8d292906d5de0e8d19ad4e306faf344a7c1d221b",
+    "technical_name": "ENTITLEMENT_ADD_PASSED",
+    "created_datetime": "2025-10-17T15:35:08.744Z"
+  },
+  {
+    "event_id": "4db7ccad6d887590721285ac0771b0120ed35d644691c5270ff589313f2daed5",
+    "technical_name": "ENTITLEMENT_ADD_PASSED",
+    "created_datetime": "2025-10-17T15:35:08.745Z"
+  },
+  {
+    "event_id": "d84a89cc22387adb973d75e04b27ed5c3e04577ed60175937198e859d0b914a7",
+    "technical_name": "ENTITLEMENT_ADD_PASSED",
+    "created_datetime": "2025-10-17T15:35:08.747Z"
+  },
+  {
+    "event_id": "d29a2a2fa4e8c833fe22c65ae9331cc2d9b8895627bca39444b4068bcd523524",
+    "technical_name": "ENTITLEMENT_ADD_PASSED",
+    "created_datetime": "2025-10-17T15:35:33.233Z"
+  },
+  {
+    "event_id": "3c4c6b9eb5534f1a38a3799226a2aa398d86535fc5e8f8e89f94c661ef694703",
+    "technical_name": "ENTITLEMENT_ADD_PASSED",
+    "created_datetime": "2025-10-17T15:35:33.234Z"
+  },
+  {
+    "event_id": "b0ecca2ae29f09c00eef768e5e0d8be6bc84a3291c5e11bcdcd7100f20919f96",
+    "technical_name": "ENTITLEMENT_ADD_PASSED",
+    "created_datetime": "2025-10-17T15:35:33.235Z"
+  },
+  {
+    "event_id": "59cb061657c679a256f46b285b269b667db7bd94d9a0c083f679f696bdd0b89e",
+    "technical_name": "ROLE_ADD_PASSED",
+    "created_datetime": "2026-03-03T18:40:55.538Z"
+  },
+  {
+    "event_id": "8310e15242fa80772cca82b5c09e8a01f263b99b856d15ba61af7d0d3ebc9aac",
+    "technical_name": "ENTITLEMENT_ADD_PASSED",
+    "created_datetime": "2026-04-16T11:05:29.161Z"
+  },
+  {
+    "event_id": "8cb976d6aa542c13e74ff0250baf5f2c8bfaba5779abc8f89f5472a5e0df163b",
+    "technical_name": "ROLE_ADD_PASSED",
+    "created_datetime": "2026-04-16T11:05:29.735Z"
+  },
+  {
+    "event_id": "4443b33c51786417f5ab048d886314f05cc9b5ef1db6c50422e265718c7ffd57",
+    "technical_name": "ENTITLEMENT_ADD_PASSED",
+    "created_datetime": "2026-04-16T12:17:50.912Z"
+  },
+  {
+    "event_id": "ff903da8005e71016b307f2f57a777f6cf825bf9d9f3acb78095729b0a6e6ae5",
+    "technical_name": "ROLE_ADD_PASSED",
+    "created_datetime": "2026-04-16T12:17:51.796Z"
+  }
+]

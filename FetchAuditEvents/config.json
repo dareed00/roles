@@ -1,0 +1,16 @@
+{
+  "ISC": {
+    "ClientId": "cbe466f45ada4892a5c08416c52ad015",
+    "ClientSecret": "3d4412c371734000de8475efeadaea7d1ed1d0fefb9e8c7442fb9db03f97dc70",
+    "BaseURL": "https://beta-14542.api.identitynow-demo.com"
+  },
+  "Database": {
+    "host": "localhost",
+    "user": "root",
+    "password": "password",
+    "database": "bundleBuilder"
+  },
+  "ClientId": "cbe466f45ada4892a5c08416c52ad015",
+  "ClientSecret": "3d4412c371734000de8475efeadaea7d1ed1d0fefb9e8c7442fb9db03f97dc70",
+  "BaseURL": "https://beta-14542.api.identitynow-demo.com"
+}
