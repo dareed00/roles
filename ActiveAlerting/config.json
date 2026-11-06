@@ -1,0 +1,31 @@
+{
+  "ISC": {
+    "tenant_url": "https://company13409-poc.api.identitynow-demo.com",
+    "client_id": "bced44dd-deb4-4c77-b8e5-39dc679602ce",
+    "client_secret": "473e228b1aed2236f21312d4f8bb2b463bd82b22c5684dcc10a506aeaf184e9d",
+    "workflow_id": "36090b26-d60b-4d57-8a66-edeb56aff8d9",
+    "workflow_url":"https://company13409-poc.api.identitynow-demo.com/beta/workflows/execute/external/36090b26-d60b-4d57-8a66-edeb56aff8d9",
+    "token_url":"https://company13409-poc.api.identitynow-demo.com/oauth/token?grant_type=client_credentials"
+  },
+  "ClientId": "8e733c7e27f44a02adbb49085ec6be3c",
+  "ClientSecret": "4867451bb9d3d5638ec2539fdadec01f7302bbea828f6f206adc5edbb29598d1",
+  "BaseURL": "https://company13409-poc.api.identitynow-demo.com",
+  "DormantEmail": {
+    "tenant_url": "https://company13409-poc.api.identitynow-demo.com",
+    "client_id": "d7722dee-94e6-422e-8bbe-e3d3114e6469",
+    "client_secret": "2b964688b3afa5aa1b3b89b0600c0415073439ba8b9c64e978476469dafe58b3",
+    "workflow_id": "f9e579c5-e436-4f3b-b847-aff8bf3e81c3",
+    "workflow_url":"https://company13409-poc.api.identitynow-demo.com/beta/workflows/execute/external/f9e579c5-e436-4f3b-b847-aff8bf3e81c3",
+    "token_url":"https://company13409-poc.api.identitynow-demo.com/oauth/token?grant_type=client_credentials"
+  },
+  "AttributeEntitlementSimilarity": {
+    "tenant_url": "https://company13409-poc.api.identitynow-demo.com",
+    "client_id": "6dfa079f-2d04-4e6c-be20-559909c5aabd",
+    "client_secret": "43e0ac8844dd78ad9d196d6d6cc8f695972a37dbb8785407c8cc0864122ffc0d",
+    "workflow_id": "bbaeec5e-d054-4a52-a73e-242f658b4bcb",
+    "workflow_url":"https://company13409-poc.api.identitynow-demo.com/beta/workflows/execute/external/bbaeec5e-d054-4a52-a73e-242f658b4bcb",
+    "token_url":"https://company13409-poc.api.identitynow-demo.com/oauth/token?grant_type=client_credentials"
+  }
+}
+
+

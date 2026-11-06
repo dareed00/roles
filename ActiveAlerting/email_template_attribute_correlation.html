@@ -1,0 +1,33 @@
+Hello,<br><br>
+Our automated identity analytics service has identified a strong correlation between a user attribute and an entitlement. This suggests a potential "birthright" role that could be created to simplify access management.
+<br><br>
+Please review the data-driven suggestion below.
+<br><br>
+<b>SUGGESTED BUSINESS RULE</b>
+<table style="width:100%; border-collapse: collapse; border: 1px solid #dddddd;">
+  <tr style="background-color: #f2f2f2;">
+    <td style="padding: 8px; border: 1px solid #dddddd; font-weight: bold; width: 5%;">IF a user has the attribute:</td>
+    <td style="padding: 8px; border: 1px solid #dddddd;"><b>{primary_grouping_column}</b> = "{primary_value}"</td>
+  </tr>
+  <tr>
+    <td style="padding: 8px; border: 1px solid #dddddd; font-weight: bold;">THEN they should have the entitlement:</td>
+    <td style="padding: 8px; border: 1px solid #dddddd;"><b>{attribute_value}</b> (from Source: {access_source_name})</td>
+  </tr>
+</table>
+<br>
+<b>JUSTIFICATION (THE DATA)</b>
+<ul>
+    <li>This suggestion is based on a <b>{jaccard_score_percent}</b> similarity score.</li>
+    <li><b>{population_primary}</b> users have the attribute.</li>
+    <li><b>{population_attribute}</b> users have the entitlement.</li>
+    <li><b>{population_overlap}</b> users have BOTH.</li>
+</ul>
+<br>
+<b>EXCEPTIONS TO THE PATTERN (ACTIONABLE INSIGHTS)</b><br>
+<i>To help you validate this rule, here is a sample of the <b>{delta_user_count} users</b> who currently have the attribute but are <b>MISSING</b> the entitlement.</i>
+{delta_users_list}
+<br>
+<b>YOUR ACTION</b><br>
+Please review this correlation. If this represents a valid business rule, consider creating a new birthright role based on this attribute to automatically grant the entitlement.
+<br><br>
+Thank you,<br><b>The Automated Role Mining Service</b>

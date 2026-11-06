@@ -1,0 +1,32 @@
+Hello,<br><br>
+Our automated identity analytics service has identified a <b>high-confidence correlation</b> that presents an opportunity to improve the composition of a bundle you own.
+Based on an analysis of user access patterns, we recommend adding a new entitlement to your {bundle_type}.
+<br><br>
+<b>RECOMMENDATION</b><br>
+<ul>
+    <li><b>Add Entitlement:</b> {entitlement_to_add_name} (from Source: {entitlement_to_add_source})</li>
+    <li><b>To Your Bundle:</b> {bundle_name}</li>
+</ul>
+<br>
+<b>JUSTIFICATION (THE DATA)</b><br>
+This recommendation is based on a <b>{jaccard_score_percent} similarity score</b> between these two entitlements. A strong majority of users with one entitlement also have the other, suggesting they represent a consistent set of access rights.
+<br><br>
+<b>POPULATION ANALYSIS</b>
+<ul>
+    <li>Users with Existing Entitlement in your Bundle: <b>{population_B}</b></li>
+    <li>Users with Suggested Entitlement to Add: <b>{population_A}</b></li>
+    <li>Users with BOTH (The Overlap): <b>{population_overlap}</b></li>
+</ul>
+<br>
+<b>EXCEPTIONS TO THE PATTERN (For Your Review)</b><br>
+To help you make a decision, here is a sample of the <b>{delta_user_count} users</b> who currently have the existing entitlement in your bundle but are <b>missing</b> the one we are suggesting to add. Understanding these exceptions is key to verifying if this is a good fit.
+{delta_users_list}
+<br>
+Approving this change would bring the users who fit this pattern into compliance and ensure new users get the correct, complete set of permissions.
+<br><br>
+<b>YOUR ACTION</b><br>
+Please review this data-driven suggestion.
+<br><br>
+Thank you,<br>
+<b>The Automated Role Mining Service</b><br>
+(RoleMiner Bot)
