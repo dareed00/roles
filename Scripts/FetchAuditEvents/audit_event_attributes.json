@@ -1,0 +1,1297 @@
+[
+  {
+    "event_id": "58f9626353bd7bb90f3753b5197e412730ab79dfd074963444af9fa6208ef99c",
+    "attribute_key": "cloudAppName",
+    "attribute_value": "IdentityNow"
+  },
+  {
+    "event_id": "58f9626353bd7bb90f3753b5197e412730ab79dfd074963444af9fa6208ef99c",
+    "attribute_key": "accountName",
+    "attribute_value": "steve.toole"
+  },
+  {
+    "event_id": "58f9626353bd7bb90f3753b5197e412730ab79dfd074963444af9fa6208ef99c",
+    "attribute_key": "attributeValue",
+    "attribute_value": "571f497a-944a-4397-8f45-e57c473d40d7"
+  },
+  {
+    "event_id": "58f9626353bd7bb90f3753b5197e412730ab79dfd074963444af9fa6208ef99c",
+    "attribute_key": "appId",
+    "attribute_value": "830c69f910504925886ed0131912aabf"
+  },
+  {
+    "event_id": "58f9626353bd7bb90f3753b5197e412730ab79dfd074963444af9fa6208ef99c",
+    "attribute_key": "accountUuid",
+    "attribute_value": "null"
+  },
+  {
+    "event_id": "58f9626353bd7bb90f3753b5197e412730ab79dfd074963444af9fa6208ef99c",
+    "attribute_key": "attributeName",
+    "attribute_value": "assignedLaunchers"
+  },
+  {
+    "event_id": "58f9626353bd7bb90f3753b5197e412730ab79dfd074963444af9fa6208ef99c",
+    "attribute_key": "sourceName",
+    "attribute_value": "IdentityNow"
+  },
+  {
+    "event_id": "58f9626353bd7bb90f3753b5197e412730ab79dfd074963444af9fa6208ef99c",
+    "attribute_key": "interface",
+    "attribute_value": "appRequest"
+  },
+  {
+    "event_id": "a40f2a483fc56895125e31a845f22385211b0e1778141b09fa104ec74b4b6597",
+    "attribute_key": "cloudAppName",
+    "attribute_value": "IdentityNow"
+  },
+  {
+    "event_id": "a40f2a483fc56895125e31a845f22385211b0e1778141b09fa104ec74b4b6597",
+    "attribute_key": "accountName",
+    "attribute_value": "Aaron.Nichols"
+  },
+  {
+    "event_id": "a40f2a483fc56895125e31a845f22385211b0e1778141b09fa104ec74b4b6597",
+    "attribute_key": "attributeValue",
+    "attribute_value": "571f497a-944a-4397-8f45-e57c473d40d7"
+  },
+  {
+    "event_id": "a40f2a483fc56895125e31a845f22385211b0e1778141b09fa104ec74b4b6597",
+    "attribute_key": "appId",
+    "attribute_value": "830c69f910504925886ed0131912aabf"
+  },
+  {
+    "event_id": "a40f2a483fc56895125e31a845f22385211b0e1778141b09fa104ec74b4b6597",
+    "attribute_key": "accountUuid",
+    "attribute_value": "null"
+  },
+  {
+    "event_id": "a40f2a483fc56895125e31a845f22385211b0e1778141b09fa104ec74b4b6597",
+    "attribute_key": "attributeName",
+    "attribute_value": "assignedLaunchers"
+  },
+  {
+    "event_id": "a40f2a483fc56895125e31a845f22385211b0e1778141b09fa104ec74b4b6597",
+    "attribute_key": "sourceName",
+    "attribute_value": "IdentityNow"
+  },
+  {
+    "event_id": "a40f2a483fc56895125e31a845f22385211b0e1778141b09fa104ec74b4b6597",
+    "attribute_key": "interface",
+    "attribute_value": "appRequest"
+  },
+  {
+    "event_id": "022b3e2527a04a238ece3e183c98c23dd658b138c5e8dcf6164d9cbeb6932a41",
+    "attribute_key": "cloudAppName",
+    "attribute_value": "Active Directory"
+  },
+  {
+    "event_id": "022b3e2527a04a238ece3e183c98c23dd658b138c5e8dcf6164d9cbeb6932a41",
+    "attribute_key": "accountName",
+    "attribute_value": "CN=Aaron Nichols,OU=Singapore,OU=Asia-Pacific,OU=Demo,DC=seri,DC=sailpointdemo,DC=com"
+  },
+  {
+    "event_id": "022b3e2527a04a238ece3e183c98c23dd658b138c5e8dcf6164d9cbeb6932a41",
+    "attribute_key": "attributeValue",
+    "attribute_value": "CN=campusAccess,OU=Groups,OU=Demo,DC=seri,DC=sailpointdemo,DC=com"
+  },
+  {
+    "event_id": "022b3e2527a04a238ece3e183c98c23dd658b138c5e8dcf6164d9cbeb6932a41",
+    "attribute_key": "appId",
+    "attribute_value": "598f2be8042a48f1bf6ea706413380a3"
+  },
+  {
+    "event_id": "022b3e2527a04a238ece3e183c98c23dd658b138c5e8dcf6164d9cbeb6932a41",
+    "attribute_key": "accountUuid",
+    "attribute_value": "null"
+  },
+  {
+    "event_id": "022b3e2527a04a238ece3e183c98c23dd658b138c5e8dcf6164d9cbeb6932a41",
+    "attribute_key": "attributeName",
+    "attribute_value": "memberOf"
+  },
+  {
+    "event_id": "022b3e2527a04a238ece3e183c98c23dd658b138c5e8dcf6164d9cbeb6932a41",
+    "attribute_key": "sourceName",
+    "attribute_value": "Active Directory"
+  },
+  {
+    "event_id": "022b3e2527a04a238ece3e183c98c23dd658b138c5e8dcf6164d9cbeb6932a41",
+    "attribute_key": "interface",
+    "attribute_value": "Lifecycle Change Refresh"
+  },
+  {
+    "event_id": "01d874c0da1f8af161d0e8a7655b24f04d5064692c0db74663c2bf28d36314b5",
+    "attribute_key": "cloudAppName",
+    "attribute_value": "Active Directory"
+  },
+  {
+    "event_id": "01d874c0da1f8af161d0e8a7655b24f04d5064692c0db74663c2bf28d36314b5",
+    "attribute_key": "accountName",
+    "attribute_value": "CN=Aaron Nichols,OU=Singapore,OU=Asia-Pacific,OU=Demo,DC=seri,DC=sailpointdemo,DC=com"
+  },
+  {
+    "event_id": "01d874c0da1f8af161d0e8a7655b24f04d5064692c0db74663c2bf28d36314b5",
+    "attribute_key": "attributeValue",
+    "attribute_value": "CN=All_Users,OU=BirthRight,OU=Groups,OU=Demo,DC=seri,DC=sailpointdemo,DC=com"
+  },
+  {
+    "event_id": "01d874c0da1f8af161d0e8a7655b24f04d5064692c0db74663c2bf28d36314b5",
+    "attribute_key": "appId",
+    "attribute_value": "598f2be8042a48f1bf6ea706413380a3"
+  },
+  {
+    "event_id": "01d874c0da1f8af161d0e8a7655b24f04d5064692c0db74663c2bf28d36314b5",
+    "attribute_key": "accountUuid",
+    "attribute_value": "null"
+  },
+  {
+    "event_id": "01d874c0da1f8af161d0e8a7655b24f04d5064692c0db74663c2bf28d36314b5",
+    "attribute_key": "attributeName",
+    "attribute_value": "memberOf"
+  },
+  {
+    "event_id": "01d874c0da1f8af161d0e8a7655b24f04d5064692c0db74663c2bf28d36314b5",
+    "attribute_key": "sourceName",
+    "attribute_value": "Active Directory"
+  },
+  {
+    "event_id": "01d874c0da1f8af161d0e8a7655b24f04d5064692c0db74663c2bf28d36314b5",
+    "attribute_key": "interface",
+    "attribute_value": "Lifecycle Change Refresh"
+  },
+  {
+    "event_id": "a632bc0dc2b6597df79963ab62a0fb817cd0835ab79c10b78050817499395f8d",
+    "attribute_key": "cloudAppName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "a632bc0dc2b6597df79963ab62a0fb817cd0835ab79c10b78050817499395f8d",
+    "attribute_key": "accountName",
+    "attribute_value": "Aaron.Nichols"
+  },
+  {
+    "event_id": "a632bc0dc2b6597df79963ab62a0fb817cd0835ab79c10b78050817499395f8d",
+    "attribute_key": "attributeValue",
+    "attribute_value": "Internal_Employee"
+  },
+  {
+    "event_id": "a632bc0dc2b6597df79963ab62a0fb817cd0835ab79c10b78050817499395f8d",
+    "attribute_key": "appId",
+    "attribute_value": "7094964e0cbd42ff8cc690b14a9796a4"
+  },
+  {
+    "event_id": "a632bc0dc2b6597df79963ab62a0fb817cd0835ab79c10b78050817499395f8d",
+    "attribute_key": "accountUuid",
+    "attribute_value": "null"
+  },
+  {
+    "event_id": "a632bc0dc2b6597df79963ab62a0fb817cd0835ab79c10b78050817499395f8d",
+    "attribute_key": "attributeName",
+    "attribute_value": "groups"
+  },
+  {
+    "event_id": "a632bc0dc2b6597df79963ab62a0fb817cd0835ab79c10b78050817499395f8d",
+    "attribute_key": "sourceName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "a632bc0dc2b6597df79963ab62a0fb817cd0835ab79c10b78050817499395f8d",
+    "attribute_key": "interface",
+    "attribute_value": "Lifecycle Change Refresh"
+  },
+  {
+    "event_id": "2fa957eea1327890a7365fd30880512a1fd945f888a859d0e1b8460cc2702bf6",
+    "attribute_key": "cloudAppName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "2fa957eea1327890a7365fd30880512a1fd945f888a859d0e1b8460cc2702bf6",
+    "attribute_key": "accountName",
+    "attribute_value": "Aaron.Nichols"
+  },
+  {
+    "event_id": "2fa957eea1327890a7365fd30880512a1fd945f888a859d0e1b8460cc2702bf6",
+    "attribute_key": "attributeValue",
+    "attribute_value": "User"
+  },
+  {
+    "event_id": "2fa957eea1327890a7365fd30880512a1fd945f888a859d0e1b8460cc2702bf6",
+    "attribute_key": "appId",
+    "attribute_value": "7094964e0cbd42ff8cc690b14a9796a4"
+  },
+  {
+    "event_id": "2fa957eea1327890a7365fd30880512a1fd945f888a859d0e1b8460cc2702bf6",
+    "attribute_key": "accountUuid",
+    "attribute_value": "null"
+  },
+  {
+    "event_id": "2fa957eea1327890a7365fd30880512a1fd945f888a859d0e1b8460cc2702bf6",
+    "attribute_key": "attributeName",
+    "attribute_value": "groups"
+  },
+  {
+    "event_id": "2fa957eea1327890a7365fd30880512a1fd945f888a859d0e1b8460cc2702bf6",
+    "attribute_key": "sourceName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "2fa957eea1327890a7365fd30880512a1fd945f888a859d0e1b8460cc2702bf6",
+    "attribute_key": "interface",
+    "attribute_value": "Lifecycle Change Refresh"
+  },
+  {
+    "event_id": "006792eb601ffb60d7f62afa18729bd1676b36ca64a663fd4c67d4ccafa4afe1",
+    "attribute_key": "cloudAppName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "006792eb601ffb60d7f62afa18729bd1676b36ca64a663fd4c67d4ccafa4afe1",
+    "attribute_key": "accountName",
+    "attribute_value": "Aaron.Nichols"
+  },
+  {
+    "event_id": "006792eb601ffb60d7f62afa18729bd1676b36ca64a663fd4c67d4ccafa4afe1",
+    "attribute_key": "attributeValue",
+    "attribute_value": "View_Reports"
+  },
+  {
+    "event_id": "006792eb601ffb60d7f62afa18729bd1676b36ca64a663fd4c67d4ccafa4afe1",
+    "attribute_key": "appId",
+    "attribute_value": "7094964e0cbd42ff8cc690b14a9796a4"
+  },
+  {
+    "event_id": "006792eb601ffb60d7f62afa18729bd1676b36ca64a663fd4c67d4ccafa4afe1",
+    "attribute_key": "accountUuid",
+    "attribute_value": "null"
+  },
+  {
+    "event_id": "006792eb601ffb60d7f62afa18729bd1676b36ca64a663fd4c67d4ccafa4afe1",
+    "attribute_key": "attributeName",
+    "attribute_value": "groups"
+  },
+  {
+    "event_id": "006792eb601ffb60d7f62afa18729bd1676b36ca64a663fd4c67d4ccafa4afe1",
+    "attribute_key": "sourceName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "006792eb601ffb60d7f62afa18729bd1676b36ca64a663fd4c67d4ccafa4afe1",
+    "attribute_key": "interface",
+    "attribute_value": "Lifecycle Change Refresh"
+  },
+  {
+    "event_id": "398ee64add6117ad881bd0bc0cd30b68f08574828d1538c30a770edcfb2ecf25",
+    "attribute_key": "cloudAppName",
+    "attribute_value": "Active Directory"
+  },
+  {
+    "event_id": "398ee64add6117ad881bd0bc0cd30b68f08574828d1538c30a770edcfb2ecf25",
+    "attribute_key": "accountName",
+    "attribute_value": "CN=Samuel Wright,OU=Demo,DC=seri,DC=sailpointdemo,DC=com"
+  },
+  {
+    "event_id": "398ee64add6117ad881bd0bc0cd30b68f08574828d1538c30a770edcfb2ecf25",
+    "attribute_key": "attributeValue",
+    "attribute_value": "CN=campusAccess,OU=Groups,OU=Demo,DC=seri,DC=sailpointdemo,DC=com"
+  },
+  {
+    "event_id": "398ee64add6117ad881bd0bc0cd30b68f08574828d1538c30a770edcfb2ecf25",
+    "attribute_key": "appId",
+    "attribute_value": "598f2be8042a48f1bf6ea706413380a3"
+  },
+  {
+    "event_id": "398ee64add6117ad881bd0bc0cd30b68f08574828d1538c30a770edcfb2ecf25",
+    "attribute_key": "accountUuid",
+    "attribute_value": "{7369ff06-eb9f-4946-a6b4-63b1ca6ea0c3}"
+  },
+  {
+    "event_id": "398ee64add6117ad881bd0bc0cd30b68f08574828d1538c30a770edcfb2ecf25",
+    "attribute_key": "attributeName",
+    "attribute_value": "memberOf"
+  },
+  {
+    "event_id": "398ee64add6117ad881bd0bc0cd30b68f08574828d1538c30a770edcfb2ecf25",
+    "attribute_key": "sourceName",
+    "attribute_value": "Active Directory"
+  },
+  {
+    "event_id": "398ee64add6117ad881bd0bc0cd30b68f08574828d1538c30a770edcfb2ecf25",
+    "attribute_key": "interface",
+    "attribute_value": "Identity Refresh"
+  },
+  {
+    "event_id": "c10a39c915dbdd72e0f4ecb4d90875ecc1a29ae93dbee845755c5a32753b712b",
+    "attribute_key": "cloudAppName",
+    "attribute_value": "Active Directory"
+  },
+  {
+    "event_id": "c10a39c915dbdd72e0f4ecb4d90875ecc1a29ae93dbee845755c5a32753b712b",
+    "attribute_key": "accountName",
+    "attribute_value": "CN=Samuel Wright,OU=Demo,DC=seri,DC=sailpointdemo,DC=com"
+  },
+  {
+    "event_id": "c10a39c915dbdd72e0f4ecb4d90875ecc1a29ae93dbee845755c5a32753b712b",
+    "attribute_key": "attributeValue",
+    "attribute_value": "CN=All_Users,OU=BirthRight,OU=Groups,OU=Demo,DC=seri,DC=sailpointdemo,DC=com"
+  },
+  {
+    "event_id": "c10a39c915dbdd72e0f4ecb4d90875ecc1a29ae93dbee845755c5a32753b712b",
+    "attribute_key": "appId",
+    "attribute_value": "598f2be8042a48f1bf6ea706413380a3"
+  },
+  {
+    "event_id": "c10a39c915dbdd72e0f4ecb4d90875ecc1a29ae93dbee845755c5a32753b712b",
+    "attribute_key": "accountUuid",
+    "attribute_value": "{7369ff06-eb9f-4946-a6b4-63b1ca6ea0c3}"
+  },
+  {
+    "event_id": "c10a39c915dbdd72e0f4ecb4d90875ecc1a29ae93dbee845755c5a32753b712b",
+    "attribute_key": "attributeName",
+    "attribute_value": "memberOf"
+  },
+  {
+    "event_id": "c10a39c915dbdd72e0f4ecb4d90875ecc1a29ae93dbee845755c5a32753b712b",
+    "attribute_key": "sourceName",
+    "attribute_value": "Active Directory"
+  },
+  {
+    "event_id": "c10a39c915dbdd72e0f4ecb4d90875ecc1a29ae93dbee845755c5a32753b712b",
+    "attribute_key": "interface",
+    "attribute_value": "Identity Refresh"
+  },
+  {
+    "event_id": "eb1c6f896be25304fc49aed1f6ad4766d5434be283c9d445755ff87551de5e7d",
+    "attribute_key": "cloudAppName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "eb1c6f896be25304fc49aed1f6ad4766d5434be283c9d445755ff87551de5e7d",
+    "attribute_key": "accountName",
+    "attribute_value": "Samuel.Wright"
+  },
+  {
+    "event_id": "eb1c6f896be25304fc49aed1f6ad4766d5434be283c9d445755ff87551de5e7d",
+    "attribute_key": "attributeValue",
+    "attribute_value": "Internal_Employee"
+  },
+  {
+    "event_id": "eb1c6f896be25304fc49aed1f6ad4766d5434be283c9d445755ff87551de5e7d",
+    "attribute_key": "appId",
+    "attribute_value": "7094964e0cbd42ff8cc690b14a9796a4"
+  },
+  {
+    "event_id": "eb1c6f896be25304fc49aed1f6ad4766d5434be283c9d445755ff87551de5e7d",
+    "attribute_key": "accountUuid",
+    "attribute_value": "null"
+  },
+  {
+    "event_id": "eb1c6f896be25304fc49aed1f6ad4766d5434be283c9d445755ff87551de5e7d",
+    "attribute_key": "attributeName",
+    "attribute_value": "groups"
+  },
+  {
+    "event_id": "eb1c6f896be25304fc49aed1f6ad4766d5434be283c9d445755ff87551de5e7d",
+    "attribute_key": "sourceName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "eb1c6f896be25304fc49aed1f6ad4766d5434be283c9d445755ff87551de5e7d",
+    "attribute_key": "interface",
+    "attribute_value": "Identity Refresh"
+  },
+  {
+    "event_id": "3f302d6cb45d441011f9985c5f6752402ef37179c238f5d510817e6b5a877f3a",
+    "attribute_key": "cloudAppName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "3f302d6cb45d441011f9985c5f6752402ef37179c238f5d510817e6b5a877f3a",
+    "attribute_key": "accountName",
+    "attribute_value": "Samuel.Wright"
+  },
+  {
+    "event_id": "3f302d6cb45d441011f9985c5f6752402ef37179c238f5d510817e6b5a877f3a",
+    "attribute_key": "attributeValue",
+    "attribute_value": "User"
+  },
+  {
+    "event_id": "3f302d6cb45d441011f9985c5f6752402ef37179c238f5d510817e6b5a877f3a",
+    "attribute_key": "appId",
+    "attribute_value": "7094964e0cbd42ff8cc690b14a9796a4"
+  },
+  {
+    "event_id": "3f302d6cb45d441011f9985c5f6752402ef37179c238f5d510817e6b5a877f3a",
+    "attribute_key": "accountUuid",
+    "attribute_value": "null"
+  },
+  {
+    "event_id": "3f302d6cb45d441011f9985c5f6752402ef37179c238f5d510817e6b5a877f3a",
+    "attribute_key": "attributeName",
+    "attribute_value": "groups"
+  },
+  {
+    "event_id": "3f302d6cb45d441011f9985c5f6752402ef37179c238f5d510817e6b5a877f3a",
+    "attribute_key": "sourceName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "3f302d6cb45d441011f9985c5f6752402ef37179c238f5d510817e6b5a877f3a",
+    "attribute_key": "interface",
+    "attribute_value": "Identity Refresh"
+  },
+  {
+    "event_id": "0d773178f78f285c57ef04392f0c1a4cdea7fe6e663213476e6f7b3683fcf840",
+    "attribute_key": "cloudAppName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "0d773178f78f285c57ef04392f0c1a4cdea7fe6e663213476e6f7b3683fcf840",
+    "attribute_key": "accountName",
+    "attribute_value": "Samuel.Wright"
+  },
+  {
+    "event_id": "0d773178f78f285c57ef04392f0c1a4cdea7fe6e663213476e6f7b3683fcf840",
+    "attribute_key": "attributeValue",
+    "attribute_value": "View_Reports"
+  },
+  {
+    "event_id": "0d773178f78f285c57ef04392f0c1a4cdea7fe6e663213476e6f7b3683fcf840",
+    "attribute_key": "appId",
+    "attribute_value": "7094964e0cbd42ff8cc690b14a9796a4"
+  },
+  {
+    "event_id": "0d773178f78f285c57ef04392f0c1a4cdea7fe6e663213476e6f7b3683fcf840",
+    "attribute_key": "accountUuid",
+    "attribute_value": "null"
+  },
+  {
+    "event_id": "0d773178f78f285c57ef04392f0c1a4cdea7fe6e663213476e6f7b3683fcf840",
+    "attribute_key": "attributeName",
+    "attribute_value": "groups"
+  },
+  {
+    "event_id": "0d773178f78f285c57ef04392f0c1a4cdea7fe6e663213476e6f7b3683fcf840",
+    "attribute_key": "sourceName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "0d773178f78f285c57ef04392f0c1a4cdea7fe6e663213476e6f7b3683fcf840",
+    "attribute_key": "interface",
+    "attribute_value": "Identity Refresh"
+  },
+  {
+    "event_id": "e7ea9fcbab9f9a9afe445750942f3d9cedbba18cdf6399e816339c5c874d5c94",
+    "attribute_key": "cloudAppName",
+    "attribute_value": "IdentityNow"
+  },
+  {
+    "event_id": "e7ea9fcbab9f9a9afe445750942f3d9cedbba18cdf6399e816339c5c874d5c94",
+    "attribute_key": "accountName",
+    "attribute_value": "Samuel.Wright"
+  },
+  {
+    "event_id": "e7ea9fcbab9f9a9afe445750942f3d9cedbba18cdf6399e816339c5c874d5c94",
+    "attribute_key": "attributeValue",
+    "attribute_value": "fd51ea00-66aa-4f08-b9ab-3ba0ba01c9a0"
+  },
+  {
+    "event_id": "e7ea9fcbab9f9a9afe445750942f3d9cedbba18cdf6399e816339c5c874d5c94",
+    "attribute_key": "appId",
+    "attribute_value": "830c69f910504925886ed0131912aabf"
+  },
+  {
+    "event_id": "e7ea9fcbab9f9a9afe445750942f3d9cedbba18cdf6399e816339c5c874d5c94",
+    "attribute_key": "accountUuid",
+    "attribute_value": "null"
+  },
+  {
+    "event_id": "e7ea9fcbab9f9a9afe445750942f3d9cedbba18cdf6399e816339c5c874d5c94",
+    "attribute_key": "attributeName",
+    "attribute_value": "assignedLaunchers"
+  },
+  {
+    "event_id": "e7ea9fcbab9f9a9afe445750942f3d9cedbba18cdf6399e816339c5c874d5c94",
+    "attribute_key": "sourceName",
+    "attribute_value": "IdentityNow"
+  },
+  {
+    "event_id": "e7ea9fcbab9f9a9afe445750942f3d9cedbba18cdf6399e816339c5c874d5c94",
+    "attribute_key": "interface",
+    "attribute_value": "appRequest"
+  },
+  {
+    "event_id": "60f3864cf78e64ef3e505c4be10a71d3c8b128593dffb6895e9f20e06046452d",
+    "attribute_key": "cloudAppName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "60f3864cf78e64ef3e505c4be10a71d3c8b128593dffb6895e9f20e06046452d",
+    "attribute_key": "accountName",
+    "attribute_value": "steve.toole"
+  },
+  {
+    "event_id": "60f3864cf78e64ef3e505c4be10a71d3c8b128593dffb6895e9f20e06046452d",
+    "attribute_key": "attributeValue",
+    "attribute_value": "Create_Reports"
+  },
+  {
+    "event_id": "60f3864cf78e64ef3e505c4be10a71d3c8b128593dffb6895e9f20e06046452d",
+    "attribute_key": "appId",
+    "attribute_value": "7094964e0cbd42ff8cc690b14a9796a4"
+  },
+  {
+    "event_id": "60f3864cf78e64ef3e505c4be10a71d3c8b128593dffb6895e9f20e06046452d",
+    "attribute_key": "accountUuid",
+    "attribute_value": "null"
+  },
+  {
+    "event_id": "60f3864cf78e64ef3e505c4be10a71d3c8b128593dffb6895e9f20e06046452d",
+    "attribute_key": "attributeName",
+    "attribute_value": "groups"
+  },
+  {
+    "event_id": "60f3864cf78e64ef3e505c4be10a71d3c8b128593dffb6895e9f20e06046452d",
+    "attribute_key": "sourceName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "60f3864cf78e64ef3e505c4be10a71d3c8b128593dffb6895e9f20e06046452d",
+    "attribute_key": "interface",
+    "attribute_value": "appRequest"
+  },
+  {
+    "event_id": "e48c55ce699e3222bfb94bff4b8c5827ced309384e037848a2852d9e25a2cd5c",
+    "attribute_key": "cloudAppName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "e48c55ce699e3222bfb94bff4b8c5827ced309384e037848a2852d9e25a2cd5c",
+    "attribute_key": "accountName",
+    "attribute_value": "steve.toole"
+  },
+  {
+    "event_id": "e48c55ce699e3222bfb94bff4b8c5827ced309384e037848a2852d9e25a2cd5c",
+    "attribute_key": "attributeValue",
+    "attribute_value": "Modify_Reports"
+  },
+  {
+    "event_id": "e48c55ce699e3222bfb94bff4b8c5827ced309384e037848a2852d9e25a2cd5c",
+    "attribute_key": "appId",
+    "attribute_value": "7094964e0cbd42ff8cc690b14a9796a4"
+  },
+  {
+    "event_id": "e48c55ce699e3222bfb94bff4b8c5827ced309384e037848a2852d9e25a2cd5c",
+    "attribute_key": "accountUuid",
+    "attribute_value": "null"
+  },
+  {
+    "event_id": "e48c55ce699e3222bfb94bff4b8c5827ced309384e037848a2852d9e25a2cd5c",
+    "attribute_key": "attributeName",
+    "attribute_value": "groups"
+  },
+  {
+    "event_id": "e48c55ce699e3222bfb94bff4b8c5827ced309384e037848a2852d9e25a2cd5c",
+    "attribute_key": "sourceName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "e48c55ce699e3222bfb94bff4b8c5827ced309384e037848a2852d9e25a2cd5c",
+    "attribute_key": "interface",
+    "attribute_value": "appRequest"
+  },
+  {
+    "event_id": "ca628e19a924f29f9a0d9de23e805be1d4d5e4320098ea863edaa22394841107",
+    "attribute_key": "cloudAppName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "ca628e19a924f29f9a0d9de23e805be1d4d5e4320098ea863edaa22394841107",
+    "attribute_key": "accountName",
+    "attribute_value": "steve.toole"
+  },
+  {
+    "event_id": "ca628e19a924f29f9a0d9de23e805be1d4d5e4320098ea863edaa22394841107",
+    "attribute_key": "attributeValue",
+    "attribute_value": "View_Reports"
+  },
+  {
+    "event_id": "ca628e19a924f29f9a0d9de23e805be1d4d5e4320098ea863edaa22394841107",
+    "attribute_key": "appId",
+    "attribute_value": "7094964e0cbd42ff8cc690b14a9796a4"
+  },
+  {
+    "event_id": "ca628e19a924f29f9a0d9de23e805be1d4d5e4320098ea863edaa22394841107",
+    "attribute_key": "accountUuid",
+    "attribute_value": "null"
+  },
+  {
+    "event_id": "ca628e19a924f29f9a0d9de23e805be1d4d5e4320098ea863edaa22394841107",
+    "attribute_key": "attributeName",
+    "attribute_value": "groups"
+  },
+  {
+    "event_id": "ca628e19a924f29f9a0d9de23e805be1d4d5e4320098ea863edaa22394841107",
+    "attribute_key": "sourceName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "ca628e19a924f29f9a0d9de23e805be1d4d5e4320098ea863edaa22394841107",
+    "attribute_key": "interface",
+    "attribute_value": "appRequest"
+  },
+  {
+    "event_id": "4e7cb4b3569dbb1347a3a3dd0cc7cca7743d56bd7411b6057ee8f525a3d4e1d6",
+    "attribute_key": "accountName",
+    "attribute_value": "steve.toole"
+  },
+  {
+    "event_id": "4e7cb4b3569dbb1347a3a3dd0cc7cca7743d56bd7411b6057ee8f525a3d4e1d6",
+    "attribute_key": "attributeValue",
+    "attribute_value": "PRISM ERP - Report Admin [AccessProfile-1737637438524]"
+  },
+  {
+    "event_id": "4e7cb4b3569dbb1347a3a3dd0cc7cca7743d56bd7411b6057ee8f525a3d4e1d6",
+    "attribute_key": "attributeName",
+    "attribute_value": "detectedRoles"
+  },
+  {
+    "event_id": "4e7cb4b3569dbb1347a3a3dd0cc7cca7743d56bd7411b6057ee8f525a3d4e1d6",
+    "attribute_key": "preventativeSODResultsJSON",
+    "attribute_value": "{\"state\":\"SUCCESS\",\"violationCheckResult\":{\"message\":{\"locale\":\"en-US\",\"localeOrigin\":\"DEFAULT\",\"text\":\"\"},\"violatedPolicies\":[],\"violationContexts\":[],\"clientMetadata\":{\"identityRequestId\":\"d888caad76c7460c8c4ef521fae2c45f\",\"workflowCaseId\":\"3c6e30aa293f4ad69fd0c1ad70565f37\"}},\"uuid\":\"907fa2da-caf3-49ca-95ba-f6bb2dccbad3\"}"
+  },
+  {
+    "event_id": "4e7cb4b3569dbb1347a3a3dd0cc7cca7743d56bd7411b6057ee8f525a3d4e1d6",
+    "attribute_key": "sourceName",
+    "attribute_value": "System"
+  },
+  {
+    "event_id": "4e7cb4b3569dbb1347a3a3dd0cc7cca7743d56bd7411b6057ee8f525a3d4e1d6",
+    "attribute_key": "interface",
+    "attribute_value": "LCM"
+  },
+  {
+    "event_id": "4e7cb4b3569dbb1347a3a3dd0cc7cca7743d56bd7411b6057ee8f525a3d4e1d6",
+    "attribute_key": "operation",
+    "attribute_value": "RoleAdd"
+  },
+  {
+    "event_id": "4e7cb4b3569dbb1347a3a3dd0cc7cca7743d56bd7411b6057ee8f525a3d4e1d6",
+    "attribute_key": "flow",
+    "attribute_value": "appRequest"
+  },
+  {
+    "event_id": "4e7cb4b3569dbb1347a3a3dd0cc7cca7743d56bd7411b6057ee8f525a3d4e1d6",
+    "attribute_key": "IdnAccessRequestAttributes",
+    "attribute_value": "{\"deniedCommentsRequired\":false,\"requestedAccounts\":[{\"sourceName\":\"PRISM\",\"type\":\"ACCOUNT\"}],\"requestedObjectId\":\"1c92094b6958459aaf8b2f05ee7efb84\",\"accessRequestType\":\"GRANT_ACCESS\",\"requestedObjectDescription\":\"Grants report administrator access to the PRISM ERP system.\",\"identityRequestIds\":[\"b732d95dd52046dc96e8918300ec36cb\"],\"requestedObjectSourceDisplayNames\":\"PRISM\",\"multiValue\":\"false\",\"requestedObjectName\":\"PRISM ERP - Report Admin\",\"requestedObjectType\":\"ACCESS_PROFILE\"}"
+  },
+  {
+    "event_id": "4e7cb4b3569dbb1347a3a3dd0cc7cca7743d56bd7411b6057ee8f525a3d4e1d6",
+    "attribute_key": "info",
+    "attribute_value": "PRISM ERP - Report Admin"
+  },
+  {
+    "event_id": "48ed3fbd6039cc24c59390c980da1968cef2f768b0ee549d4136e98f4fd804bb",
+    "attribute_key": "cloudAppName",
+    "attribute_value": "IdentityNow"
+  },
+  {
+    "event_id": "48ed3fbd6039cc24c59390c980da1968cef2f768b0ee549d4136e98f4fd804bb",
+    "attribute_key": "accountName",
+    "attribute_value": "matt.miller"
+  },
+  {
+    "event_id": "48ed3fbd6039cc24c59390c980da1968cef2f768b0ee549d4136e98f4fd804bb",
+    "attribute_key": "attributeValue",
+    "attribute_value": "sd_24779725-5dbe-478a-a854-579ada3ee35a"
+  },
+  {
+    "event_id": "48ed3fbd6039cc24c59390c980da1968cef2f768b0ee549d4136e98f4fd804bb",
+    "attribute_key": "appId",
+    "attribute_value": "830c69f910504925886ed0131912aabf"
+  },
+  {
+    "event_id": "48ed3fbd6039cc24c59390c980da1968cef2f768b0ee549d4136e98f4fd804bb",
+    "attribute_key": "accountUuid",
+    "attribute_value": "null"
+  },
+  {
+    "event_id": "48ed3fbd6039cc24c59390c980da1968cef2f768b0ee549d4136e98f4fd804bb",
+    "attribute_key": "attributeName",
+    "attribute_value": "sharedDashboards"
+  },
+  {
+    "event_id": "48ed3fbd6039cc24c59390c980da1968cef2f768b0ee549d4136e98f4fd804bb",
+    "attribute_key": "sourceName",
+    "attribute_value": "IdentityNow"
+  },
+  {
+    "event_id": "48ed3fbd6039cc24c59390c980da1968cef2f768b0ee549d4136e98f4fd804bb",
+    "attribute_key": "interface",
+    "attribute_value": "appRequest"
+  },
+  {
+    "event_id": "cc1cbc6c13a2c7fc9aabc418420ed43d5cb891c3998dae29418e147854418323",
+    "attribute_key": "cloudAppName",
+    "attribute_value": "Active Directory"
+  },
+  {
+    "event_id": "cc1cbc6c13a2c7fc9aabc418420ed43d5cb891c3998dae29418e147854418323",
+    "attribute_key": "accountName",
+    "attribute_value": "CN=Benjamin Hicks,OU=Munich,OU=Europe,OU=Demo,DC=seri,DC=sailpointdemo,DC=com"
+  },
+  {
+    "event_id": "cc1cbc6c13a2c7fc9aabc418420ed43d5cb891c3998dae29418e147854418323",
+    "attribute_key": "attributeValue",
+    "attribute_value": "CN=Contractors,OU=BirthRight,OU=Groups,OU=Demo,DC=seri,DC=sailpointdemo,DC=com"
+  },
+  {
+    "event_id": "cc1cbc6c13a2c7fc9aabc418420ed43d5cb891c3998dae29418e147854418323",
+    "attribute_key": "appId",
+    "attribute_value": "598f2be8042a48f1bf6ea706413380a3"
+  },
+  {
+    "event_id": "cc1cbc6c13a2c7fc9aabc418420ed43d5cb891c3998dae29418e147854418323",
+    "attribute_key": "accountUuid",
+    "attribute_value": "{cc99fe7f-b4c2-4d8a-88ff-9326b4759d31}"
+  },
+  {
+    "event_id": "cc1cbc6c13a2c7fc9aabc418420ed43d5cb891c3998dae29418e147854418323",
+    "attribute_key": "attributeName",
+    "attribute_value": "memberOf"
+  },
+  {
+    "event_id": "cc1cbc6c13a2c7fc9aabc418420ed43d5cb891c3998dae29418e147854418323",
+    "attribute_key": "sourceName",
+    "attribute_value": "Active Directory"
+  },
+  {
+    "event_id": "cc1cbc6c13a2c7fc9aabc418420ed43d5cb891c3998dae29418e147854418323",
+    "attribute_key": "interface",
+    "attribute_value": "AccountAttributeUpdate"
+  },
+  {
+    "event_id": "6ac6c87ab5c8cd3539a1a4b3d96b5c7ffe536384da91e114f602790ffec0b19d",
+    "attribute_key": "cloudAppName",
+    "attribute_value": "Active Directory"
+  },
+  {
+    "event_id": "6ac6c87ab5c8cd3539a1a4b3d96b5c7ffe536384da91e114f602790ffec0b19d",
+    "attribute_key": "accountName",
+    "attribute_value": "CN=Danny Fields,OU=Tokyo,OU=Asia-Pacific,OU=Demo,DC=seri,DC=sailpointdemo,DC=com"
+  },
+  {
+    "event_id": "6ac6c87ab5c8cd3539a1a4b3d96b5c7ffe536384da91e114f602790ffec0b19d",
+    "attribute_key": "attributeValue",
+    "attribute_value": "CN=Contractors,OU=BirthRight,OU=Groups,OU=Demo,DC=seri,DC=sailpointdemo,DC=com"
+  },
+  {
+    "event_id": "6ac6c87ab5c8cd3539a1a4b3d96b5c7ffe536384da91e114f602790ffec0b19d",
+    "attribute_key": "appId",
+    "attribute_value": "598f2be8042a48f1bf6ea706413380a3"
+  },
+  {
+    "event_id": "6ac6c87ab5c8cd3539a1a4b3d96b5c7ffe536384da91e114f602790ffec0b19d",
+    "attribute_key": "accountUuid",
+    "attribute_value": "{f911385c-fe19-4244-af59-57162fc440ed}"
+  },
+  {
+    "event_id": "6ac6c87ab5c8cd3539a1a4b3d96b5c7ffe536384da91e114f602790ffec0b19d",
+    "attribute_key": "attributeName",
+    "attribute_value": "memberOf"
+  },
+  {
+    "event_id": "6ac6c87ab5c8cd3539a1a4b3d96b5c7ffe536384da91e114f602790ffec0b19d",
+    "attribute_key": "sourceName",
+    "attribute_value": "Active Directory"
+  },
+  {
+    "event_id": "6ac6c87ab5c8cd3539a1a4b3d96b5c7ffe536384da91e114f602790ffec0b19d",
+    "attribute_key": "interface",
+    "attribute_value": "AccountAttributeUpdate"
+  },
+  {
+    "event_id": "8ea6f912ab235b21c1412ff7e1e88a6166edea6a131448bcf0c00649444ffa72",
+    "attribute_key": "cloudAppName",
+    "attribute_value": "Active Directory"
+  },
+  {
+    "event_id": "8ea6f912ab235b21c1412ff7e1e88a6166edea6a131448bcf0c00649444ffa72",
+    "attribute_key": "accountName",
+    "attribute_value": "CN=Ashley Simpson,OU=Munich,OU=Europe,OU=Demo,DC=seri,DC=sailpointdemo,DC=com"
+  },
+  {
+    "event_id": "8ea6f912ab235b21c1412ff7e1e88a6166edea6a131448bcf0c00649444ffa72",
+    "attribute_key": "attributeValue",
+    "attribute_value": "CN=Contractors,OU=BirthRight,OU=Groups,OU=Demo,DC=seri,DC=sailpointdemo,DC=com"
+  },
+  {
+    "event_id": "8ea6f912ab235b21c1412ff7e1e88a6166edea6a131448bcf0c00649444ffa72",
+    "attribute_key": "appId",
+    "attribute_value": "598f2be8042a48f1bf6ea706413380a3"
+  },
+  {
+    "event_id": "8ea6f912ab235b21c1412ff7e1e88a6166edea6a131448bcf0c00649444ffa72",
+    "attribute_key": "accountUuid",
+    "attribute_value": "{91eb8503-30a0-461e-a719-9cf9414a6a49}"
+  },
+  {
+    "event_id": "8ea6f912ab235b21c1412ff7e1e88a6166edea6a131448bcf0c00649444ffa72",
+    "attribute_key": "attributeName",
+    "attribute_value": "memberOf"
+  },
+  {
+    "event_id": "8ea6f912ab235b21c1412ff7e1e88a6166edea6a131448bcf0c00649444ffa72",
+    "attribute_key": "sourceName",
+    "attribute_value": "Active Directory"
+  },
+  {
+    "event_id": "8ea6f912ab235b21c1412ff7e1e88a6166edea6a131448bcf0c00649444ffa72",
+    "attribute_key": "interface",
+    "attribute_value": "AccountAttributeUpdate"
+  },
+  {
+    "event_id": "f6a1c125b8d779d9c767f1fd8d292906d5de0e8d19ad4e306faf344a7c1d221b",
+    "attribute_key": "cloudAppName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "f6a1c125b8d779d9c767f1fd8d292906d5de0e8d19ad4e306faf344a7c1d221b",
+    "attribute_key": "accountName",
+    "attribute_value": "Juliet.Cox"
+  },
+  {
+    "event_id": "f6a1c125b8d779d9c767f1fd8d292906d5de0e8d19ad4e306faf344a7c1d221b",
+    "attribute_key": "attributeValue",
+    "attribute_value": "Internal_Employee"
+  },
+  {
+    "event_id": "f6a1c125b8d779d9c767f1fd8d292906d5de0e8d19ad4e306faf344a7c1d221b",
+    "attribute_key": "appId",
+    "attribute_value": "7094964e0cbd42ff8cc690b14a9796a4"
+  },
+  {
+    "event_id": "f6a1c125b8d779d9c767f1fd8d292906d5de0e8d19ad4e306faf344a7c1d221b",
+    "attribute_key": "accountUuid",
+    "attribute_value": "null"
+  },
+  {
+    "event_id": "f6a1c125b8d779d9c767f1fd8d292906d5de0e8d19ad4e306faf344a7c1d221b",
+    "attribute_key": "attributeName",
+    "attribute_value": "groups"
+  },
+  {
+    "event_id": "f6a1c125b8d779d9c767f1fd8d292906d5de0e8d19ad4e306faf344a7c1d221b",
+    "attribute_key": "sourceName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "f6a1c125b8d779d9c767f1fd8d292906d5de0e8d19ad4e306faf344a7c1d221b",
+    "attribute_key": "interface",
+    "attribute_value": "Identity Refresh"
+  },
+  {
+    "event_id": "4db7ccad6d887590721285ac0771b0120ed35d644691c5270ff589313f2daed5",
+    "attribute_key": "cloudAppName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "4db7ccad6d887590721285ac0771b0120ed35d644691c5270ff589313f2daed5",
+    "attribute_key": "accountName",
+    "attribute_value": "Juliet.Cox"
+  },
+  {
+    "event_id": "4db7ccad6d887590721285ac0771b0120ed35d644691c5270ff589313f2daed5",
+    "attribute_key": "attributeValue",
+    "attribute_value": "User"
+  },
+  {
+    "event_id": "4db7ccad6d887590721285ac0771b0120ed35d644691c5270ff589313f2daed5",
+    "attribute_key": "appId",
+    "attribute_value": "7094964e0cbd42ff8cc690b14a9796a4"
+  },
+  {
+    "event_id": "4db7ccad6d887590721285ac0771b0120ed35d644691c5270ff589313f2daed5",
+    "attribute_key": "accountUuid",
+    "attribute_value": "null"
+  },
+  {
+    "event_id": "4db7ccad6d887590721285ac0771b0120ed35d644691c5270ff589313f2daed5",
+    "attribute_key": "attributeName",
+    "attribute_value": "groups"
+  },
+  {
+    "event_id": "4db7ccad6d887590721285ac0771b0120ed35d644691c5270ff589313f2daed5",
+    "attribute_key": "sourceName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "4db7ccad6d887590721285ac0771b0120ed35d644691c5270ff589313f2daed5",
+    "attribute_key": "interface",
+    "attribute_value": "Identity Refresh"
+  },
+  {
+    "event_id": "d84a89cc22387adb973d75e04b27ed5c3e04577ed60175937198e859d0b914a7",
+    "attribute_key": "cloudAppName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "d84a89cc22387adb973d75e04b27ed5c3e04577ed60175937198e859d0b914a7",
+    "attribute_key": "accountName",
+    "attribute_value": "Juliet.Cox"
+  },
+  {
+    "event_id": "d84a89cc22387adb973d75e04b27ed5c3e04577ed60175937198e859d0b914a7",
+    "attribute_key": "attributeValue",
+    "attribute_value": "View_Reports"
+  },
+  {
+    "event_id": "d84a89cc22387adb973d75e04b27ed5c3e04577ed60175937198e859d0b914a7",
+    "attribute_key": "appId",
+    "attribute_value": "7094964e0cbd42ff8cc690b14a9796a4"
+  },
+  {
+    "event_id": "d84a89cc22387adb973d75e04b27ed5c3e04577ed60175937198e859d0b914a7",
+    "attribute_key": "accountUuid",
+    "attribute_value": "null"
+  },
+  {
+    "event_id": "d84a89cc22387adb973d75e04b27ed5c3e04577ed60175937198e859d0b914a7",
+    "attribute_key": "attributeName",
+    "attribute_value": "groups"
+  },
+  {
+    "event_id": "d84a89cc22387adb973d75e04b27ed5c3e04577ed60175937198e859d0b914a7",
+    "attribute_key": "sourceName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "d84a89cc22387adb973d75e04b27ed5c3e04577ed60175937198e859d0b914a7",
+    "attribute_key": "interface",
+    "attribute_value": "Identity Refresh"
+  },
+  {
+    "event_id": "d29a2a2fa4e8c833fe22c65ae9331cc2d9b8895627bca39444b4068bcd523524",
+    "attribute_key": "cloudAppName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "d29a2a2fa4e8c833fe22c65ae9331cc2d9b8895627bca39444b4068bcd523524",
+    "attribute_key": "accountName",
+    "attribute_value": "April.Rios"
+  },
+  {
+    "event_id": "d29a2a2fa4e8c833fe22c65ae9331cc2d9b8895627bca39444b4068bcd523524",
+    "attribute_key": "attributeValue",
+    "attribute_value": "Internal_Employee"
+  },
+  {
+    "event_id": "d29a2a2fa4e8c833fe22c65ae9331cc2d9b8895627bca39444b4068bcd523524",
+    "attribute_key": "appId",
+    "attribute_value": "7094964e0cbd42ff8cc690b14a9796a4"
+  },
+  {
+    "event_id": "d29a2a2fa4e8c833fe22c65ae9331cc2d9b8895627bca39444b4068bcd523524",
+    "attribute_key": "accountUuid",
+    "attribute_value": "null"
+  },
+  {
+    "event_id": "d29a2a2fa4e8c833fe22c65ae9331cc2d9b8895627bca39444b4068bcd523524",
+    "attribute_key": "attributeName",
+    "attribute_value": "groups"
+  },
+  {
+    "event_id": "d29a2a2fa4e8c833fe22c65ae9331cc2d9b8895627bca39444b4068bcd523524",
+    "attribute_key": "sourceName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "d29a2a2fa4e8c833fe22c65ae9331cc2d9b8895627bca39444b4068bcd523524",
+    "attribute_key": "interface",
+    "attribute_value": "Identity Refresh"
+  },
+  {
+    "event_id": "3c4c6b9eb5534f1a38a3799226a2aa398d86535fc5e8f8e89f94c661ef694703",
+    "attribute_key": "cloudAppName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "3c4c6b9eb5534f1a38a3799226a2aa398d86535fc5e8f8e89f94c661ef694703",
+    "attribute_key": "accountName",
+    "attribute_value": "April.Rios"
+  },
+  {
+    "event_id": "3c4c6b9eb5534f1a38a3799226a2aa398d86535fc5e8f8e89f94c661ef694703",
+    "attribute_key": "attributeValue",
+    "attribute_value": "User"
+  },
+  {
+    "event_id": "3c4c6b9eb5534f1a38a3799226a2aa398d86535fc5e8f8e89f94c661ef694703",
+    "attribute_key": "appId",
+    "attribute_value": "7094964e0cbd42ff8cc690b14a9796a4"
+  },
+  {
+    "event_id": "3c4c6b9eb5534f1a38a3799226a2aa398d86535fc5e8f8e89f94c661ef694703",
+    "attribute_key": "accountUuid",
+    "attribute_value": "null"
+  },
+  {
+    "event_id": "3c4c6b9eb5534f1a38a3799226a2aa398d86535fc5e8f8e89f94c661ef694703",
+    "attribute_key": "attributeName",
+    "attribute_value": "groups"
+  },
+  {
+    "event_id": "3c4c6b9eb5534f1a38a3799226a2aa398d86535fc5e8f8e89f94c661ef694703",
+    "attribute_key": "sourceName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "3c4c6b9eb5534f1a38a3799226a2aa398d86535fc5e8f8e89f94c661ef694703",
+    "attribute_key": "interface",
+    "attribute_value": "Identity Refresh"
+  },
+  {
+    "event_id": "b0ecca2ae29f09c00eef768e5e0d8be6bc84a3291c5e11bcdcd7100f20919f96",
+    "attribute_key": "cloudAppName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "b0ecca2ae29f09c00eef768e5e0d8be6bc84a3291c5e11bcdcd7100f20919f96",
+    "attribute_key": "accountName",
+    "attribute_value": "April.Rios"
+  },
+  {
+    "event_id": "b0ecca2ae29f09c00eef768e5e0d8be6bc84a3291c5e11bcdcd7100f20919f96",
+    "attribute_key": "attributeValue",
+    "attribute_value": "View_Reports"
+  },
+  {
+    "event_id": "b0ecca2ae29f09c00eef768e5e0d8be6bc84a3291c5e11bcdcd7100f20919f96",
+    "attribute_key": "appId",
+    "attribute_value": "7094964e0cbd42ff8cc690b14a9796a4"
+  },
+  {
+    "event_id": "b0ecca2ae29f09c00eef768e5e0d8be6bc84a3291c5e11bcdcd7100f20919f96",
+    "attribute_key": "accountUuid",
+    "attribute_value": "null"
+  },
+  {
+    "event_id": "b0ecca2ae29f09c00eef768e5e0d8be6bc84a3291c5e11bcdcd7100f20919f96",
+    "attribute_key": "attributeName",
+    "attribute_value": "groups"
+  },
+  {
+    "event_id": "b0ecca2ae29f09c00eef768e5e0d8be6bc84a3291c5e11bcdcd7100f20919f96",
+    "attribute_key": "sourceName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "b0ecca2ae29f09c00eef768e5e0d8be6bc84a3291c5e11bcdcd7100f20919f96",
+    "attribute_key": "interface",
+    "attribute_value": "Identity Refresh"
+  },
+  {
+    "event_id": "59cb061657c679a256f46b285b269b667db7bd94d9a0c083f679f696bdd0b89e",
+    "attribute_key": "attributeValue",
+    "attribute_value": "ISC Admins [cloudIdentityProfile-1737635909094]"
+  },
+  {
+    "event_id": "59cb061657c679a256f46b285b269b667db7bd94d9a0c083f679f696bdd0b89e",
+    "attribute_key": "accountUuid",
+    "attribute_value": "null"
+  },
+  {
+    "event_id": "59cb061657c679a256f46b285b269b667db7bd94d9a0c083f679f696bdd0b89e",
+    "attribute_key": "attributeName",
+    "attribute_value": "assignedRoles"
+  },
+  {
+    "event_id": "59cb061657c679a256f46b285b269b667db7bd94d9a0c083f679f696bdd0b89e",
+    "attribute_key": "sourceName",
+    "attribute_value": "System"
+  },
+  {
+    "event_id": "59cb061657c679a256f46b285b269b667db7bd94d9a0c083f679f696bdd0b89e",
+    "attribute_key": "interface",
+    "attribute_value": "Identity Refresh"
+  },
+  {
+    "event_id": "8310e15242fa80772cca82b5c09e8a01f263b99b856d15ba61af7d0d3ebc9aac",
+    "attribute_key": "cloudAppName",
+    "attribute_value": "Active Directory"
+  },
+  {
+    "event_id": "8310e15242fa80772cca82b5c09e8a01f263b99b856d15ba61af7d0d3ebc9aac",
+    "attribute_key": "accountName",
+    "attribute_value": "CN=steve toole, OU=Demo,DC=seri,DC=sailpointdemo,DC=com"
+  },
+  {
+    "event_id": "8310e15242fa80772cca82b5c09e8a01f263b99b856d15ba61af7d0d3ebc9aac",
+    "attribute_key": "attributeValue",
+    "attribute_value": "CN=AccountingGeneral,OU=Groups,OU=Demo,DC=seri,DC=sailpointdemo,DC=com"
+  },
+  {
+    "event_id": "8310e15242fa80772cca82b5c09e8a01f263b99b856d15ba61af7d0d3ebc9aac",
+    "attribute_key": "appId",
+    "attribute_value": "598f2be8042a48f1bf6ea706413380a3"
+  },
+  {
+    "event_id": "8310e15242fa80772cca82b5c09e8a01f263b99b856d15ba61af7d0d3ebc9aac",
+    "attribute_key": "accountUuid",
+    "attribute_value": "null"
+  },
+  {
+    "event_id": "8310e15242fa80772cca82b5c09e8a01f263b99b856d15ba61af7d0d3ebc9aac",
+    "attribute_key": "attributeName",
+    "attribute_value": "memberOf"
+  },
+  {
+    "event_id": "8310e15242fa80772cca82b5c09e8a01f263b99b856d15ba61af7d0d3ebc9aac",
+    "attribute_key": "sourceName",
+    "attribute_value": "Active Directory"
+  },
+  {
+    "event_id": "8310e15242fa80772cca82b5c09e8a01f263b99b856d15ba61af7d0d3ebc9aac",
+    "attribute_key": "interface",
+    "attribute_value": "appRequest"
+  },
+  {
+    "event_id": "8cb976d6aa542c13e74ff0250baf5f2c8bfaba5779abc8f89f5472a5e0df163b",
+    "attribute_key": "accountName",
+    "attribute_value": "steve.toole"
+  },
+  {
+    "event_id": "8cb976d6aa542c13e74ff0250baf5f2c8bfaba5779abc8f89f5472a5e0df163b",
+    "attribute_key": "attributeValue",
+    "attribute_value": "Cost Optimization Agent [AccessProfile-1775048096113]"
+  },
+  {
+    "event_id": "8cb976d6aa542c13e74ff0250baf5f2c8bfaba5779abc8f89f5472a5e0df163b",
+    "attribute_key": "attributeName",
+    "attribute_value": "detectedRoles"
+  },
+  {
+    "event_id": "8cb976d6aa542c13e74ff0250baf5f2c8bfaba5779abc8f89f5472a5e0df163b",
+    "attribute_key": "preventativeSODResultsJSON",
+    "attribute_value": "{\"state\":\"SUCCESS\",\"violationCheckResult\":{\"message\":{\"locale\":\"en-US\",\"localeOrigin\":\"DEFAULT\",\"text\":\"\"},\"violatedPolicies\":[],\"violationContexts\":[],\"clientMetadata\":{\"targetIdentityName\":\"steve.toole\",\"accessRequestId\":\"ab8fc69ef6754fe39ffb393dfe893a5b\",\"identityRequestId\":\"3244e581a05449fd82d0dca28be9a53e\",\"workflowCaseId\":\"015f236d66124d5dba471b8f44a62ce6\"}},\"uuid\":\"e3d23e09-8e53-4622-a2a5-2c0436601032\"}"
+  },
+  {
+    "event_id": "8cb976d6aa542c13e74ff0250baf5f2c8bfaba5779abc8f89f5472a5e0df163b",
+    "attribute_key": "sourceName",
+    "attribute_value": "System"
+  },
+  {
+    "event_id": "8cb976d6aa542c13e74ff0250baf5f2c8bfaba5779abc8f89f5472a5e0df163b",
+    "attribute_key": "interface",
+    "attribute_value": "LCM"
+  },
+  {
+    "event_id": "8cb976d6aa542c13e74ff0250baf5f2c8bfaba5779abc8f89f5472a5e0df163b",
+    "attribute_key": "operation",
+    "attribute_value": "RoleAdd"
+  },
+  {
+    "event_id": "8cb976d6aa542c13e74ff0250baf5f2c8bfaba5779abc8f89f5472a5e0df163b",
+    "attribute_key": "flow",
+    "attribute_value": "appRequest"
+  },
+  {
+    "event_id": "8cb976d6aa542c13e74ff0250baf5f2c8bfaba5779abc8f89f5472a5e0df163b",
+    "attribute_key": "IdnAccessRequestAttributes",
+    "attribute_value": "{\"clientMetadata\":{\"source\":\"AI via access-request-tool\"},\"deniedCommentsRequired\":false,\"requestedObjectId\":\"12f25d49e9604bb0965795b58c2758c6\",\"accessRequestType\":\"GRANT_ACCESS\",\"identityType\":\"HUMAN\",\"requestedObjectDescription\":\"Grants access to the Cost Optimization Agent.  Access Restricted to Accounting department only.\",\"identityRequestIds\":[\"ab8fc69ef6754fe39ffb393dfe893a5b\"],\"requestedObjectSourceDisplayNames\":\"Active Directory\",\"multiValue\":\"false\",\"requestedObjectName\":\"Cost Optimization Agent\",\"requestedObjectType\":\"ACCESS_PROFILE\"}"
+  },
+  {
+    "event_id": "8cb976d6aa542c13e74ff0250baf5f2c8bfaba5779abc8f89f5472a5e0df163b",
+    "attribute_key": "info",
+    "attribute_value": "Cost Optimization Agent"
+  },
+  {
+    "event_id": "4443b33c51786417f5ab048d886314f05cc9b5ef1db6c50422e265718c7ffd57",
+    "attribute_key": "cloudAppName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "4443b33c51786417f5ab048d886314f05cc9b5ef1db6c50422e265718c7ffd57",
+    "attribute_key": "accountName",
+    "attribute_value": "steve.toole"
+  },
+  {
+    "event_id": "4443b33c51786417f5ab048d886314f05cc9b5ef1db6c50422e265718c7ffd57",
+    "attribute_key": "attributeValue",
+    "attribute_value": "User"
+  },
+  {
+    "event_id": "4443b33c51786417f5ab048d886314f05cc9b5ef1db6c50422e265718c7ffd57",
+    "attribute_key": "appId",
+    "attribute_value": "7094964e0cbd42ff8cc690b14a9796a4"
+  },
+  {
+    "event_id": "4443b33c51786417f5ab048d886314f05cc9b5ef1db6c50422e265718c7ffd57",
+    "attribute_key": "accountUuid",
+    "attribute_value": "null"
+  },
+  {
+    "event_id": "4443b33c51786417f5ab048d886314f05cc9b5ef1db6c50422e265718c7ffd57",
+    "attribute_key": "attributeName",
+    "attribute_value": "groups"
+  },
+  {
+    "event_id": "4443b33c51786417f5ab048d886314f05cc9b5ef1db6c50422e265718c7ffd57",
+    "attribute_key": "sourceName",
+    "attribute_value": "PRISM"
+  },
+  {
+    "event_id": "4443b33c51786417f5ab048d886314f05cc9b5ef1db6c50422e265718c7ffd57",
+    "attribute_key": "interface",
+    "attribute_value": "appRequest"
+  },
+  {
+    "event_id": "ff903da8005e71016b307f2f57a777f6cf825bf9d9f3acb78095729b0a6e6ae5",
+    "attribute_key": "accountName",
+    "attribute_value": "steve.toole"
+  },
+  {
+    "event_id": "ff903da8005e71016b307f2f57a777f6cf825bf9d9f3acb78095729b0a6e6ae5",
+    "attribute_key": "attributeValue",
+    "attribute_value": "PRISM ERP - User Access [AccessProfile-1737637490655]"
+  },
+  {
+    "event_id": "ff903da8005e71016b307f2f57a777f6cf825bf9d9f3acb78095729b0a6e6ae5",
+    "attribute_key": "attributeName",
+    "attribute_value": "detectedRoles"
+  },
+  {
+    "event_id": "ff903da8005e71016b307f2f57a777f6cf825bf9d9f3acb78095729b0a6e6ae5",
+    "attribute_key": "preventativeSODResultsJSON",
+    "attribute_value": "{\"state\":\"SUCCESS\",\"violationCheckResult\":{\"message\":{\"locale\":\"en-US\",\"localeOrigin\":\"DEFAULT\",\"text\":\"\"},\"violatedPolicies\":[],\"violationContexts\":[],\"clientMetadata\":{\"targetIdentityName\":\"steve.toole\",\"accessRequestId\":\"51c32d2691884cbf82a61704a305f2c4\",\"identityRequestId\":\"38ec16fc509f4849952e3c09b99868aa\",\"workflowCaseId\":\"786ff3ed6fac4ec897c950a7e6f84a07\"}},\"uuid\":\"abd1982c-3080-4bdf-8094-989e45f479af\"}"
+  },
+  {
+    "event_id": "ff903da8005e71016b307f2f57a777f6cf825bf9d9f3acb78095729b0a6e6ae5",
+    "attribute_key": "sourceName",
+    "attribute_value": "System"
+  },
+  {
+    "event_id": "ff903da8005e71016b307f2f57a777f6cf825bf9d9f3acb78095729b0a6e6ae5",
+    "attribute_key": "interface",
+    "attribute_value": "LCM"
+  },
+  {
+    "event_id": "ff903da8005e71016b307f2f57a777f6cf825bf9d9f3acb78095729b0a6e6ae5",
+    "attribute_key": "operation",
+    "attribute_value": "RoleAdd"
+  },
+  {
+    "event_id": "ff903da8005e71016b307f2f57a777f6cf825bf9d9f3acb78095729b0a6e6ae5",
+    "attribute_key": "flow",
+    "attribute_value": "appRequest"
+  },
+  {
+    "event_id": "ff903da8005e71016b307f2f57a777f6cf825bf9d9f3acb78095729b0a6e6ae5",
+    "attribute_key": "IdnAccessRequestAttributes",
+    "attribute_value": "{\"clientMetadata\":{\"source\":\"AI via access-request-tool\"},\"requestedAccounts\":[{\"accountId\":\"steve.toole\",\"name\":\"steve.toole\",\"sourceName\":\"PRISM\",\"type\":\"ACCOUNT\"}],\"accessRequestType\":\"GRANT_ACCESS\",\"identityRequestIds\":[\"51c32d2691884cbf82a61704a305f2c4\"],\"requestedObjectSourceDisplayNames\":\"PRISM\",\"multiValue\":\"false\",\"requestedObjectName\":\"PRISM ERP - User Access\",\"deniedCommentsRequired\":false,\"requestedObjectId\":\"7a354f916e9d42a292f75852d5788548\",\"identityType\":\"HUMAN\",\"requestedObjectDescription\":\"Grants user access to the PRISM ERP system\",\"requestedObjectType\":\"ACCESS_PROFILE\"}"
+  },
+  {
+    "event_id": "ff903da8005e71016b307f2f57a777f6cf825bf9d9f3acb78095729b0a6e6ae5",
+    "attribute_key": "info",
+    "attribute_value": "PRISM ERP - User Access"
+  }
+]
