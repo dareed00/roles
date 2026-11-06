@@ -1,0 +1,1118 @@
+[
+  {
+    "accessProfileCount": 0,
+    "created": "2026-04-14T17:09:09.512Z",
+    "description": "asdfsa\n\nThis role was created using IdentityAI for identities matching the criteria: (attributes.department:\"Accounting\")",
+    "dimensionCount": 0,
+    "dimensionSchemaAttributeCount": 0,
+    "dimensional": false,
+    "enabled": true,
+    "entitlementCount": 8,
+    "entitlements": [
+      {
+        "attribute": "servicePrincipals",
+        "hasPermissions": true,
+        "hash": "9d386a000f061b0ae524ec8f29d2b51160882529",
+        "id": "1afaa5003cdc4d70b682910acb46ff99",
+        "name": "35969ad8-9b02-447c-a15b-93b3a12d9dc4",
+        "privileged": false,
+        "schema": "Entitlement",
+        "sourceSchemaObjectType": "Entitlement",
+        "value": "35969ad8-9b02-447c-a15b-93b3a12d9dc4"
+      },
+      {
+        "attribute": "servicePrincipals",
+        "hasPermissions": true,
+        "hash": "cebd381b3c0f0a64e8dda858a3d279d225ea2aad",
+        "id": "fb9cc3ddb50242639edd9d0c0125364b",
+        "name": "d7ca3f2b-9fa2-412b-b817-41b06cf8ed53",
+        "privileged": false,
+        "schema": "Entitlement",
+        "sourceSchemaObjectType": "Entitlement",
+        "value": "d7ca3f2b-9fa2-412b-b817-41b06cf8ed53"
+      },
+      {
+        "attribute": "groups",
+        "hasPermissions": true,
+        "hash": "1a1e4c3506b15cd23a4d3e02db232b26762277c5",
+        "id": "4135717a996d47c8b9e8ad8adccf3b45",
+        "name": "SailPoint_Catalog",
+        "privileged": false,
+        "schema": "group",
+        "sourceSchemaObjectType": "group",
+        "value": "5b3c2f56db45e01061a5a5bb1396197f"
+      },
+      {
+        "attribute": "servicePrincipals",
+        "hasPermissions": true,
+        "hash": "081e67184e3b883ec82ac7f5c978b548e14edd58",
+        "id": "193d9b95a0de487e8e1728a177227e70",
+        "name": "b2ed2dd4-9606-4754-93d9-9b04e2b9c277",
+        "privileged": false,
+        "schema": "Entitlement",
+        "sourceSchemaObjectType": "Entitlement",
+        "value": "b2ed2dd4-9606-4754-93d9-9b04e2b9c277"
+      },
+      {
+        "attribute": "appRoleAssignments",
+        "hasPermissions": true,
+        "hash": "5f63592612ffb1afc714ea219d869b5b767d98df",
+        "id": "17a019ebc5c74979840ff5a0d3c419bb",
+        "name": "default access [on] SailPoint CAM - ent 194",
+        "privileged": false,
+        "schema": "applicationRole",
+        "sourceSchemaObjectType": "applicationRole",
+        "value": "35969ad8-9b02-447c-a15b-93b3a12d9dc4:00000000-0000-0000-0000-000000000000"
+      },
+      {
+        "attribute": "appRoleAssignments",
+        "hasPermissions": true,
+        "hash": "8999fd1888f130933062c3867500bb8cb3e77466",
+        "id": "51c181d230be45c7b45744c742852b72",
+        "name": "camsailpoint-readonly-user,AzureAD-CAM-SailPoint [on] Amazon Web Services (AWS)",
+        "privileged": false,
+        "schema": "applicationRole",
+        "sourceSchemaObjectType": "applicationRole",
+        "value": "b2ed2dd4-9606-4754-93d9-9b04e2b9c277:97b90098-bc44-4a12-b5c7-b692bc0cdd5e"
+      },
+      {
+        "attribute": "groups",
+        "description": "All Users in Employee Active Directory",
+        "hasPermissions": true,
+        "hash": "6be54a8a64850a3080c64ba1d0422267ceef6b60",
+        "id": "701b7162dc4045bc814601ffba2662f5",
+        "name": "All_Users",
+        "privileged": false,
+        "schema": "group",
+        "sourceSchemaObjectType": "group",
+        "value": "430cf7e2-ebe6-470b-b663-63c81e109077"
+      },
+      {
+        "attribute": "appRoleAssignments",
+        "hasPermissions": true,
+        "hash": "14a78474947741c9afec704cbe009fcceaaad971",
+        "id": "dfb942683fa74aae9448dcd739d36716",
+        "name": "User [on] SailPoint IdentityNow",
+        "privileged": false,
+        "schema": "applicationRole",
+        "sourceSchemaObjectType": "applicationRole",
+        "value": "d7ca3f2b-9fa2-412b-b817-41b06cf8ed53:18d14569-c3bd-439b-9a66-3a2aee01d14f"
+      }
+    ],
+    "globalSegment": true,
+    "id": "7f5ac876bbbc4d6aaa29e591dc7f170c",
+    "modified": "2026-04-14T17:10:01.046Z",
+    "name": "Accounting",
+    "owner": {
+      "email": "dana.reed@sailpoint.com",
+      "id": "cf70ddef2378480c81245bb24436f6f3",
+      "name": "dana.reed",
+      "type": "IDENTITY"
+    },
+    "requestCommentsRequired": false,
+    "requestable": false,
+    "segmentCount": 0,
+    "tags": [
+      "AI_CREATED"
+    ],
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "synced": "2026-04-17T01:32:46.375Z",
+    "type": "role",
+    "_type": "role",
+    "_index": "32"
+  },
+  {
+    "accessProfileCount": 2,
+    "accessProfiles": [
+      {
+        "id": "c66a9b81e1bb40f69890d842c5ba991e",
+        "name": "Financial Systems Analyst Access"
+      },
+      {
+        "id": "723a5bdf40764603ac0e07c13a648dc0",
+        "name": "Accounts Payable"
+      }
+    ],
+    "created": "2024-11-06T12:51:00.306Z",
+    "description": "Accounts Payable Analyst",
+    "dimensionCount": 0,
+    "dimensionSchemaAttributeCount": 0,
+    "dimensional": false,
+    "enabled": true,
+    "entitlementCount": 0,
+    "globalSegment": true,
+    "id": "45c4cbf4de5a40dc9f71604dfb306cac",
+    "modified": "2024-11-06T12:51:00.886Z",
+    "name": "Accounts Payable Analyst",
+    "owner": {
+      "email": "steve.toole@sailpoint.com",
+      "id": "76778a1639904de3be6af0711f79bab0",
+      "name": "steve.toole",
+      "type": "IDENTITY"
+    },
+    "requestable": true,
+    "segmentCount": 0,
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "synced": "2026-04-17T01:32:46.489Z",
+    "type": "role",
+    "_type": "role",
+    "_index": "32"
+  },
+  {
+    "accessProfileCount": 1,
+    "accessProfiles": [
+      {
+        "id": "473fc797e1f6412db3ecbf2d8ce57f0b",
+        "name": "Accounts Receivable"
+      }
+    ],
+    "created": "2024-11-06T12:51:00.195Z",
+    "description": "Accounts Receivable Analyst",
+    "dimensionCount": 0,
+    "dimensionSchemaAttributeCount": 0,
+    "dimensional": false,
+    "enabled": true,
+    "entitlementCount": 0,
+    "globalSegment": true,
+    "id": "bb2e5f355ace439297e5fd9f9dc47b57",
+    "modified": "2025-02-18T13:47:49.395Z",
+    "name": "Accounts Receivable Analyst",
+    "owner": {
+      "email": "steve.toole@sailpoint.com",
+      "id": "76778a1639904de3be6af0711f79bab0",
+      "name": "steve.toole",
+      "type": "IDENTITY"
+    },
+    "requestCommentsRequired": false,
+    "requestable": true,
+    "segmentCount": 0,
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "synced": "2026-04-17T01:32:46.352Z",
+    "type": "role",
+    "_type": "role",
+    "_index": "32"
+  },
+  {
+    "accessProfileCount": 2,
+    "accessProfiles": [
+      {
+        "id": "16ddfab652724be0a7fd856df347bfa1",
+        "name": "Azure Production Admin Access"
+      },
+      {
+        "id": "6b0fd5d790974d88911538b366afa348",
+        "name": "AWS Production Read Access"
+      }
+    ],
+    "created": "2024-11-06T12:51:00.669Z",
+    "description": "This role provides access to the production tenants in our CSPs ( AWS, GCP, Azure)",
+    "dimensionCount": 0,
+    "dimensionSchemaAttributeCount": 0,
+    "dimensional": false,
+    "enabled": true,
+    "entitlementCount": 0,
+    "globalSegment": true,
+    "id": "06db338f4c6d466bb7747a1f52297096",
+    "modified": "2024-11-06T12:51:00.900Z",
+    "name": "Cloud Production Team",
+    "owner": {
+      "email": "steve.toole@sailpoint.com",
+      "id": "76778a1639904de3be6af0711f79bab0",
+      "name": "steve.toole",
+      "type": "IDENTITY"
+    },
+    "requestable": true,
+    "segmentCount": 0,
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "synced": "2026-04-17T01:32:46.368Z",
+    "type": "role",
+    "_type": "role",
+    "_index": "32"
+  },
+  {
+    "accessProfileCount": 3,
+    "accessProfiles": [
+      {
+        "id": "00e143892e2049a4b12d8a1c9ea0a6e3",
+        "name": "Azure Developer Access"
+      },
+      {
+        "id": "59ec2dd40ed14469a8e34255ff1f70ca",
+        "name": "AWS Pre-Prod Admin Access"
+      },
+      {
+        "id": "d1ca0f8d7aa74cc88f1ba56eddf26762",
+        "name": "GCP Developer Admin Access on AI Product Project"
+      }
+    ],
+    "created": "2024-11-06T12:51:00.700Z",
+    "description": "This Role is for the Cloud team to gain access to Staging environments to AWS, GCP and Azure",
+    "dimensionCount": 0,
+    "dimensionSchemaAttributeCount": 0,
+    "dimensional": false,
+    "enabled": true,
+    "entitlementCount": 0,
+    "globalSegment": true,
+    "id": "d9a5087118a744f29951e15804c33596",
+    "modified": "2024-11-06T12:51:00.866Z",
+    "name": "Cloud Team Staging Access",
+    "owner": {
+      "email": "steve.toole@sailpoint.com",
+      "id": "76778a1639904de3be6af0711f79bab0",
+      "name": "steve.toole",
+      "type": "IDENTITY"
+    },
+    "requestable": true,
+    "segmentCount": 0,
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "synced": "2026-04-17T01:32:46.517Z",
+    "type": "role",
+    "_type": "role",
+    "_index": "32"
+  },
+  {
+    "accessProfileCount": 3,
+    "accessProfiles": [
+      {
+        "id": "a722cc0cf2ee410aa33576ec247c8a30",
+        "name": "AWS Quality Assurance"
+      },
+      {
+        "id": "bf0aca23dd47474180efbd430819a6d1",
+        "name": "Azure QA"
+      },
+      {
+        "id": "5bab7537c2c043318821c111513abc48",
+        "name": "GCP QA Access"
+      }
+    ],
+    "created": "2024-11-06T12:51:00.550Z",
+    "description": "This role is for QA to test on AWS, GCP, Azure",
+    "dimensionCount": 0,
+    "dimensionSchemaAttributeCount": 0,
+    "dimensional": false,
+    "enabled": true,
+    "entitlementCount": 0,
+    "globalSegment": true,
+    "id": "63309c8921f84c50bce058588fa91cb1",
+    "modified": "2024-11-06T12:51:00.812Z",
+    "name": "Cloud Team- QA",
+    "owner": {
+      "email": "steve.toole@sailpoint.com",
+      "id": "76778a1639904de3be6af0711f79bab0",
+      "name": "steve.toole",
+      "type": "IDENTITY"
+    },
+    "requestable": false,
+    "segmentCount": 0,
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "synced": "2026-04-17T01:32:46.496Z",
+    "type": "role",
+    "_type": "role",
+    "_index": "32"
+  },
+  {
+    "accessProfileCount": 2,
+    "accessProfiles": [
+      {
+        "id": "d5f9ba512b6e4d378492ae7b3b62dc60",
+        "name": "Employee Base Account"
+      },
+      {
+        "id": "7e76ce5b7d0a4ff38b1a54b101bc31af",
+        "name": "PRISM ERP Employee Access"
+      }
+    ],
+    "created": "2024-11-06T12:51:00.537Z",
+    "description": "Base level Domain account for active employees",
+    "dimensionCount": 0,
+    "dimensionSchemaAttributeCount": 0,
+    "dimensional": false,
+    "enabled": true,
+    "entitlementCount": 0,
+    "globalSegment": true,
+    "id": "c6d456d6642d4ee1b09dae2898a45177",
+    "modified": "2024-11-06T12:56:15.528Z",
+    "name": "Current Employee Base Access",
+    "owner": {
+      "email": "steve.toole@sailpoint.com",
+      "id": "76778a1639904de3be6af0711f79bab0",
+      "name": "steve.toole",
+      "type": "IDENTITY"
+    },
+    "requestable": true,
+    "segmentCount": 0,
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "synced": "2026-04-17T01:32:46.343Z",
+    "type": "role",
+    "_type": "role",
+    "_index": "32"
+  },
+  {
+    "accessProfileCount": 0,
+    "created": "2025-04-01T14:56:32.351Z",
+    "description": "Dealer Application XYZ",
+    "dimensionCount": 0,
+    "dimensionSchemaAttributeCount": 0,
+    "dimensional": false,
+    "enabled": false,
+    "entitlementCount": 0,
+    "globalSegment": true,
+    "id": "142b31b7fefa41e7b55ea5d836c3f3d4",
+    "modified": "2025-04-01T14:56:32.351Z",
+    "name": "Dealer Application XYZ",
+    "owner": {
+      "email": "Aaron.Nichols@sailpointdemo.com",
+      "id": "cd41e6005d5d42208551037bc742c889",
+      "name": "Aaron.Nichols",
+      "type": "IDENTITY"
+    },
+    "requestable": false,
+    "segmentCount": 0,
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "synced": "2026-04-17T01:32:46.527Z",
+    "type": "role",
+    "_type": "role",
+    "_index": "32"
+  },
+  {
+    "accessProfileCount": 0,
+    "created": "2024-11-06T12:56:14.032Z",
+    "description": "All Non-Employees that are Consultants",
+    "dimensionCount": 0,
+    "dimensionSchemaAttributeCount": 0,
+    "dimensional": false,
+    "enabled": true,
+    "entitlementCount": 0,
+    "globalSegment": true,
+    "id": "463b67f2a56e4aadaadd4f0c8cf1fb93",
+    "modified": "2024-11-06T12:56:14.139Z",
+    "name": "NE - All Consultants",
+    "owner": {
+      "email": "steve.toole@sailpoint.com",
+      "id": "76778a1639904de3be6af0711f79bab0",
+      "name": "steve.toole",
+      "type": "IDENTITY"
+    },
+    "requestable": false,
+    "segmentCount": 0,
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "synced": "2026-04-17T01:32:46.530Z",
+    "type": "role",
+    "_type": "role",
+    "_index": "32"
+  },
+  {
+    "accessProfileCount": 0,
+    "created": "2024-11-06T12:56:14.336Z",
+    "description": "All Non-Employees",
+    "dimensionCount": 0,
+    "dimensionSchemaAttributeCount": 0,
+    "dimensional": false,
+    "enabled": true,
+    "entitlementCount": 0,
+    "globalSegment": true,
+    "id": "f77e6241c2354786b9c6747b2eff5ec4",
+    "modified": "2024-11-06T12:56:14.403Z",
+    "name": "NE - All Non-Employees",
+    "owner": {
+      "email": "steve.toole@sailpoint.com",
+      "id": "76778a1639904de3be6af0711f79bab0",
+      "name": "steve.toole",
+      "type": "IDENTITY"
+    },
+    "requestable": false,
+    "segmentCount": 0,
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "synced": "2026-04-17T01:32:46.577Z",
+    "type": "role",
+    "_type": "role",
+    "_index": "32"
+  },
+  {
+    "accessProfileCount": 0,
+    "created": "2024-11-06T12:56:14.587Z",
+    "description": "All Non-Employees that are Students",
+    "dimensionCount": 0,
+    "dimensionSchemaAttributeCount": 0,
+    "dimensional": false,
+    "enabled": true,
+    "entitlementCount": 0,
+    "globalSegment": true,
+    "id": "a5f3a6f2a2b341a08f7b00ad6d12428d",
+    "modified": "2024-11-06T12:56:14.671Z",
+    "name": "NE - All Students",
+    "owner": {
+      "email": "steve.toole@sailpoint.com",
+      "id": "76778a1639904de3be6af0711f79bab0",
+      "name": "steve.toole",
+      "type": "IDENTITY"
+    },
+    "requestable": false,
+    "segmentCount": 0,
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "synced": "2026-04-17T01:32:46.363Z",
+    "type": "role",
+    "_type": "role",
+    "_index": "32"
+  },
+  {
+    "accessProfileCount": 0,
+    "created": "2024-11-06T12:56:14.827Z",
+    "description": "All Non-Employees that are Vendors",
+    "dimensionCount": 0,
+    "dimensionSchemaAttributeCount": 0,
+    "dimensional": false,
+    "enabled": true,
+    "entitlementCount": 0,
+    "globalSegment": true,
+    "id": "a910a54fbaa849ef9037580504a0097c",
+    "modified": "2024-11-06T12:56:14.897Z",
+    "name": "NE - All Vendors",
+    "owner": {
+      "email": "steve.toole@sailpoint.com",
+      "id": "76778a1639904de3be6af0711f79bab0",
+      "name": "steve.toole",
+      "type": "IDENTITY"
+    },
+    "requestable": false,
+    "segmentCount": 0,
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "synced": "2026-04-17T01:32:46.489Z",
+    "type": "role",
+    "_type": "role",
+    "_index": "32"
+  },
+  {
+    "accessProfileCount": 0,
+    "created": "2024-11-06T12:56:15.068Z",
+    "description": "All Non-Employee Consultants in US-TX-Austin location",
+    "dimensionCount": 0,
+    "dimensionSchemaAttributeCount": 0,
+    "dimensional": false,
+    "enabled": true,
+    "entitlementCount": 0,
+    "globalSegment": true,
+    "id": "de17f1cd996d412690e39173a1b91ee8",
+    "modified": "2024-11-06T12:56:15.142Z",
+    "name": "NE - Consultant in US-TX-Austin",
+    "owner": {
+      "email": "steve.toole@sailpoint.com",
+      "id": "76778a1639904de3be6af0711f79bab0",
+      "name": "steve.toole",
+      "type": "IDENTITY"
+    },
+    "requestable": false,
+    "segmentCount": 0,
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "synced": "2026-04-17T01:32:46.497Z",
+    "type": "role",
+    "_type": "role",
+    "_index": "32"
+  },
+  {
+    "accessProfileCount": 0,
+    "created": "2024-11-06T12:56:15.306Z",
+    "description": "All Non-Employee Nurses that are Registered Nurses",
+    "dimensionCount": 0,
+    "dimensionSchemaAttributeCount": 0,
+    "dimensional": false,
+    "enabled": true,
+    "entitlementCount": 0,
+    "globalSegment": true,
+    "id": "6723bbae18dd42288816839840476b60",
+    "modified": "2024-11-06T12:56:15.376Z",
+    "name": "NE - Registered Nurse",
+    "owner": {
+      "email": "steve.toole@sailpoint.com",
+      "id": "76778a1639904de3be6af0711f79bab0",
+      "name": "steve.toole",
+      "type": "IDENTITY"
+    },
+    "requestable": false,
+    "segmentCount": 0,
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "synced": "2026-04-17T01:32:46.382Z",
+    "type": "role",
+    "_type": "role",
+    "_index": "32"
+  },
+  {
+    "accessProfileCount": 0,
+    "created": "2025-04-01T14:20:53.324Z",
+    "description": "New Truck Sales Manager - Dynamic Role based on Users Location",
+    "dimensionCount": 3,
+    "dimensionSchemaAttributeCount": 1,
+    "dimensionSchemaAttributes": [
+      {
+        "derived": true,
+        "displayName": "Location",
+        "name": "location"
+      }
+    ],
+    "dimensional": true,
+    "dimensions": [
+      {
+        "description": "Milton CAT",
+        "entitlements": [
+          {
+            "attribute": "azureRoleAssignments",
+            "hasPermissions": true,
+            "hash": "10492cdd8dd14ed303a5a4ab698f840b70a5bc61",
+            "id": "0000309c0fa54eb4b7e6db3db59a7902",
+            "name": "Data Box Reader [on] network-flow-logs",
+            "privileged": true,
+            "schema": "azureRoleAssignment",
+            "sourceSchemaObjectType": "azureRoleAssignment",
+            "value": "/subscriptions/8b6514f9-4972-4dad-94b2-884991b26356/resourceGroups/network-flow-logs:028f4ed7-e2a9-465e-a8f4-9c0ffdfdc027"
+          }
+        ],
+        "id": "65ba80f16f684c37a4ea53070b1526a7",
+        "membership": {
+          "criteria": {
+            "children": [
+              {
+                "children": [
+                  {
+                    "key": {
+                      "property": "attribute.location",
+                      "type": "IDENTITY"
+                    },
+                    "operation": "EQUALS",
+                    "stringValue": "Milton CAT"
+                  }
+                ],
+                "operation": "AND",
+                "stringValue": ""
+              }
+            ],
+            "operation": "AND",
+            "stringValue": ""
+          },
+          "identities": [],
+          "type": "STANDARD"
+        },
+        "name": "Milton CAT"
+      },
+      {
+        "description": "Lucky's Trailers",
+        "entitlements": [
+          {
+            "attribute": "azureRoleAssignments",
+            "hasPermissions": true,
+            "hash": "1ea8a302edabcd04a1cb05c15d090f6b8823610a",
+            "id": "0003e8393b934d71958fedda443aeeaa",
+            "name": "HDInsight on AKS Cluster Operator [on] NetworkWatcherRG",
+            "privileged": true,
+            "schema": "azureRoleAssignment",
+            "sourceSchemaObjectType": "azureRoleAssignment",
+            "value": "/subscriptions/8b6514f9-4972-4dad-94b2-884991b26356/resourceGroups/NetworkWatcherRG:bcf28286-af25-4c81-bb6f-351fcab5dbe9"
+          }
+        ],
+        "id": "eb12d65ab74f4b309bae535a5ec0d9ca",
+        "membership": {
+          "criteria": {
+            "children": [
+              {
+                "children": [
+                  {
+                    "key": {
+                      "property": "attribute.location",
+                      "type": "IDENTITY"
+                    },
+                    "operation": "EQUALS",
+                    "stringValue": "Lucky's Trailers"
+                  }
+                ],
+                "operation": "AND",
+                "stringValue": ""
+              }
+            ],
+            "operation": "AND",
+            "stringValue": ""
+          },
+          "identities": [],
+          "type": "STANDARD"
+        },
+        "name": "Lucky's Trailers"
+      },
+      {
+        "description": "Kenworth",
+        "entitlements": [
+          {
+            "attribute": "azureEligibleRoles",
+            "hasPermissions": true,
+            "hash": "109ba878a6ba776744d56180463a9e4c027998c8",
+            "id": "0000a71faf684285b4fe5179ff0cd826",
+            "name": "Project Babylon Data Source Administrator [on] cs-ioa-group",
+            "privileged": true,
+            "schema": "azureEligibleRole",
+            "sourceSchemaObjectType": "azureEligibleRole",
+            "value": "/subscriptions/8b6514f9-4972-4dad-94b2-884991b26356/resourceGroups/cs-ioa-group:05b7651b-dc44-475e-b74d-df3db49fae0f"
+          }
+        ],
+        "id": "7e44ddc9c07e42048e049b9bd787c4ef",
+        "membership": {
+          "criteria": {
+            "children": [
+              {
+                "children": [
+                  {
+                    "key": {
+                      "property": "attribute.location",
+                      "type": "IDENTITY"
+                    },
+                    "operation": "EQUALS",
+                    "stringValue": "Kenworth Buffalo"
+                  }
+                ],
+                "operation": "AND",
+                "stringValue": ""
+              }
+            ],
+            "operation": "AND",
+            "stringValue": ""
+          },
+          "identities": [],
+          "type": "STANDARD"
+        },
+        "name": "Kenworth"
+      }
+    ],
+    "enabled": false,
+    "entitlementCount": 0,
+    "globalSegment": true,
+    "id": "d12cf5f47e244d349249c497347ad8e2",
+    "modified": "2025-04-01T14:22:19.676Z",
+    "name": "New Truck Sales Manager",
+    "owner": {
+      "email": "steve.toole@sailpoint.com",
+      "id": "76778a1639904de3be6af0711f79bab0",
+      "name": "steve.toole",
+      "type": "IDENTITY"
+    },
+    "requestable": false,
+    "segmentCount": 0,
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "synced": "2026-04-17T01:32:46.442Z",
+    "type": "role",
+    "_type": "role",
+    "_index": "32"
+  },
+  {
+    "accessProfileCount": 2,
+    "accessProfiles": [
+      {
+        "id": "bb720922f3794a79921106cac7f22c2c",
+        "name": "SalesCommonAccess"
+      },
+      {
+        "id": "97ebb9a0b0114a2fa30d86856b7e2b3f",
+        "name": "SalesEngineering"
+      }
+    ],
+    "created": "2024-11-06T12:51:00.633Z",
+    "description": "SalesEngineering",
+    "dimensionCount": 0,
+    "dimensionSchemaAttributeCount": 0,
+    "dimensional": false,
+    "enabled": true,
+    "entitlementCount": 0,
+    "globalSegment": true,
+    "id": "f7132b4c69604bce96a88b5e2663ec4c",
+    "modified": "2024-11-06T12:51:00.871Z",
+    "name": "SalesEngineering",
+    "owner": {
+      "email": "steve.toole@sailpoint.com",
+      "id": "76778a1639904de3be6af0711f79bab0",
+      "name": "steve.toole",
+      "type": "IDENTITY"
+    },
+    "requestable": true,
+    "segmentCount": 0,
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "synced": "2026-04-17T01:32:46.553Z",
+    "type": "role",
+    "_type": "role",
+    "_index": "32"
+  },
+  {
+    "accessProfileCount": 2,
+    "accessProfiles": [
+      {
+        "id": "bb720922f3794a79921106cac7f22c2c",
+        "name": "SalesCommonAccess"
+      },
+      {
+        "id": "75d73a56763a443b873f606a676ce938",
+        "name": "SalesEnterprise"
+      }
+    ],
+    "created": "2024-11-06T12:51:00.695Z",
+    "description": "The Enterprise Sales Team",
+    "dimensionCount": 0,
+    "dimensionSchemaAttributeCount": 0,
+    "dimensional": false,
+    "enabled": true,
+    "entitlementCount": 0,
+    "globalSegment": true,
+    "id": "9e5597c09d394868a57ce8d74dde115e",
+    "modified": "2024-11-06T12:51:00.779Z",
+    "name": "SalesEnterprise",
+    "owner": {
+      "email": "steve.toole@sailpoint.com",
+      "id": "76778a1639904de3be6af0711f79bab0",
+      "name": "steve.toole",
+      "type": "IDENTITY"
+    },
+    "requestable": true,
+    "segmentCount": 0,
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "synced": "2026-04-17T01:32:46.490Z",
+    "type": "role",
+    "_type": "role",
+    "_index": "32"
+  },
+  {
+    "accessProfileCount": 1,
+    "accessProfiles": [
+      {
+        "id": "bb720922f3794a79921106cac7f22c2c",
+        "name": "SalesCommonAccess"
+      }
+    ],
+    "created": "2024-11-06T12:51:00.250Z",
+    "description": "All Sales people in the company",
+    "dimensionCount": 0,
+    "dimensionSchemaAttributeCount": 0,
+    "dimensional": false,
+    "enabled": true,
+    "entitlementCount": 0,
+    "globalSegment": true,
+    "id": "1739d566c5994a79b02f98b2ff400eba",
+    "modified": "2024-11-06T12:51:00.678Z",
+    "name": "SalesGlobal",
+    "owner": {
+      "email": "steve.toole@sailpoint.com",
+      "id": "76778a1639904de3be6af0711f79bab0",
+      "name": "steve.toole",
+      "type": "IDENTITY"
+    },
+    "requestable": true,
+    "segmentCount": 0,
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "synced": "2026-04-17T01:32:46.525Z",
+    "type": "role",
+    "_type": "role",
+    "_index": "32"
+  },
+  {
+    "accessProfileCount": 2,
+    "accessProfiles": [
+      {
+        "id": "bb720922f3794a79921106cac7f22c2c",
+        "name": "SalesCommonAccess"
+      },
+      {
+        "id": "7a826b2b87ee4813a8daf70e71d033cb",
+        "name": "SalesRegional"
+      }
+    ],
+    "created": "2024-11-06T12:51:00.407Z",
+    "description": "The Regional Sales Team",
+    "dimensionCount": 0,
+    "dimensionSchemaAttributeCount": 0,
+    "dimensional": false,
+    "enabled": true,
+    "entitlementCount": 0,
+    "globalSegment": true,
+    "id": "c1d9f78677f140898c58ab425a6a026e",
+    "modified": "2024-11-06T12:51:00.818Z",
+    "name": "SalesRegional",
+    "owner": {
+      "email": "steve.toole@sailpoint.com",
+      "id": "76778a1639904de3be6af0711f79bab0",
+      "name": "steve.toole",
+      "type": "IDENTITY"
+    },
+    "requestable": true,
+    "segmentCount": 0,
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "synced": "2026-04-17T01:32:46.393Z",
+    "type": "role",
+    "_type": "role",
+    "_index": "32"
+  },
+  {
+    "accessProfileCount": 0,
+    "created": "2025-05-08T13:44:41.338Z",
+    "description": "Role for teller access to branches",
+    "dimensionCount": 4,
+    "dimensionSchemaAttributeCount": 1,
+    "dimensionSchemaAttributes": [
+      {
+        "derived": true,
+        "displayName": "Location",
+        "name": "location"
+      }
+    ],
+    "dimensional": true,
+    "dimensions": [
+      {
+        "description": "Branch 1",
+        "entitlements": [
+          {
+            "attribute": "groups",
+            "hasPermissions": true,
+            "hash": "5b051a9cdd7e076c57ceecce1157420078395cf2",
+            "id": "7b5ac7ff64b732a7918f0bdfd016e479",
+            "name": "Austin_Branch_Location",
+            "privileged": false,
+            "schema": "group",
+            "sourceSchemaObjectType": "group",
+            "value": "00g15udspr5GuZOCv0h8"
+          }
+        ],
+        "id": "b5339610cbb24ddebb7f87203c3d8a4a",
+        "membership": {
+          "criteria": {
+            "children": [
+              {
+                "children": [
+                  {
+                    "key": {
+                      "property": "attribute.location",
+                      "type": "IDENTITY"
+                    },
+                    "operation": "EQUALS",
+                    "stringValue": "Branch 1"
+                  }
+                ],
+                "operation": "AND",
+                "stringValue": ""
+              }
+            ],
+            "operation": "AND",
+            "stringValue": ""
+          },
+          "identities": [],
+          "type": "STANDARD"
+        },
+        "name": "Branch 1"
+      },
+      {
+        "description": "Branch 2",
+        "id": "3f892f398d404bb5895a9d0dc22b125c",
+        "membership": {
+          "criteria": {
+            "children": [
+              {
+                "children": [
+                  {
+                    "key": {
+                      "property": "attribute.location",
+                      "type": "IDENTITY"
+                    },
+                    "operation": "EQUALS",
+                    "stringValue": "Branch 2"
+                  }
+                ],
+                "operation": "AND",
+                "stringValue": ""
+              }
+            ],
+            "operation": "AND",
+            "stringValue": ""
+          },
+          "identities": [],
+          "type": "STANDARD"
+        },
+        "name": "Branch 2"
+      },
+      {
+        "description": "Branch 3",
+        "id": "f3e07071487642c1a32acee3843ea874",
+        "name": "Branch 3"
+      },
+      {
+        "description": "Branch 4",
+        "id": "d907152f9fdf4f1b9185badb89829cf8",
+        "name": "Branch 4"
+      }
+    ],
+    "enabled": false,
+    "entitlementCount": 1,
+    "entitlements": [
+      {
+        "description": "Grants access to read all resources in Retail.",
+        "hasPermissions": true,
+        "hash": "8938c4ddf26e0c9c539033ce2b8d60001c1bf77e",
+        "id": "94433a0b3c6d44d191618c9959fa6dc6",
+        "name": "Retail Viewer",
+        "privileged": false,
+        "schema": "iamRole",
+        "sourceSchemaObjectType": "iamRole",
+        "value": "roles/retail.viewer"
+      }
+    ],
+    "globalSegment": true,
+    "id": "b4f2c2121b0f47ca93900aca324a707b",
+    "modified": "2025-05-08T13:47:10.937Z",
+    "name": "Teller",
+    "owner": {
+      "email": "steve.toole@sailpoint.com",
+      "id": "76778a1639904de3be6af0711f79bab0",
+      "name": "steve.toole",
+      "type": "IDENTITY"
+    },
+    "requestable": false,
+    "segmentCount": 0,
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "synced": "2026-04-17T01:32:46.490Z",
+    "type": "role",
+    "_type": "role",
+    "_index": "32"
+  },
+  {
+    "accessModelMetadata": [
+      {
+        "description": "Classification used to specify the level of sensitivity for an access item.",
+        "key": "iscDataClassificationLevel",
+        "name": "Data Classification Level",
+        "type": "governance",
+        "value": "confidential",
+        "valueName": "Confidential"
+      }
+    ],
+    "accessProfileCount": 0,
+    "created": "2024-12-05T15:10:51.302Z",
+    "description": "My Dynamic Role",
+    "dimensionCount": 1,
+    "dimensionSchemaAttributeCount": 1,
+    "dimensionSchemaAttributes": [
+      {
+        "derived": true,
+        "displayName": "Country",
+        "name": "country"
+      }
+    ],
+    "dimensional": true,
+    "dimensions": [
+      {
+        "description": "Usa Access",
+        "id": "366de1540f424077a991b21732694fea",
+        "name": "USA"
+      }
+    ],
+    "enabled": false,
+    "entitlementCount": 0,
+    "globalSegment": true,
+    "id": "3599274d1823470c9ab92bc0d111d7f4",
+    "modified": "2024-12-05T15:11:40.668Z",
+    "name": "Test Dynamic",
+    "owner": {
+      "email": "Aaron.Nichols@sailpointdemo.com",
+      "id": "cd41e6005d5d42208551037bc742c889",
+      "name": "Aaron.Nichols",
+      "type": "IDENTITY"
+    },
+    "requestable": false,
+    "segmentCount": 0,
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "synced": "2026-04-17T01:32:46.352Z",
+    "type": "role",
+    "_type": "role",
+    "_index": "32"
+  },
+  {
+    "accessProfileCount": 0,
+    "created": "2024-12-03T19:38:05.417Z",
+    "description": "My Dynamic Role",
+    "dimensionCount": 2,
+    "dimensionSchemaAttributeCount": 1,
+    "dimensionSchemaAttributes": [
+      {
+        "derived": true,
+        "displayName": "City",
+        "name": "city"
+      }
+    ],
+    "dimensional": true,
+    "dimensions": [
+      {
+        "description": "This is my Dimension",
+        "id": "ee380458948b4cbea65a9128cfab78ff",
+        "name": "My Dimension"
+      },
+      {
+        "id": "999283e5d2ef4d92af86dd305ac25811",
+        "membership": {
+          "criteria": {
+            "children": [
+              {
+                "children": [
+                  {
+                    "key": {
+                      "property": "attribute.city",
+                      "type": "IDENTITY"
+                    },
+                    "operation": "EQUALS",
+                    "stringValue": "Seattle"
+                  }
+                ],
+                "operation": "AND",
+                "stringValue": ""
+              }
+            ],
+            "operation": "AND",
+            "stringValue": ""
+          },
+          "identities": [],
+          "type": "STANDARD"
+        },
+        "name": "Store 5"
+      }
+    ],
+    "enabled": false,
+    "entitlementCount": 0,
+    "globalSegment": true,
+    "id": "b32604f8a4ce414796baddcd050b0290",
+    "modified": "2024-12-03T19:38:43.702Z",
+    "name": "XYZ",
+    "owner": {
+      "email": "Aaron.Nichols@sailpointdemo.com",
+      "id": "cd41e6005d5d42208551037bc742c889",
+      "name": "Aaron.Nichols",
+      "type": "IDENTITY"
+    },
+    "requestable": false,
+    "segmentCount": 0,
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "synced": "2026-04-17T01:32:46.569Z",
+    "type": "role",
+    "_type": "role",
+    "_index": "32"
+  }
+]

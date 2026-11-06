@@ -1,0 +1,1625 @@
+[
+  {
+    "source": {
+      "id": "4e58fdbf8dd24204aa0bfc22c590536c",
+      "name": "AWS"
+    },
+    "apps": [],
+    "entitlements": [
+      {
+        "hasPermissions": false,
+        "attribute": "Groups",
+        "value": "arn:aws:iam::699264236613:group/StagingAccessAdmin",
+        "schema": "group",
+        "privileged": false,
+        "id": "ff81a90400024554bc9cc6be4e21717c",
+        "name": "StagingAccessAdmin"
+      }
+    ],
+    "entitlementCount": 1,
+    "segments": [],
+    "segmentCount": 0,
+    "description": "This Provides admin access to our Pre Prod Accounts in AWS",
+    "created": "2024-11-06T12:50:20Z",
+    "modified": "2024-11-06T12:50:20Z",
+    "synced": "2026-04-17T05:28:23.051Z",
+    "enabled": true,
+    "requestable": true,
+    "requestCommentsRequired": false,
+    "owner": {
+      "email": "Amanda.Ross@sailpointdemo.com",
+      "type": "IDENTITY",
+      "id": "be6439c71c98468e801b0bfe17a17c49",
+      "name": "Amanda.Ross"
+    },
+    "id": "59ec2dd40ed14469a8e34255ff1f70ca",
+    "name": "AWS Pre-Prod Admin Access",
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "type": "accessprofile",
+    "_type": "accessprofile",
+    "_index": "14"
+  },
+  {
+    "source": {
+      "id": "4e58fdbf8dd24204aa0bfc22c590536c",
+      "name": "AWS"
+    },
+    "apps": [],
+    "entitlements": [
+      {
+        "hasPermissions": false,
+        "attribute": "Groups",
+        "value": "arn:aws:iam::699264236613:group/ProductDevAccessRead",
+        "schema": "group",
+        "privileged": false,
+        "id": "4cef995ec96b468bbd0c4e05d0f2aa61",
+        "name": "ProductDevAccessRead"
+      }
+    ],
+    "entitlementCount": 1,
+    "segments": [],
+    "segmentCount": 0,
+    "description": "This Profile is to get read access to AWS Production Accounts",
+    "created": "2024-11-06T12:50:20Z",
+    "modified": "2024-11-06T12:50:20Z",
+    "synced": "2026-04-17T05:28:22.961Z",
+    "enabled": true,
+    "requestable": true,
+    "requestCommentsRequired": false,
+    "owner": {
+      "email": "Amanda.Ross@sailpointdemo.com",
+      "type": "IDENTITY",
+      "id": "be6439c71c98468e801b0bfe17a17c49",
+      "name": "Amanda.Ross"
+    },
+    "id": "6b0fd5d790974d88911538b366afa348",
+    "name": "AWS Production Read Access",
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "type": "accessprofile",
+    "_type": "accessprofile",
+    "_index": "14"
+  },
+  {
+    "source": {
+      "id": "4e58fdbf8dd24204aa0bfc22c590536c",
+      "name": "AWS"
+    },
+    "apps": [],
+    "entitlements": [
+      {
+        "hasPermissions": false,
+        "attribute": "Groups",
+        "value": "arn:aws:iam::699264236613:group/QAAccessRead",
+        "schema": "group",
+        "privileged": false,
+        "id": "35ed203588bb4dd08d7301f95e83fa63",
+        "name": "QAAccessRead"
+      }
+    ],
+    "entitlementCount": 1,
+    "segments": [],
+    "segmentCount": 0,
+    "description": "This Access Profile is for the QA Team on AWS Accounts",
+    "created": "2024-11-06T12:50:20Z",
+    "modified": "2024-11-06T12:50:20Z",
+    "synced": "2026-04-17T05:28:22.675Z",
+    "enabled": true,
+    "requestable": true,
+    "requestCommentsRequired": false,
+    "owner": {
+      "email": "Amanda.Ross@sailpointdemo.com",
+      "type": "IDENTITY",
+      "id": "be6439c71c98468e801b0bfe17a17c49",
+      "name": "Amanda.Ross"
+    },
+    "id": "a722cc0cf2ee410aa33576ec247c8a30",
+    "name": "AWS Quality Assurance",
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "type": "accessprofile",
+    "_type": "accessprofile",
+    "_index": "14"
+  },
+  {
+    "source": {
+      "id": "0e95eca230df4605a9264791b054ee27",
+      "name": "Active Directory"
+    },
+    "apps": [
+      {
+        "description": "Accounting Department Access",
+        "owner": {
+          "email": "cloud-internal-support@sailpoint.com",
+          "type": "IDENTITY",
+          "id": "0b19f20443494d1b992fca491875572c",
+          "name": "slpt.support"
+        },
+        "id": "ed805558a20843afb99eb2d4d0795f77",
+        "name": "Accounting"
+      }
+    ],
+    "entitlements": [
+      {
+        "hasPermissions": false,
+        "description": "Internal web access to AP system",
+        "attribute": "memberOf",
+        "value": "CN=AccountsPayable,OU=Groups,OU=Demo,DC=seri,DC=sailpointdemo,DC=com",
+        "schema": "group",
+        "privileged": false,
+        "id": "3b59c71d1a7943cb8612a53ddf478197",
+        "name": "AccountsPayable"
+      }
+    ],
+    "entitlementCount": 1,
+    "segments": [],
+    "segmentCount": 0,
+    "description": "Internal Accounts Payable Application Access",
+    "created": "2024-11-06T12:50:20Z",
+    "modified": "2024-11-06T12:53:32Z",
+    "synced": "2026-04-17T05:28:22.928Z",
+    "enabled": true,
+    "requestable": false,
+    "requestCommentsRequired": false,
+    "owner": {
+      "email": "Jerry.Bennett@sailpointdemo.com",
+      "type": "IDENTITY",
+      "id": "06ca3df0c4ec44ada8e6a394af1989e4",
+      "name": "Jerry.Bennett"
+    },
+    "id": "723a5bdf40764603ac0e07c13a648dc0",
+    "name": "Accounts Payable",
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "type": "accessprofile",
+    "_type": "accessprofile",
+    "_index": "14"
+  },
+  {
+    "source": {
+      "id": "0e95eca230df4605a9264791b054ee27",
+      "name": "Active Directory"
+    },
+    "apps": [
+      {
+        "description": "Accounting Department Access",
+        "owner": {
+          "email": "cloud-internal-support@sailpoint.com",
+          "type": "IDENTITY",
+          "id": "0b19f20443494d1b992fca491875572c",
+          "name": "slpt.support"
+        },
+        "id": "ed805558a20843afb99eb2d4d0795f77",
+        "name": "Accounting"
+      }
+    ],
+    "entitlements": [
+      {
+        "hasPermissions": false,
+        "description": "Allows access to AR menu in general accounting applications",
+        "attribute": "memberOf",
+        "value": "CN=AccountsReceivable,OU=Groups,OU=Demo,DC=seri,DC=sailpointdemo,DC=com",
+        "schema": "group",
+        "privileged": false,
+        "id": "8538268649c44faaa688dff9db8064bf",
+        "name": "AccountsReceivable"
+      }
+    ],
+    "entitlementCount": 1,
+    "segments": [],
+    "segmentCount": 0,
+    "description": "Internal Accounts Receivable Application Access",
+    "created": "2024-11-06T12:50:20Z",
+    "modified": "2024-11-06T12:53:32Z",
+    "synced": "2026-04-17T05:28:23.117Z",
+    "enabled": true,
+    "requestable": false,
+    "requestCommentsRequired": false,
+    "owner": {
+      "email": "Jerry.Bennett@sailpointdemo.com",
+      "type": "IDENTITY",
+      "id": "06ca3df0c4ec44ada8e6a394af1989e4",
+      "name": "Jerry.Bennett"
+    },
+    "id": "473fc797e1f6412db3ecbf2d8ce57f0b",
+    "name": "Accounts Receivable",
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "type": "accessprofile",
+    "_type": "accessprofile",
+    "_index": "14"
+  },
+  {
+    "source": {
+      "id": "e0a2388cb34f4e209ee37f39e1f54b21",
+      "name": "Airgap Application"
+    },
+    "apps": [
+      {
+        "description": "Airgap Access",
+        "owner": {
+          "email": "cloud-internal-support@sailpoint.com",
+          "type": "IDENTITY",
+          "id": "0b19f20443494d1b992fca491875572c",
+          "name": "slpt.support"
+        },
+        "id": "571fff1d9c5d48afab55a50358c59058",
+        "name": "Airgap Application"
+      }
+    ],
+    "entitlements": [
+      {
+        "hasPermissions": false,
+        "attribute": "groups",
+        "value": "Basic Access",
+        "schema": "group",
+        "privileged": false,
+        "id": "ce4dfc41ba2044fd893b1baa4b08b354",
+        "name": "Basic Access"
+      }
+    ],
+    "entitlementCount": 1,
+    "segments": [],
+    "segmentCount": 0,
+    "description": "Basic access to the Airgap system. This will require a ServiceNow ticket for manual fulfillment. The application has no network connectivity.",
+    "created": "2024-11-06T12:50:21Z",
+    "modified": "2024-11-06T12:54:18Z",
+    "synced": "2026-04-17T05:28:22.815Z",
+    "enabled": true,
+    "requestable": false,
+    "requestCommentsRequired": false,
+    "owner": {
+      "email": "Jerry.Bennett@sailpointdemo.com",
+      "type": "IDENTITY",
+      "id": "06ca3df0c4ec44ada8e6a394af1989e4",
+      "name": "Jerry.Bennett"
+    },
+    "id": "8404a96df9014049a758e01e7352fcdb",
+    "name": "Airgap - Basic Access",
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "type": "accessprofile",
+    "_type": "accessprofile",
+    "_index": "14"
+  },
+  {
+    "source": {
+      "id": "6369ed3ac7354ac79ab6f3d55dac00ee",
+      "name": "Azure AD"
+    },
+    "apps": [],
+    "entitlements": [
+      {
+        "hasPermissions": false,
+        "attribute": "groups",
+        "value": "b608e9e7-e527-4efc-92b9-189cfdbd036d",
+        "schema": "group",
+        "privileged": false,
+        "id": "69fe721adc354f759d06758a5096de43",
+        "name": "Infrastructure PreProd Read"
+      },
+      {
+        "hasPermissions": false,
+        "attribute": "groups",
+        "value": "f375c4da-4b06-4ce9-9ecf-58e178e71876",
+        "schema": "group",
+        "privileged": false,
+        "id": "dd9f6842ea7a4adba8672de0a9a2385c",
+        "name": "Infrastructure PreProd Write"
+      }
+    ],
+    "entitlementCount": 2,
+    "segments": [],
+    "segmentCount": 0,
+    "description": "This provides access to Azure Portal in the Development Subscription.",
+    "created": "2024-11-06T12:50:21Z",
+    "modified": "2024-11-06T12:50:21Z",
+    "synced": "2026-04-17T05:28:23.277Z",
+    "enabled": true,
+    "requestable": true,
+    "requestCommentsRequired": false,
+    "owner": {
+      "email": "Amanda.Ross@sailpointdemo.com",
+      "type": "IDENTITY",
+      "id": "be6439c71c98468e801b0bfe17a17c49",
+      "name": "Amanda.Ross"
+    },
+    "id": "00e143892e2049a4b12d8a1c9ea0a6e3",
+    "name": "Azure Developer Access",
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "type": "accessprofile",
+    "_type": "accessprofile",
+    "_index": "14"
+  },
+  {
+    "source": {
+      "id": "6369ed3ac7354ac79ab6f3d55dac00ee",
+      "name": "Azure AD"
+    },
+    "apps": [],
+    "entitlements": [
+      {
+        "hasPermissions": false,
+        "attribute": "groups",
+        "value": "24d7a7a3-d338-45b9-bdd8-7ac428992023",
+        "schema": "group",
+        "privileged": false,
+        "id": "0d0da097514342fb91cc70adc01808b5",
+        "name": "Infrastructure Prod Admin"
+      }
+    ],
+    "entitlementCount": 1,
+    "segments": [],
+    "segmentCount": 0,
+    "description": "This Access Profile is for Azure Production Engineering team",
+    "created": "2024-11-06T12:50:20Z",
+    "modified": "2024-11-06T12:50:20Z",
+    "synced": "2026-04-17T05:28:23.241Z",
+    "enabled": true,
+    "requestable": true,
+    "requestCommentsRequired": false,
+    "owner": {
+      "email": "Amanda.Ross@sailpointdemo.com",
+      "type": "IDENTITY",
+      "id": "be6439c71c98468e801b0bfe17a17c49",
+      "name": "Amanda.Ross"
+    },
+    "id": "16ddfab652724be0a7fd856df347bfa1",
+    "name": "Azure Production Admin Access",
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "type": "accessprofile",
+    "_type": "accessprofile",
+    "_index": "14"
+  },
+  {
+    "source": {
+      "id": "6369ed3ac7354ac79ab6f3d55dac00ee",
+      "name": "Azure AD"
+    },
+    "apps": [],
+    "entitlements": [
+      {
+        "hasPermissions": false,
+        "description": "Quality Assurance",
+        "attribute": "groups",
+        "value": "0d89c751-47ae-4750-869b-8dd6586d71cc",
+        "schema": "group",
+        "privileged": false,
+        "id": "70f2ef9b657a4e5797ffc6a640496e7f",
+        "name": "QualityAssurance"
+      },
+      {
+        "hasPermissions": false,
+        "attribute": "groups",
+        "value": "71f2586a-1342-4d2f-a8b9-77316dec2a27",
+        "schema": "group",
+        "privileged": false,
+        "id": "1e5d056ecf5c42cba02f503cda6bdf26",
+        "name": "Infrastructure Prod QA Access Read"
+      }
+    ],
+    "entitlementCount": 2,
+    "segments": [],
+    "segmentCount": 0,
+    "description": "This Access Profile is for the QA team to access Azure Portal.",
+    "created": "2024-11-06T12:50:21Z",
+    "modified": "2024-11-06T12:50:21Z",
+    "synced": "2026-04-17T05:28:22.587Z",
+    "enabled": true,
+    "requestable": true,
+    "requestCommentsRequired": false,
+    "owner": {
+      "email": "Amanda.Ross@sailpointdemo.com",
+      "type": "IDENTITY",
+      "id": "be6439c71c98468e801b0bfe17a17c49",
+      "name": "Amanda.Ross"
+    },
+    "id": "bf0aca23dd47474180efbd430819a6d1",
+    "name": "Azure QA",
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "type": "accessprofile",
+    "_type": "accessprofile",
+    "_index": "14"
+  },
+  {
+    "source": {
+      "id": "8ec7af04747f49bab775c802f9ca8ea6",
+      "name": "Badging"
+    },
+    "apps": [
+      {
+        "description": "Corporate Badging Access",
+        "owner": {
+          "email": "cloud-internal-support@sailpoint.com",
+          "type": "IDENTITY",
+          "id": "0b19f20443494d1b992fca491875572c",
+          "name": "slpt.support"
+        },
+        "id": "5dffa36c948c479f89f1b0ce2e5697cf",
+        "name": "Badging"
+      }
+    ],
+    "entitlements": [
+      {
+        "hasPermissions": false,
+        "attribute": "groups",
+        "value": "HQ Access",
+        "schema": "group",
+        "privileged": false,
+        "id": "187638b3b5164f8382f56b53beca7652",
+        "name": "HQ Access"
+      }
+    ],
+    "entitlementCount": 1,
+    "segments": [],
+    "segmentCount": 0,
+    "description": "Access to the headquarters building - exterior doors and common areas. And everywhere else",
+    "created": "2024-11-06T12:50:20Z",
+    "modified": "2024-11-06T12:55:05Z",
+    "synced": "2026-04-17T05:28:23.149Z",
+    "enabled": true,
+    "requestable": false,
+    "requestCommentsRequired": false,
+    "owner": {
+      "email": "Jerry.Bennett@sailpointdemo.com",
+      "type": "IDENTITY",
+      "id": "06ca3df0c4ec44ada8e6a394af1989e4",
+      "name": "Jerry.Bennett"
+    },
+    "id": "4374eee28d064cb69ee78610dde24117",
+    "name": "Badging - HQ Access",
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "type": "accessprofile",
+    "_type": "accessprofile",
+    "_index": "14"
+  },
+  {
+    "source": {
+      "id": "0e95eca230df4605a9264791b054ee27",
+      "name": "Active Directory"
+    },
+    "apps": [
+      {
+        "description": "Accounting Department Access",
+        "owner": {
+          "email": "cloud-internal-support@sailpoint.com",
+          "type": "IDENTITY",
+          "id": "0b19f20443494d1b992fca491875572c",
+          "name": "slpt.support"
+        },
+        "id": "ed805558a20843afb99eb2d4d0795f77",
+        "name": "Accounting"
+      }
+    ],
+    "entitlements": [
+      {
+        "hasPermissions": false,
+        "description": "Group assigned to workers in the Benefits department of HR",
+        "attribute": "memberOf",
+        "value": "CN=Benefits,OU=Groups,OU=Demo,DC=seri,DC=sailpointdemo,DC=com",
+        "schema": "group",
+        "privileged": false,
+        "id": "1166a104e8884e999f7c5c0a78a4d1fb",
+        "name": "Benefits"
+      }
+    ],
+    "entitlementCount": 1,
+    "segments": [],
+    "segmentCount": 0,
+    "description": "Access for Benefits Employees. Distribution group and File share access.",
+    "created": "2024-11-06T12:50:20Z",
+    "modified": "2024-11-06T12:53:32Z",
+    "synced": "2026-04-17T05:28:22.417Z",
+    "enabled": true,
+    "requestable": false,
+    "requestCommentsRequired": false,
+    "owner": {
+      "email": "Jerry.Bennett@sailpointdemo.com",
+      "type": "IDENTITY",
+      "id": "06ca3df0c4ec44ada8e6a394af1989e4",
+      "name": "Jerry.Bennett"
+    },
+    "id": "ecec90357e544201b3e19bd2e2422ddb",
+    "name": "Benefits Employees",
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "type": "accessprofile",
+    "_type": "accessprofile",
+    "_index": "14"
+  },
+  {
+    "source": {
+      "id": "0e95eca230df4605a9264791b054ee27",
+      "name": "Active Directory"
+    },
+    "apps": [
+      {
+        "description": "Accounting Department Access",
+        "owner": {
+          "email": "cloud-internal-support@sailpoint.com",
+          "type": "IDENTITY",
+          "id": "0b19f20443494d1b992fca491875572c",
+          "name": "slpt.support"
+        },
+        "id": "ed805558a20843afb99eb2d4d0795f77",
+        "name": "Accounting"
+      }
+    ],
+    "entitlements": [
+      {
+        "hasPermissions": false,
+        "description": "Allowed to make acquisitions",
+        "attribute": "memberOf",
+        "value": "CN=Buyer,OU=Groups,OU=Demo,DC=seri,DC=sailpointdemo,DC=com",
+        "schema": "group",
+        "privileged": false,
+        "id": "3a65917ff54b421cb677ad915ff6f14e",
+        "name": "Buyer"
+      }
+    ],
+    "entitlementCount": 1,
+    "segments": [],
+    "segmentCount": 0,
+    "description": "Allowed to make acquisitions",
+    "created": "2024-11-06T12:50:20Z",
+    "modified": "2024-11-06T12:53:32Z",
+    "synced": "2026-04-17T05:28:23.178Z",
+    "enabled": true,
+    "requestable": false,
+    "requestCommentsRequired": false,
+    "owner": {
+      "email": "Jerry.Bennett@sailpointdemo.com",
+      "type": "IDENTITY",
+      "id": "06ca3df0c4ec44ada8e6a394af1989e4",
+      "name": "Jerry.Bennett"
+    },
+    "id": "3d2fd107d56148f395de0e1d67ac53b0",
+    "name": "Buyer",
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "type": "accessprofile",
+    "_type": "accessprofile",
+    "_index": "14"
+  },
+  {
+    "source": {
+      "id": "0e95eca230df4605a9264791b054ee27",
+      "name": "Active Directory"
+    },
+    "apps": [
+      {
+        "description": "Corporate Remote Access",
+        "owner": {
+          "email": "cloud-internal-support@sailpoint.com",
+          "type": "IDENTITY",
+          "id": "0b19f20443494d1b992fca491875572c",
+          "name": "slpt.support"
+        },
+        "id": "cadafe7823bc4385994a9a0f3ffaff2b",
+        "name": "Corporate Remote Access"
+      }
+    ],
+    "entitlements": [
+      {
+        "hasPermissions": false,
+        "description": "Grants general VPN capability for remote workers",
+        "attribute": "memberOf",
+        "value": "CN=Corporate-VPN,OU=Groups,OU=Demo,DC=seri,DC=sailpointdemo,DC=com",
+        "schema": "group",
+        "privileged": false,
+        "id": "224bdbf5e4c34fcdbdb0f1538ba37851",
+        "name": "Corporate-VPN"
+      }
+    ],
+    "entitlementCount": 1,
+    "segments": [],
+    "segmentCount": 0,
+    "description": "Corporate VPN Access",
+    "created": "2024-11-06T12:50:20Z",
+    "modified": "2024-11-06T12:51:50Z",
+    "synced": "2026-04-17T05:28:22.759Z",
+    "enabled": true,
+    "requestable": false,
+    "requestCommentsRequired": false,
+    "owner": {
+      "email": "Jerry.Bennett@sailpointdemo.com",
+      "type": "IDENTITY",
+      "id": "06ca3df0c4ec44ada8e6a394af1989e4",
+      "name": "Jerry.Bennett"
+    },
+    "id": "8cbd42a092df42b5af192c5ccbeea296",
+    "name": "Corporate VPN Access",
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "type": "accessprofile",
+    "_type": "accessprofile",
+    "_index": "14"
+  },
+  {
+    "source": {
+      "id": "0e95eca230df4605a9264791b054ee27",
+      "name": "Active Directory"
+    },
+    "apps": [],
+    "entitlements": [
+      {
+        "hasPermissions": false,
+        "description": "All Users in Employee Active Directory",
+        "attribute": "memberOf",
+        "value": "CN=All_Users,OU=BirthRight,OU=Groups,OU=Demo,DC=seri,DC=sailpointdemo,DC=com",
+        "schema": "group",
+        "privileged": false,
+        "id": "8853704652544e9ab67c049d95eee781",
+        "name": "All_Users"
+      },
+      {
+        "hasPermissions": false,
+        "description": "Controls physical badge access to company HQ buildings",
+        "attribute": "memberOf",
+        "value": "CN=campusAccess,OU=Groups,OU=Demo,DC=seri,DC=sailpointdemo,DC=com",
+        "schema": "group",
+        "privileged": false,
+        "id": "7a902717af984da29c5e710cd5ab6af4",
+        "name": "campusAccess"
+      }
+    ],
+    "entitlementCount": 2,
+    "segments": [],
+    "segmentCount": 0,
+    "description": "Base Active Directory account for all active employees",
+    "created": "2024-11-06T12:50:20Z",
+    "modified": "2024-11-06T12:50:20Z",
+    "synced": "2026-04-17T05:28:22.475Z",
+    "enabled": true,
+    "requestable": false,
+    "requestCommentsRequired": false,
+    "owner": {
+      "email": "Jerry.Bennett@sailpointdemo.com",
+      "type": "IDENTITY",
+      "id": "06ca3df0c4ec44ada8e6a394af1989e4",
+      "name": "Jerry.Bennett"
+    },
+    "id": "d5f9ba512b6e4d378492ae7b3b62dc60",
+    "name": "Employee Base Account",
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "type": "accessprofile",
+    "_type": "accessprofile",
+    "_index": "14"
+  },
+  {
+    "source": {
+      "id": "0e95eca230df4605a9264791b054ee27",
+      "name": "Active Directory"
+    },
+    "apps": [
+      {
+        "description": "Accounting Department Access",
+        "owner": {
+          "email": "cloud-internal-support@sailpoint.com",
+          "type": "IDENTITY",
+          "id": "0b19f20443494d1b992fca491875572c",
+          "name": "slpt.support"
+        },
+        "id": "ed805558a20843afb99eb2d4d0795f77",
+        "name": "Accounting"
+      }
+    ],
+    "entitlements": [
+      {
+        "hasPermissions": false,
+        "description": "Grants basic financial access to the internal Financial System",
+        "attribute": "memberOf",
+        "value": "CN=FinanceUsers,OU=Groups,OU=Demo,DC=seri,DC=sailpointdemo,DC=com",
+        "schema": "group",
+        "privileged": false,
+        "id": "d9ac5339040b4078bd478fd64b687ede",
+        "name": "FinanceUsers"
+      },
+      {
+        "hasPermissions": false,
+        "attribute": "memberOf",
+        "value": "CN=Finance-Invoicing,OU=Asset Management,OU=AI,OU=Demo,DC=seri,DC=sailpointdemo,DC=com",
+        "schema": "group",
+        "privileged": false,
+        "id": "01f60ca656ff45dd9bf9581e2ebf52fb",
+        "name": "Finance-Invoicing"
+      }
+    ],
+    "entitlementCount": 2,
+    "segments": [],
+    "segmentCount": 0,
+    "description": "Financial Systems Analyst Access",
+    "created": "2024-11-06T12:50:21Z",
+    "modified": "2024-11-06T12:53:32Z",
+    "synced": "2026-04-17T05:28:22.547Z",
+    "enabled": true,
+    "requestable": false,
+    "requestCommentsRequired": false,
+    "owner": {
+      "email": "Jerry.Bennett@sailpointdemo.com",
+      "type": "IDENTITY",
+      "id": "06ca3df0c4ec44ada8e6a394af1989e4",
+      "name": "Jerry.Bennett"
+    },
+    "id": "c66a9b81e1bb40f69890d842c5ba991e",
+    "name": "Financial Systems Analyst Access",
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "type": "accessprofile",
+    "_type": "accessprofile",
+    "_index": "14"
+  },
+  {
+    "source": {
+      "id": "ac4ea899ab394d58a9b8c53535a99b1d",
+      "name": "GCP"
+    },
+    "apps": [],
+    "entitlements": [
+      {
+        "hasPermissions": false,
+        "attribute": "Groups",
+        "value": "01opuj5n3okv648",
+        "schema": "group",
+        "privileged": false,
+        "id": "512402f5fb674aef9945d1e792e30237",
+        "name": "AI Dev Read"
+      },
+      {
+        "hasPermissions": false,
+        "attribute": "Groups",
+        "value": "040ew0vw1ktqt0h",
+        "schema": "group",
+        "privileged": false,
+        "id": "8e75b161637441cab75b0872081963cb",
+        "name": "AI Dev Admin"
+      },
+      {
+        "hasPermissions": false,
+        "attribute": "Groups",
+        "value": "01jlao462gumfcg",
+        "schema": "group",
+        "privileged": false,
+        "id": "56c89f62dd064db8b556a581c6a0986f",
+        "name": "AI Dev Write"
+      }
+    ],
+    "entitlementCount": 3,
+    "segments": [],
+    "segmentCount": 0,
+    "description": "This profile grants access to the Production Projects for the AI product team",
+    "created": "2024-11-06T12:50:21Z",
+    "modified": "2024-11-06T12:50:21Z",
+    "synced": "2026-04-17T05:28:22.702Z",
+    "enabled": true,
+    "requestable": true,
+    "requestCommentsRequired": false,
+    "owner": {
+      "email": "Amanda.Ross@sailpointdemo.com",
+      "type": "IDENTITY",
+      "id": "be6439c71c98468e801b0bfe17a17c49",
+      "name": "Amanda.Ross"
+    },
+    "id": "a1c7fc7262004fa183a8789cf4c57ae5",
+    "name": "GCP AI Team Production Access",
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "type": "accessprofile",
+    "_type": "accessprofile",
+    "_index": "14"
+  },
+  {
+    "source": {
+      "id": "ac4ea899ab394d58a9b8c53535a99b1d",
+      "name": "GCP"
+    },
+    "apps": [],
+    "entitlements": [
+      {
+        "hasPermissions": false,
+        "attribute": "Groups",
+        "value": "037m2jsg2caxj02",
+        "schema": "group",
+        "privileged": false,
+        "id": "6affb2467c94440594ec620a461ac9f1",
+        "name": "AI Stage Admin"
+      }
+    ],
+    "entitlementCount": 1,
+    "segments": [],
+    "segmentCount": 0,
+    "description": "Provides Admin Access to Development Projects for the AI team",
+    "created": "2024-11-06T12:50:21Z",
+    "modified": "2024-11-06T12:50:21Z",
+    "synced": "2026-04-17T05:28:22.520Z",
+    "enabled": true,
+    "requestable": true,
+    "requestCommentsRequired": false,
+    "owner": {
+      "email": "Amanda.Ross@sailpointdemo.com",
+      "type": "IDENTITY",
+      "id": "be6439c71c98468e801b0bfe17a17c49",
+      "name": "Amanda.Ross"
+    },
+    "id": "d1ca0f8d7aa74cc88f1ba56eddf26762",
+    "name": "GCP Developer Admin Access on AI Product Project",
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "type": "accessprofile",
+    "_type": "accessprofile",
+    "_index": "14"
+  },
+  {
+    "source": {
+      "id": "ac4ea899ab394d58a9b8c53535a99b1d",
+      "name": "GCP"
+    },
+    "apps": [],
+    "entitlements": [
+      {
+        "hasPermissions": false,
+        "description": "Full access to most Google Cloud resources. See the list of included permissions.",
+        "attribute": "resourcePermissions",
+        "value": "projects/se-quality-assurance:roles/owner",
+        "schema": "iamResourcePermission",
+        "privileged": false,
+        "id": "af0a1f0eb92b4aa89950724845cc2008",
+        "name": "Owner (on) SE Quality Assurance [Project]"
+      },
+      {
+        "hasPermissions": false,
+        "description": "View most Google Cloud resources. See the list of included permissions.",
+        "attribute": "resourcePermissions",
+        "value": "projects/cam-demo-project:roles/viewer",
+        "schema": "iamResourcePermission",
+        "privileged": false,
+        "id": "db9446afd5254f56a4390dc29834ae72",
+        "name": "Viewer (on) cam-demo-project [Project]"
+      },
+      {
+        "hasPermissions": false,
+        "attribute": "Groups",
+        "value": "02250f4o1ze4t14",
+        "schema": "group",
+        "privileged": false,
+        "id": "008bf180c5a24924b74d306cd80c2393",
+        "name": "AI QA Read"
+      }
+    ],
+    "entitlementCount": 3,
+    "segments": [],
+    "segmentCount": 0,
+    "description": "This Profile Access to the QA team to review the AI product team projects",
+    "created": "2024-11-06T12:50:21Z",
+    "modified": "2024-11-06T12:50:21Z",
+    "synced": "2026-04-17T05:28:23.019Z",
+    "enabled": true,
+    "requestable": true,
+    "requestCommentsRequired": false,
+    "owner": {
+      "email": "Amanda.Ross@sailpointdemo.com",
+      "type": "IDENTITY",
+      "id": "be6439c71c98468e801b0bfe17a17c49",
+      "name": "Amanda.Ross"
+    },
+    "id": "5bab7537c2c043318821c111513abc48",
+    "name": "GCP QA Access",
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "type": "accessprofile",
+    "_type": "accessprofile",
+    "_index": "14"
+  },
+  {
+    "source": {
+      "id": "0555ab0cfa744a4aa472559b28b65cf6",
+      "name": "PRISM"
+    },
+    "apps": [
+      {
+        "description": "PRISM Enterprise Resource Planning",
+        "owner": {
+          "email": "cloud-internal-support@sailpoint.com",
+          "type": "IDENTITY",
+          "id": "0b19f20443494d1b992fca491875572c",
+          "name": "slpt.support"
+        },
+        "id": "dfded9722ad34afebd2741d2be79c362",
+        "name": "PRISM Enterprise Resource Planning"
+      }
+    ],
+    "entitlements": [
+      {
+        "hasPermissions": false,
+        "description": "View-only access to all existing Accounting report data",
+        "attribute": "groups",
+        "value": "View_Reports",
+        "schema": "group",
+        "privileged": false,
+        "id": "fb2c11fbc7834834b6ad9d183dc6064f",
+        "name": "View_Reports"
+      },
+      {
+        "hasPermissions": false,
+        "description": "View, Modify and Create Accounting report runs",
+        "attribute": "groups",
+        "value": "Create_Reports",
+        "schema": "group",
+        "privileged": false,
+        "id": "ff4fc5d3a7914a9fb5f10f365e711ca5",
+        "name": "Create_Reports"
+      },
+      {
+        "hasPermissions": false,
+        "description": "View and Modify existing Accounting report runs",
+        "attribute": "groups",
+        "value": "Modify_Reports",
+        "schema": "group",
+        "privileged": false,
+        "id": "06c6ce1301984130b9de96879dbd99d9",
+        "name": "Modify_Reports"
+      }
+    ],
+    "entitlementCount": 3,
+    "segments": [],
+    "segmentCount": 0,
+    "description": "Grants report administrator access to the PRISM ERP system.",
+    "created": "2024-11-06T12:50:21Z",
+    "modified": "2024-11-06T12:55:57Z",
+    "synced": "2026-04-17T19:51:46.491Z",
+    "enabled": true,
+    "requestable": true,
+    "requestCommentsRequired": false,
+    "owner": {
+      "email": "Jerry.Bennett@sailpointdemo.com",
+      "type": "IDENTITY",
+      "id": "06ca3df0c4ec44ada8e6a394af1989e4",
+      "name": "Jerry.Bennett"
+    },
+    "id": "8b8a0a42c02d48c680bff69d1afcd2f0",
+    "name": "PRISM ERP - Report Admin",
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "type": "accessprofile",
+    "_type": "accessprofile",
+    "_index": "14"
+  },
+  {
+    "source": {
+      "id": "0555ab0cfa744a4aa472559b28b65cf6",
+      "name": "PRISM"
+    },
+    "apps": [],
+    "entitlements": [
+      {
+        "hasPermissions": false,
+        "description": "View-only access to all existing Accounting report data",
+        "attribute": "groups",
+        "value": "View_Reports",
+        "schema": "group",
+        "privileged": false,
+        "id": "fb2c11fbc7834834b6ad9d183dc6064f",
+        "name": "View_Reports"
+      },
+      {
+        "hasPermissions": false,
+        "description": "View, Modify and Create Accounting report runs",
+        "attribute": "groups",
+        "value": "Create_Reports",
+        "schema": "group",
+        "privileged": false,
+        "id": "ff4fc5d3a7914a9fb5f10f365e711ca5",
+        "name": "Create_Reports"
+      },
+      {
+        "hasPermissions": false,
+        "description": "This is a privileged group with superuser access to PRISM",
+        "attribute": "groups",
+        "value": "Super",
+        "schema": "group",
+        "privileged": false,
+        "id": "064a1c11d0954f4591c6fcb387b27619",
+        "name": "Super"
+      },
+      {
+        "hasPermissions": false,
+        "description": "View and Modify existing Accounting report runs",
+        "attribute": "groups",
+        "value": "Modify_Reports",
+        "schema": "group",
+        "privileged": false,
+        "id": "06c6ce1301984130b9de96879dbd99d9",
+        "name": "Modify_Reports"
+      }
+    ],
+    "entitlementCount": 4,
+    "segments": [],
+    "segmentCount": 0,
+    "description": "Admin access to PRISM system",
+    "created": "2024-11-06T12:50:21Z",
+    "modified": "2024-11-06T12:50:21Z",
+    "synced": "2026-04-17T05:28:22.383Z",
+    "enabled": true,
+    "requestable": true,
+    "requestCommentsRequired": false,
+    "owner": {
+      "email": "Jerry.Bennett@sailpointdemo.com",
+      "type": "IDENTITY",
+      "id": "06ca3df0c4ec44ada8e6a394af1989e4",
+      "name": "Jerry.Bennett"
+    },
+    "id": "fc433de27eb94c50a3e8b6a796fd61a7",
+    "name": "PRISM ERP - Super Admin",
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "type": "accessprofile",
+    "_type": "accessprofile",
+    "_index": "14"
+  },
+  {
+    "source": {
+      "id": "0555ab0cfa744a4aa472559b28b65cf6",
+      "name": "PRISM"
+    },
+    "apps": [
+      {
+        "description": "PRISM Enterprise Resource Planning",
+        "owner": {
+          "email": "cloud-internal-support@sailpoint.com",
+          "type": "IDENTITY",
+          "id": "0b19f20443494d1b992fca491875572c",
+          "name": "slpt.support"
+        },
+        "id": "dfded9722ad34afebd2741d2be79c362",
+        "name": "PRISM Enterprise Resource Planning"
+      }
+    ],
+    "entitlements": [
+      {
+        "hasPermissions": false,
+        "description": "This group is used to assign basic user access to PRISM",
+        "attribute": "groups",
+        "value": "User",
+        "schema": "group",
+        "privileged": false,
+        "id": "334a692fb5334251906ccba28d937572",
+        "name": "User"
+      }
+    ],
+    "entitlementCount": 1,
+    "segments": [],
+    "segmentCount": 0,
+    "description": "Grants user access to the PRISM ERP system",
+    "created": "2024-11-06T12:50:20Z",
+    "modified": "2024-11-06T12:55:56Z",
+    "synced": "2026-04-17T05:28:22.448Z",
+    "enabled": true,
+    "requestable": true,
+    "requestCommentsRequired": false,
+    "owner": {
+      "email": "Jerry.Bennett@sailpointdemo.com",
+      "type": "IDENTITY",
+      "id": "06ca3df0c4ec44ada8e6a394af1989e4",
+      "name": "Jerry.Bennett"
+    },
+    "id": "d7d9f3b647b44c85a02cab19d29e691e",
+    "name": "PRISM ERP - User Access",
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "type": "accessprofile",
+    "_type": "accessprofile",
+    "_index": "14"
+  },
+  {
+    "source": {
+      "id": "0555ab0cfa744a4aa472559b28b65cf6",
+      "name": "PRISM"
+    },
+    "apps": [],
+    "entitlements": [
+      {
+        "hasPermissions": false,
+        "description": "View-only access to all existing Accounting report data",
+        "attribute": "groups",
+        "value": "View_Reports",
+        "schema": "group",
+        "privileged": false,
+        "id": "fb2c11fbc7834834b6ad9d183dc6064f",
+        "name": "View_Reports"
+      },
+      {
+        "hasPermissions": false,
+        "description": "Access to internal-use-only systems",
+        "attribute": "groups",
+        "value": "Internal_Employee",
+        "schema": "group",
+        "privileged": false,
+        "id": "b3bd64888bd04a2cbce5f98a224f5e64",
+        "name": "Internal_Employee"
+      },
+      {
+        "hasPermissions": false,
+        "description": "This group is used to assign basic user access to PRISM",
+        "attribute": "groups",
+        "value": "User",
+        "schema": "group",
+        "privileged": false,
+        "id": "334a692fb5334251906ccba28d937572",
+        "name": "User"
+      }
+    ],
+    "entitlementCount": 3,
+    "segments": [],
+    "segmentCount": 0,
+    "description": "Grants user access to the PRISM ERP system",
+    "created": "2024-11-06T12:50:21Z",
+    "modified": "2024-11-06T12:50:21Z",
+    "synced": "2026-04-17T05:28:22.843Z",
+    "enabled": true,
+    "requestable": true,
+    "requestCommentsRequired": false,
+    "owner": {
+      "email": "Jerry.Bennett@sailpointdemo.com",
+      "type": "IDENTITY",
+      "id": "06ca3df0c4ec44ada8e6a394af1989e4",
+      "name": "Jerry.Bennett"
+    },
+    "id": "7e76ce5b7d0a4ff38b1a54b101bc31af",
+    "name": "PRISM ERP Employee Access",
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "type": "accessprofile",
+    "_type": "accessprofile",
+    "_index": "14"
+  },
+  {
+    "source": {
+      "id": "0e95eca230df4605a9264791b054ee27",
+      "name": "Active Directory"
+    },
+    "apps": [
+      {
+        "description": "Accounting Department Access",
+        "owner": {
+          "email": "cloud-internal-support@sailpoint.com",
+          "type": "IDENTITY",
+          "id": "0b19f20443494d1b992fca491875572c",
+          "name": "slpt.support"
+        },
+        "id": "ed805558a20843afb99eb2d4d0795f77",
+        "name": "Accounting"
+      }
+    ],
+    "entitlements": [
+      {
+        "hasPermissions": false,
+        "description": "Payroll Projects Base-level Access",
+        "attribute": "memberOf",
+        "value": "CN=PayrollProjects,OU=Groups,OU=Demo,DC=seri,DC=sailpointdemo,DC=com",
+        "schema": "group",
+        "privileged": false,
+        "id": "06b65a49a13e4d439c03ce590f1d0911",
+        "name": "PayrollProjects"
+      },
+      {
+        "hasPermissions": false,
+        "description": "Payroll Controls Base-level Access",
+        "attribute": "memberOf",
+        "value": "CN=PayrollControls,OU=Groups,OU=Demo,DC=seri,DC=sailpointdemo,DC=com",
+        "schema": "group",
+        "privileged": false,
+        "id": "428b3795451442ca9d0d57cfc536ff2c",
+        "name": "PayrollControls"
+      }
+    ],
+    "entitlementCount": 2,
+    "segments": [],
+    "segmentCount": 0,
+    "description": "Internal Payroll Admin Application Access",
+    "created": "2024-11-06T12:50:20Z",
+    "modified": "2024-11-06T12:53:32Z",
+    "synced": "2026-04-17T05:28:22.648Z",
+    "enabled": true,
+    "requestable": false,
+    "requestCommentsRequired": false,
+    "owner": {
+      "email": "Jerry.Bennett@sailpointdemo.com",
+      "type": "IDENTITY",
+      "id": "06ca3df0c4ec44ada8e6a394af1989e4",
+      "name": "Jerry.Bennett"
+    },
+    "id": "b3277ce586914b7da1c5ead70db44aac",
+    "name": "Payroll Admin Access",
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "type": "accessprofile",
+    "_type": "accessprofile",
+    "_index": "14"
+  },
+  {
+    "source": {
+      "id": "0e95eca230df4605a9264791b054ee27",
+      "name": "Active Directory"
+    },
+    "apps": [],
+    "entitlements": [
+      {
+        "hasPermissions": false,
+        "attribute": "memberOf",
+        "value": "CN=Sales-Folder,OU=Sales,OU=AI,OU=Demo,DC=seri,DC=sailpointdemo,DC=com",
+        "schema": "group",
+        "privileged": false,
+        "id": "a7ffe3686d654c86b4d720ea079451b5",
+        "name": "Sales-Folder"
+      },
+      {
+        "hasPermissions": false,
+        "attribute": "memberOf",
+        "value": "CN=Salesforce Access,OU=Sales,OU=AI,OU=Demo,DC=seri,DC=sailpointdemo,DC=com",
+        "schema": "group",
+        "privileged": false,
+        "id": "fb1edff799fc45a5814cb523b990f6bf",
+        "name": "Salesforce Access"
+      },
+      {
+        "hasPermissions": false,
+        "attribute": "memberOf",
+        "value": "CN=Salesforce opportunity management,OU=Sales,OU=AI,OU=Demo,DC=seri,DC=sailpointdemo,DC=com",
+        "schema": "group",
+        "privileged": false,
+        "id": "8449edc5bd284e8687c4f61305498a16",
+        "name": "Salesforce opportunity management"
+      }
+    ],
+    "entitlementCount": 3,
+    "segments": [],
+    "segmentCount": 0,
+    "description": "Grants basic access for everyone in the sale department",
+    "created": "2024-11-06T12:50:21Z",
+    "modified": "2024-11-06T12:50:21Z",
+    "synced": "2026-04-17T05:28:22.619Z",
+    "enabled": true,
+    "requestable": true,
+    "requestCommentsRequired": false,
+    "owner": {
+      "email": "Jerry.Bennett@sailpointdemo.com",
+      "type": "IDENTITY",
+      "id": "06ca3df0c4ec44ada8e6a394af1989e4",
+      "name": "Jerry.Bennett"
+    },
+    "id": "bb720922f3794a79921106cac7f22c2c",
+    "name": "SalesCommonAccess",
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "type": "accessprofile",
+    "_type": "accessprofile",
+    "_index": "14"
+  },
+  {
+    "source": {
+      "id": "0e95eca230df4605a9264791b054ee27",
+      "name": "Active Directory"
+    },
+    "apps": [],
+    "entitlements": [
+      {
+        "hasPermissions": false,
+        "attribute": "memberOf",
+        "value": "CN=SalesEngineering-Training,OU=Sales,OU=AI,OU=Demo,DC=seri,DC=sailpointdemo,DC=com",
+        "schema": "group",
+        "privileged": false,
+        "id": "966079a61ce1477db6b001d34ebb53fd",
+        "name": "SalesEngineering-Training"
+      },
+      {
+        "hasPermissions": false,
+        "attribute": "memberOf",
+        "value": "CN=SalesEngineering-TechnologyExchange,OU=Sales,OU=AI,OU=Demo,DC=seri,DC=sailpointdemo,DC=com",
+        "schema": "group",
+        "privileged": false,
+        "id": "8b904527ff664da89a5c4b9bf02544f1",
+        "name": "SalesEngineering-TechnologyExchange"
+      },
+      {
+        "hasPermissions": false,
+        "attribute": "memberOf",
+        "value": "CN=SalesEngineering-Demo,OU=Sales,OU=AI,OU=Demo,DC=seri,DC=sailpointdemo,DC=com",
+        "schema": "group",
+        "privileged": false,
+        "id": "92bf92525ac44884b4705bcdec2a0525",
+        "name": "SalesEngineering-Demo"
+      },
+      {
+        "hasPermissions": false,
+        "attribute": "memberOf",
+        "value": "CN=SalesEngineering-RFP,OU=Sales,OU=AI,OU=Demo,DC=seri,DC=sailpointdemo,DC=com",
+        "schema": "group",
+        "privileged": false,
+        "id": "f60d8acb10534b15b6ee5ea4a366c711",
+        "name": "SalesEngineering-RFP"
+      }
+    ],
+    "entitlementCount": 4,
+    "segments": [],
+    "segmentCount": 0,
+    "description": "Grants access to the Sales Engineering team",
+    "created": "2024-11-06T12:50:21Z",
+    "modified": "2024-11-06T12:50:21Z",
+    "synced": "2026-04-17T05:28:22.727Z",
+    "enabled": true,
+    "requestable": true,
+    "requestCommentsRequired": false,
+    "owner": {
+      "email": "Jerry.Bennett@sailpointdemo.com",
+      "type": "IDENTITY",
+      "id": "06ca3df0c4ec44ada8e6a394af1989e4",
+      "name": "Jerry.Bennett"
+    },
+    "id": "97ebb9a0b0114a2fa30d86856b7e2b3f",
+    "name": "SalesEngineering",
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "type": "accessprofile",
+    "_type": "accessprofile",
+    "_index": "14"
+  },
+  {
+    "source": {
+      "id": "0e95eca230df4605a9264791b054ee27",
+      "name": "Active Directory"
+    },
+    "apps": [],
+    "entitlements": [
+      {
+        "hasPermissions": false,
+        "attribute": "memberOf",
+        "value": "CN=Salesforce contacts management,OU=Sales,OU=AI,OU=Demo,DC=seri,DC=sailpointdemo,DC=com",
+        "schema": "group",
+        "privileged": false,
+        "id": "88d32348780541829931608df25c7c3d",
+        "name": "Salesforce contacts management"
+      },
+      {
+        "hasPermissions": false,
+        "attribute": "memberOf",
+        "value": "CN=Salesforce Enterprise Sales dashboard,OU=Sales,OU=AI,OU=Demo,DC=seri,DC=sailpointdemo,DC=com",
+        "schema": "group",
+        "privileged": false,
+        "id": "4c60db9458ee49e88395146067763bcd",
+        "name": "Salesforce Enterprise Sales dashboard"
+      },
+      {
+        "hasPermissions": false,
+        "attribute": "memberOf",
+        "value": "CN=Sales-Enterprise Accounts,OU=Sales,OU=AI,OU=Demo,DC=seri,DC=sailpointdemo,DC=com",
+        "schema": "group",
+        "privileged": false,
+        "id": "214ddb9744b1468bb083c0d2aac82007",
+        "name": "Sales-Enterprise Accounts"
+      }
+    ],
+    "entitlementCount": 3,
+    "segments": [],
+    "segmentCount": 0,
+    "description": "Grants access for the Enterprise Sales team",
+    "created": "2024-11-06T12:50:21Z",
+    "modified": "2024-11-06T12:50:21Z",
+    "synced": "2026-04-17T05:28:22.895Z",
+    "enabled": true,
+    "requestable": true,
+    "requestCommentsRequired": false,
+    "owner": {
+      "email": "Jerry.Bennett@sailpointdemo.com",
+      "type": "IDENTITY",
+      "id": "06ca3df0c4ec44ada8e6a394af1989e4",
+      "name": "Jerry.Bennett"
+    },
+    "id": "75d73a56763a443b873f606a676ce938",
+    "name": "SalesEnterprise",
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "type": "accessprofile",
+    "_type": "accessprofile",
+    "_index": "14"
+  },
+  {
+    "source": {
+      "id": "0e95eca230df4605a9264791b054ee27",
+      "name": "Active Directory"
+    },
+    "apps": [],
+    "entitlements": [
+      {
+        "hasPermissions": false,
+        "attribute": "memberOf",
+        "value": "CN=Sales-Regional Accounts,OU=Sales,OU=AI,OU=Demo,DC=seri,DC=sailpointdemo,DC=com",
+        "schema": "group",
+        "privileged": false,
+        "id": "3add732e3c12413992f05d19e0ae57ed",
+        "name": "Sales-Regional Accounts"
+      },
+      {
+        "hasPermissions": false,
+        "attribute": "memberOf",
+        "value": "CN=Salesforce contacts management,OU=Sales,OU=AI,OU=Demo,DC=seri,DC=sailpointdemo,DC=com",
+        "schema": "group",
+        "privileged": false,
+        "id": "88d32348780541829931608df25c7c3d",
+        "name": "Salesforce contacts management"
+      },
+      {
+        "hasPermissions": false,
+        "attribute": "memberOf",
+        "value": "CN=Salesforce Regional Sales dashboard,OU=Sales,OU=AI,OU=Demo,DC=seri,DC=sailpointdemo,DC=com",
+        "schema": "group",
+        "privileged": false,
+        "id": "a559cb65a8a442f095fa1164c830b7c4",
+        "name": "Salesforce Regional Sales dashboard"
+      }
+    ],
+    "entitlementCount": 3,
+    "segments": [],
+    "segmentCount": 0,
+    "description": "Grants access to the regional account managers",
+    "created": "2024-11-06T12:50:21Z",
+    "modified": "2024-11-06T12:50:21Z",
+    "synced": "2026-04-17T05:28:22.870Z",
+    "enabled": true,
+    "requestable": true,
+    "requestCommentsRequired": false,
+    "owner": {
+      "email": "Jerry.Bennett@sailpointdemo.com",
+      "type": "IDENTITY",
+      "id": "06ca3df0c4ec44ada8e6a394af1989e4",
+      "name": "Jerry.Bennett"
+    },
+    "id": "7a826b2b87ee4813a8daf70e71d033cb",
+    "name": "SalesRegional",
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "type": "accessprofile",
+    "_type": "accessprofile",
+    "_index": "14"
+  },
+  {
+    "source": {
+      "id": "2734b43c652741d9b8458869476fcab5",
+      "name": "TRAKK-WS"
+    },
+    "apps": [],
+    "entitlements": [
+      {
+        "hasPermissions": false,
+        "attribute": "capabilities",
+        "value": "approve",
+        "schema": "group",
+        "privileged": false,
+        "id": "4c45a2bf765244c3a01ab95422b2f45c",
+        "name": "approve"
+      }
+    ],
+    "entitlementCount": 1,
+    "segments": [],
+    "segmentCount": 0,
+    "description": "Approve timecards",
+    "created": "2024-11-06T12:50:21Z",
+    "modified": "2024-11-06T12:50:21Z",
+    "synced": "2026-04-17T05:28:23.086Z",
+    "enabled": true,
+    "requestable": true,
+    "requestCommentsRequired": false,
+    "owner": {
+      "email": "Jerry.Bennett@sailpointdemo.com",
+      "type": "IDENTITY",
+      "id": "06ca3df0c4ec44ada8e6a394af1989e4",
+      "name": "Jerry.Bennett"
+    },
+    "id": "561fe27e29414c6eae4929f9af6eb4af",
+    "name": "TRAKK Approve",
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "type": "accessprofile",
+    "_type": "accessprofile",
+    "_index": "14"
+  },
+  {
+    "source": {
+      "id": "2734b43c652741d9b8458869476fcab5",
+      "name": "TRAKK-WS"
+    },
+    "apps": [
+      {
+        "description": "Timecard System Access",
+        "owner": {
+          "email": "cloud-internal-support@sailpoint.com",
+          "type": "IDENTITY",
+          "id": "0b19f20443494d1b992fca491875572c",
+          "name": "slpt.support"
+        },
+        "id": "9cef7c57313f47fda07443ecfc31818a",
+        "name": "Timecard"
+      }
+    ],
+    "entitlements": [
+      {
+        "hasPermissions": false,
+        "attribute": "capabilities",
+        "value": "input",
+        "schema": "group",
+        "privileged": false,
+        "id": "7943580c678547a0b83292ac11ce62d0",
+        "name": "input"
+      }
+    ],
+    "entitlementCount": 1,
+    "segments": [],
+    "segmentCount": 0,
+    "description": "Input timecards",
+    "created": "2024-11-06T12:50:21Z",
+    "modified": "2024-11-06T12:52:44Z",
+    "synced": "2026-04-17T05:28:22.989Z",
+    "enabled": true,
+    "requestable": true,
+    "requestCommentsRequired": false,
+    "owner": {
+      "email": "Jerry.Bennett@sailpointdemo.com",
+      "type": "IDENTITY",
+      "id": "06ca3df0c4ec44ada8e6a394af1989e4",
+      "name": "Jerry.Bennett"
+    },
+    "id": "6631a7cff55b4c7faff675814e25a9fc",
+    "name": "TRAKK Input",
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "type": "accessprofile",
+    "_type": "accessprofile",
+    "_index": "14"
+  },
+  {
+    "source": {
+      "id": "2734b43c652741d9b8458869476fcab5",
+      "name": "TRAKK-WS"
+    },
+    "apps": [],
+    "entitlements": [
+      {
+        "hasPermissions": false,
+        "attribute": "capabilities",
+        "value": "reject",
+        "schema": "group",
+        "privileged": false,
+        "id": "45fa9fea87c540b9bc46a41f44797834",
+        "name": "reject"
+      }
+    ],
+    "entitlementCount": 1,
+    "segments": [],
+    "segmentCount": 0,
+    "description": "Reject timecards",
+    "created": "2024-11-06T12:50:20Z",
+    "modified": "2024-11-06T12:50:20Z",
+    "synced": "2026-04-17T05:28:23.207Z",
+    "enabled": true,
+    "requestable": true,
+    "requestCommentsRequired": false,
+    "owner": {
+      "email": "Jerry.Bennett@sailpointdemo.com",
+      "type": "IDENTITY",
+      "id": "06ca3df0c4ec44ada8e6a394af1989e4",
+      "name": "Jerry.Bennett"
+    },
+    "id": "1fcedf2b32874815b0f4f3a1459decf2",
+    "name": "TRAKK Reject",
+    "pod": "se01-useast1",
+    "org": "company13409-poc",
+    "type": "accessprofile",
+    "_type": "accessprofile",
+    "_index": "14"
+  }
+]
