@@ -2,22 +2,76 @@
 # Scripts/Utils/config.py
 """
 bundleBuilder - Unified Configuration & Utilities
-Houses database connection helpers and centralizes mining thresholds/ranges for UI integration.
+Centralizes:
+  • Database connection helpers & datetime sanitization
+  • SailPoint ISC API credentials (CONNECTION_MAP)
+  • Storage directory paths (FILES_DIR & JSON file targets)
+  • Mining thresholds and UI limits (MINING_LIMITS & MiningConfig)
 """
 
 import os
 import sys
+from dataclasses import dataclass, field, asdict
+from typing import List, Set, Optional, Dict, Any
 import mysql.connector
 from mysql.connector import Error
 
 # ==============================================================================
-# 1. DATABASE CONFIGURATION
+# 1. DIRECTORY PATH RESOLUTION (/RoleMiner/Files)
+# ==============================================================================
+_utils_dir = os.path.dirname(os.path.abspath(__file__))      # Scripts/Utils
+_scripts_dir = os.path.dirname(_utils_dir)                   # Scripts
+PROJECT_ROOT = os.path.dirname(_scripts_dir)                 # RoleMiner root
+
+FILES_DIR = os.getenv("ROLEMINER_FILES_DIR", os.path.join(PROJECT_ROOT, "Files"))
+os.makedirs(FILES_DIR, exist_ok=True)
+
+# ==============================================================================
+# GENERAL ROLE MEMBERSHIP FILTER
+# ==============================================================================
+# This filter is automatically prepended to every role's assignment rule:
+# Final Rule = "(GENERAL_ROLE_FILTER) AND (Mined Demographic Criteria)"
+GENERAL_ROLE_FILTER = os.getenv("GENERAL_ROLE_FILTER", "cloudLifecycleState = 'active'")
+
+
+def format_full_assignment_rule(mined_rule_logic: str, general_filter: str = None) -> str:
+    """
+    Combines the global scoping filter with the mined role criteria into:
+    (General Filter) AND (Role Filter)
+    """
+    gen = general_filter if general_filter is not None else GENERAL_ROLE_FILTER
+    clean_rule = str(mined_rule_logic).strip()
+    
+    if not gen or not gen.strip():
+        return clean_rule
+        
+    gen_clean = gen.strip()
+    # Prevent duplicate prepending if already present
+    if gen_clean.lower() in clean_rule.lower():
+        return clean_rule
+        
+    return f"({gen_clean}) AND ({clean_rule})"
+
+
+JSON_PATHS = {
+    "identities": os.path.join(FILES_DIR, "identities.json"),
+    "identity_assignments": os.path.join(FILES_DIR, "identity_assignments.json"),
+    "accounts": os.path.join(FILES_DIR, "accounts.json"),
+    "entitlements": os.path.join(FILES_DIR, "entitlements.json"),
+    "access_profiles": os.path.join(FILES_DIR, "access_profiles.json"),
+    "roles": os.path.join(FILES_DIR, "roles.json"),
+    "audit_events": os.path.join(FILES_DIR, "audit_events.json"),
+}
+
+
+# ==============================================================================
+# 2. DATABASE CONFIGURATION & HELPERS
 # ==============================================================================
 DB_CONFIG = {
     "host": os.getenv("DB_HOST", "localhost"),
     "port": int(os.getenv("DB_PORT", 3306)),
     "user": os.getenv("DB_USER", "root"),
-    "password": os.getenv("DB_PASSWORD", "password"),  # Central password defined
+    "password": os.getenv("DB_PASSWORD", "password"),  # Safe password configured
     "database": os.getenv("DB_NAME", "bundleBuilder"),
 }
 
@@ -40,6 +94,7 @@ def open_connection(config_dict=None):
 
 
 def close_db_connection(connection, cursor=None):
+    """Safely closes connection and cursor handles."""
     try:
         if cursor:
             cursor.close()
@@ -52,10 +107,34 @@ def close_db_connection(connection, cursor=None):
         pass
 
 
+def format_datetime_for_mysql(dt_val):
+    """
+    Converts ISO 8601 timestamps (e.g. '2024-09-24T15:33:45.993Z') 
+    to MySQL-compatible DATETIME format ('YYYY-MM-DD HH:MM:SS').
+    Strips fractional milliseconds, 'T' delimiters, and trailing 'Z'.
+    """
+    if not dt_val:
+        return None
+    val = str(dt_val).strip().replace("T", " ").rstrip("Z")
+    if "." in val:
+        val = val.split(".")[0]
+    return val if val else None
+
+
 # ==============================================================================
-# 2. CENTRALIZED MINING CONFIGURATION FOR UI INTEGRATION
+# 3. SAILPOINT ISC API CONNECTION MAP
 # ==============================================================================
-# These parameters can be programmatically updated by your UI code prior to run.
+CONNECTION_MAP = {
+    "ISC": {
+        "ClientId": "5961a1294d6243888ddbbc88efe31c78",
+        "ClientSecret": "83044fc7ad661161564524cf336ff68ad9dd3f7f7afb88434bcffe4833cdac69",
+        "BaseURL": "https://company12640-poc.api.identitynow-demo.com"
+    }
+}
+
+# ==============================================================================
+# 4. CENTRALIZED MINING CONFIGURATION FOR UI INTEGRATION
+# ==============================================================================
 MINING_LIMITS = {
     "min_pop": 75,                 # Minimum entitlement population size to inspect
     "max_pop": None,               # Maximum population size (None = Unlimited)
@@ -67,19 +146,12 @@ MINING_LIMITS = {
 ALLOWED_ATTRIBUTES = (
     "jobTitle", "department", "location", "country", 
     "type", "isManager", "division", "costCenter",
-    "Functional_Business_Unit", "Job_Family_Group", "Job_Family", "Job_Code",
-    "Management_Level_2", "Management_Level_3", "Management_Level_4", "Management_Level_5"
+    "Functional_Business_Unit", "Job_Family_Group", "Job_Family", "Job_Code"
 )
 
-# Hierarchy Families: Prevents pairing redundant or subordinate dimensions
 HIERARCHY_FAMILIES = [
     {"city", "state", "location", "country", "site", "region"},
     {"jobcode", "job_code", "jobtitle", "job_title", "job_family", "job_family_group", "career_level"},
-    {
-        "supervisory_organization", "management_level_2", "management_level_3",
-        "management_level_4", "management_level_5", "management_level_6",
-        "management_level_7", "management_level_8", "management_level_9", "management_level_10"
-    },
     {"department", "division", "functional_business_unit", "company", "company_-_id", "costcenter", "cost_center"},
     {"type", "worker_type", "worker_sub-type", "ismanager", "ismgmt", "exempt"},
 ]
@@ -87,91 +159,61 @@ HIERARCHY_FAMILIES = [
 MAX_CONTAINMENT_RATIO = 0.95
 
 
-def apply_preset(preset_name: str):
-    """Convenience helper for your UI to quickly apply standard population tiers."""
-    preset = str(preset_name).upper().strip()
-    if preset == "BROAD_BIRTHRIGHT":
-        MINING_LIMITS["min_pop"] = 75
-        MINING_LIMITS["max_pop"] = None
-    elif preset == "CORE_FUNCTIONAL":
-        MINING_LIMITS["min_pop"] = 10
-        MINING_LIMITS["max_pop"] = 75
-    elif preset == "MICRO_BUNDLE":
-        MINING_LIMITS["min_pop"] = 1
-        MINING_LIMITS["max_pop"] = 4
-    elif preset == "ALL":
-        MINING_LIMITS["min_pop"] = 2
-        MINING_LIMITS["max_pop"] = None
-    print(f"📊 Applied Preset '{preset}': min_pop={MINING_LIMITS['min_pop']}, max_pop={MINING_LIMITS['max_pop']}")
+@dataclass
+class MiningConfig:
+    min_pop: int = 2
+    max_pop: Optional[int] = None
+    batch_size: Optional[int] = None
+    batch_index: int = 0
+    clear_all: bool = False
+    min_jaccard: float = 0.50
+    max_containment_ratio: float = 0.95
+
+    allowed_attributes: List[str] = field(default_factory=lambda: [
+        "jobTitle", "department", "location", "country", 
+        "type", "isManager", "division", "costCenter",
+        "Functional_Business_Unit", "Job_Family_Group", "Job_Family", "Job_Code",
+        "Management_Level_2", "Management_Level_3", "Management_Level_4", "Management_Level_5"
+    ])
+
+    hierarchy_families: List[Set[str]] = field(default_factory=lambda: [
+        {"city", "state", "location", "country", "site", "region"},
+        {"jobcode", "job_code", "jobtitle", "job_title", "job_family", "job_family_group", "career_level"},
+        {
+            "supervisory_organization", "management_level_2", "management_level_3",
+            "management_level_4", "management_level_5", "management_level_6",
+            "management_level_7", "management_level_8", "management_level_9", "management_level_10"
+        },
+        {"department", "division", "functional_business_unit", "company", "company_-_id", "costcenter", "cost_center"},
+        {"type", "worker_type", "worker_sub-type", "ismanager", "ismgmt", "exempt"},
+    ])
+
+    def to_dict(self) -> Dict[str, Any]:
+        data = asdict(self)
+        data["hierarchy_families"] = [list(f) for f in self.hierarchy_families]
+        return data
+
+    @classmethod
+    def from_dict(cls, data: Dict[str, Any]) -> "MiningConfig":
+        if "hierarchy_families" in data and isinstance(data["hierarchy_families"], list):
+            data["hierarchy_families"] = [set(f) for f in data["hierarchy_families"]]
+        return cls(**data)
+
+    def apply_preset(self, preset_name: str):
+        preset = preset_name.upper().strip()
+        if preset == "BROAD_BIRTHRIGHT":
+            self.min_pop = 75
+            self.max_pop = None
+        elif preset == "CORE_FUNCTIONAL":
+            self.min_pop = 10
+            self.max_pop = 75
+        elif preset == "MICRO_BUNDLE":
+            self.min_pop = 1
+            self.max_pop = 4
+        elif preset == "ALL":
+            self.min_pop = 2
+            self.max_pop = None
 
 
-# Define additional attributes to display for UIDs and load into DB
-DISPLAY_ATTRIBUTES = ['type', 'Is Manager', 'country', 'department', 'jobTitle', 'location']
-
-ATTRIBUTE_VALUE_COLUMN_NAME = 'Attribute Value Name'
-ACCESS_SOURCE_NAME_COLUMN = 'Access Source Name'
-UID_COLUMN_NAME = 'UID'
-
-
-# --- Role Generation Specific Configuration ---
-ROLE_OWNER_NAME = "Service Account" # Placeholder owner for generated roles
-ROLE_COMMENTS = "Auto Generated Role by Dana's Role Minier"
-ROLE_ENABLED_DEFAULT = False # Set to False as requested
-ROLE_REQUESTABLE_DEFAULT = True
-
-# --- Output File Configuration (for generated roles) ---
-OUTPUT_DIRECTORY = "/Users/dana.reed/RoleMiner/Output"
-OUTPUT_FILENAME = "ISCBundles.json"
-OUTPUT_PDF = "Suggested_IT_Roles_Catalog_Report.pdf"
-
-# --- NEW: SailPoint ISC API Configuration (for uploading roles) ---
-ISC_TENANT_URL = "http://seri.company21602-poc.demohub.sailpointtechnologies.com"
-ISC_CLIENT_ID = "YOUR_CLIENT_ID_HERE"      # <<< IMPORTANT: REPLACE WITH YOUR CLIENT ID
-ISC_CLIENT_SECRET = "YOUR_CLIENT_SECRET_HERE" # <<< IMPORTANT: REPLACE WITH YOUR CLIENT SECRET
-
-BATCH_SIZE = 5000
-
-# Tier Configuration: (min_pop, max_pop, min_jaccard_threshold, min_size_ratio)
-POPULATION_TIER_CONFIG = [
-    (1, 3, 0.65, 0.65),
-    (4, 8, 0.74, 0.74),
-    (9, 14, 0.82, 0.82),
-    (15, 20, 0.85, 0.85),
-    (21, 30, 0.87, 0.87),
-    (31, 50, 0.89, 0.89),
-    (51, 75, 0.91, 0.91),
-    (76, 100, 0.93, 0.93),
-    (101, 150, 0.94, 0.94),
-    (151, 225, 0.95, 0.95),
-    (226, 300, 0.96, 0.96),
-    (301, float("inf"), 0.97, 0.97),
-]
-
-# ==============================================================================
-# HIERARCHY & REDUNDANCY SUPPRESSION RULES
-# ==============================================================================
-HIERARCHY_FAMILIES = [
-    # Geographic hierarchy
-    {"city", "state", "location", "country", "site", "region"},
-    # Job architecture hierarchy
-    {"jobcode", "job_code", "jobtitle", "job_title", "job_family", "job_family_group", "career_level"},
-    # Management hierarchy
-    {
-        "supervisory_organization", "management_level_2", "management_level_3",
-        "management_level_4", "management_level_5", "management_level_6",
-        "management_level_7", "management_level_8", "management_level_9", "management_level_10"
-    },
-    # Organizational & financial hierarchy
-    {"department", "division", "functional_business_unit", "company", "company_-_id", "costcenter", "cost_center"},
-    # Worker classification hierarchy
-    {"type", "worker_type", "worker_sub-type", "ismanager", "ismgmt", "exempt"},
-]
-
-# If >= 95% of users with attribute A also have attribute B, one is a subset of the other
-MAX_CONTAINMENT_RATIO = 0.95
-
-
-
-
-
-
+def get_mining_config(**overrides) -> MiningConfig:
+    return MiningConfig(**overrides)
