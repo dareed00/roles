@@ -1,380 +1,436 @@
 #!/usr/bin/env python3
-"""
-bundleBuilder - Suggested vs. Approved Role Model Comparator (Robust Schema Introspection)
-Dynamically inspects table columns to compare Suggested_Roles vs Approved & Current Roles,
-and accurately populates already_defined and already_in_role flags.
+"""RoleMiner - Unified Delta Comparator (Suggested vs.
+
+Approved & Current Role Models)
+File: ComputeSimilarity/compare_suggested_vs_approved.py
 """
 
+from collections import defaultdict
 import os
-import sys
 import re
-import json
-import mysql.connector
-from mysql.connector import Error
+import sys
+import pymysql
 
-# ==============================================================================
-# 1. DYNAMIC SYSTEM PATH RESOLUTION
-# ==============================================================================
-# Locate the absolute root path ('Scripts/') relative to this file's folder:
-# __file__ is ".../RoleMiner/Scripts/GenerateRoles/role_generator_logic.py"
-# dirname(__file__) is ".../RoleMiner/Scripts/GenerateRoles"
-# dirname(dirname(__file__)) is ".../RoleMiner/Scripts"
-root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-# Append 'Scripts/' directory to Python's search path if not already there
-if root_dir not in sys.path:
-    sys.path.append(root_dir)
-
-# ==============================================================================
-# 2. CANONICAL IMPORTS FROM UTILS/CONFIG.PY
-# ==============================================================================
-# Importing db connection utilities from the specific Utils/config.py module
-from Utils.config import get_db_connection, close_db_connection
-
-
+# Database configuration (using fallback password 'password')
 DB_CONFIG = {
-    "host": os.getenv("DB_HOST", "localhost"),
-    "port": int(os.getenv("DB_PORT", 3306)),
-    "user": os.getenv("DB_USER", "root"),
-    "password": os.getenv("DB_PASSWORD", "password"),
-    "database": os.getenv("DB_NAME", "bundleBuilder"),
+    "host": "127.0.0.1",
+    "user": "root",
+    "password": "password",
+    "database": "bundleBuilder",
+    "charset": "utf8mb4",
+    "cursorclass": pymysql.cursors.DictCursor,
+    "autocommit": False,
 }
 
 
-def ensure_columns_exist(db_connection.:
-    cursor = db_connection.cursor()
-    try:
-        cursor.execute("""
-            ALTER TABLE `Suggested_Roles`
-            ADD COLUMN IF NOT EXISTS `already_defined` BOOLEAN NOT NULL DEFAULT FALSE AFTER `approval_status`
-        """)
-        cursor.execute("""
-            ALTER TABLE `Suggested_Role_Entitlements`
-            ADD COLUMN IF NOT EXISTS `already_in_role` BOOLEAN NOT NULL DEFAULT FALSE AFTER `match_type`
-        """)
-        cursor.execute("""
-            ALTER TABLE `Suggested_IT_Role_Entitlements`
-            ADD COLUMN IF NOT EXISTS `already_in_role` BOOLEAN NOT NULL DEFAULT FALSE AFTER `assignment_count`
-        """)
-        db_connection.commit()
-    except Error as e:
-        print(f"⚠️ DDL notice: {e}")
-    finally:
-        cursor.close()
+def norm(val):
+  """Cleans, strips, and lowercases text for matching."""
+  if val is None:
+    return ""
+  return str(val).strip().lower()
 
 
-def get_table_columns(cursor. table_name):
-    """Returns a set of lowercase column names present in a table."""
-    try:
-        cursor.execute(f"SHOW COLUMNS FROM `{table_name}`")
-        return {row["Field"].lower() for row in cursor.fetchall()}
-    except Error:
-        return set()
+def pick_field(row, candidates, default=None):
+  """Picks the first non-null field matching candidate column names (case-insensitive)."""
+  if not row:
+    return default
+  lower_row = {str(k).lower(): v for k, v in row.items()}
+  for c in candidates:
+    v = lower_row.get(c.lower())
+    if v is not None:
+      return v
+  return default
 
 
-def extract_canonical_rule_set(rule_str):
-    """
-    Parses complex rule strings (SQL, JSON, Beanshell) into a canonical frozenset of (attr, val) pairs.
-    """
-    if not rule_str:
-        return frozenset()
+def canonicalize_rule(rule_str):
+  """Normalizes assignment rule syntax so differences in spacing, casing,
 
-    clean_str = str(rule_str).strip()
-    pairs = set()
+  or clause order do not prevent matching.
+  """
+  if not rule_str:
+    return ""
+  s = str(rule_str).strip().lower()
+  s = s.replace('"', "'")
+  s = re.sub(r"\s+", " ", s)
 
-    # 1. Try JSON parser
-    if clean_str.startswith("{") or clean_str.startswith("["):
-        try:
-            data = json.loads(clean_str)
-            if isinstance(data, dict):
-                attr = data.get("attribute") or data.get("name") or data.get("property")
-                val = data.get("value") or data.get("val")
-                if attr and val:
-                    pairs.add((str(attr).strip().lower(), str(val).strip().lower()))
-            elif isinstance(data, list):
-                for item in data:
-                    if isinstance(item, dict):
-                        attr = item.get("attribute") or item.get("name")
-                        val = item.get("value")
-                        if attr and val:
-                            pairs.add((str(attr).strip().lower(), str(val).strip().lower()))
-        except Exception:
-            pass
+  def sort_in(match):
+    prefix = match.group(1).strip()
+    items = [
+        x.strip().strip("'") for x in match.group(2).split(",") if x.strip()
+    ]
+    items.sort()
+    return f"{prefix} in ({', '.join(repr(i) for i in items)})"
 
-    # 2. Standard SQL Equality Matches: attr = 'val' or attr == "val"
-    eq_matches = re.findall(r"([a-zA-Z0-9_\.]+)\s*(?:==|=|eq)\s*['\"]([^'\"]+)['\"]", clean_str, re.IGNORECASE)
-    for attr, val in eq_matches:
-        attr_clean = attr.split(".")[-1].strip().lower()
-        pairs.add((attr_clean, val.strip().lower()))
+  s = re.sub(
+      r"([a-z0-9_.\-]+)\s+in\s*\(([^)]+)\)", sort_in, s, flags=re.IGNORECASE
+  )
 
-    # 3. SQL IN clauses: attr IN ('val1', 'val2')
-    in_matches = re.findall(r"([a-zA-Z0-9_\.]+)\s+IN\s*\(([^)]+)\)", clean_str, re.IGNORECASE)
-    for attr, vals_raw in in_matches:
-        attr_clean = attr.split(".")[-1].strip().lower()
-        vals = re.findall(r"['\"]([^'\"]+)['\"]", vals_raw)
-        for v in vals:
-            pairs.add((attr_clean, v.strip().lower()))
-
-    # 4. Beanshell / Java method calls: attr.equalsIgnoreCase("val")
-    java_matches = re.findall(r"([a-zA-Z0-9_\.]+)\.equalsIgnoreCase\(['\"]([^'\"]+)['\"]\)", clean_str, re.IGNORECASE)
-    for attr, val in java_matches:
-        attr_clean = attr.split(".")[-1].strip().lower()
-        pairs.add((attr_clean, val.strip().lower()))
-
-    return frozenset(pairs)
+  if " and " in s and " or " not in s:
+    parts = [p.strip().strip("()") for p in s.split(" and ") if p.strip()]
+    parts.sort()
+    return " AND ".join(parts)
+  return s
 
 
-def normalize_str(val):
-    if val is None:
-        return ""
-    return str(val).strip().lower()
+def table_exists(cur, table_name):
+  cur.execute("SHOW TABLES LIKE %s", (table_name,))
+  return bool(cur.fetchone())
 
 
-def load_all_production_rules(cursor.:
-    """Loads and canonicalizes all production assignment rules with dynamic column detection."""
-    canonical_rule_sets = set()
-    raw_exact_strings = set()
-
-    # 1. Check ApprovedRoleModel_Roles
-    armr_cols = get_table_columns(cursor. "ApprovedRoleModel_Roles")
-    if "assignment_rule" in armr_cols:
-        cursor.execute("SELECT assignment_rule FROM ApprovedRoleModel_Roles WHERE assignment_rule IS NOT NULL AND TRIM(assignment_rule) != ''")
-        for r in cursor.fetchall():
-            raw_exact_strings.add(normalize_str(r["assignment_rule"]))
-            parsed = extract_canonical_rule_set(r["assignment_rule"])
-            if parsed:
-                canonical_rule_sets.add(parsed)
-
-    # 2. Check CurrentRoleModel_Roles (Dynamic column detection)
-    crmr_cols = get_table_columns(cursor. "CurrentRoleModel_Roles")
-    rule_col = None
-    if "assignmentcriteria" in crmr_cols:
-        rule_col = "assignmentCriteria"
-    elif "assignment_rule" in crmr_cols:
-        rule_col = "assignment_rule"
-    elif "selector" in crmr_cols:
-        rule_col = "selector"
-
-    if rule_col:
-        cursor.execute(f"SELECT `{rule_col}` AS rule_text FROM CurrentRoleModel_Roles WHERE `{rule_col}` IS NOT NULL AND TRIM(`{rule_col}`) != ''")
-        for r in cursor.fetchall():
-            raw_exact_strings.add(normalize_str(r["rule_text"]))
-            parsed = extract_canonical_rule_set(r["rule_text"])
-            if parsed:
-                canonical_rule_sets.add(parsed)
-
-    return canonical_rule_sets, raw_exact_strings
+def ensure_columns(cur):
+  """Ensures 'already_defined' exists on all 4 Suggested_* tables."""
+  migrations = [
+      (
+          "Suggested_Roles",
+          "already_defined",
+          "ADD COLUMN `already_defined` BOOLEAN NOT NULL DEFAULT 0",
+      ),
+      (
+          "Suggested_Role_Entitlements",
+          "already_defined",
+          "ADD COLUMN `already_defined` BOOLEAN NOT NULL DEFAULT 0 AFTER"
+          " `already_in_role`",
+      ),
+      (
+          "Suggested_IT_Roles",
+          "already_defined",
+          "ADD COLUMN `already_defined` BOOLEAN NOT NULL DEFAULT 0 AFTER"
+          " `approval_status`",
+      ),
+      (
+          "Suggested_IT_Role_Entitlements",
+          "already_defined",
+          "ADD COLUMN `already_defined` BOOLEAN NOT NULL DEFAULT 0 AFTER"
+          " `already_in_role`",
+      ),
+  ]
+  for tbl, col, sql in migrations:
+    if table_exists(cur, tbl):
+      cur.execute(f"SHOW COLUMNS FROM `{tbl}` LIKE %s", (col,))
+      if not cur.fetchone():
+        cur.execute(f"ALTER TABLE `{tbl}` {sql}")
 
 
-def run_comparison_pipeline():
-    print("=" * 85)
-    print("🔍 ENHANCED ROLE MODEL DELTA COMPARATOR (DYNAMIC SCHEMA INTROSPECTION)")
-    print("=" * 85)
+def load_entitlement_id_map(cur):
+  """Maps entitlement_id -> normalized entitlement_name from `entitlements`."""
+  id_map = {}
+  if table_exists(cur, "entitlements"):
+    cur.execute("SELECT * FROM `entitlements`")
+    for r in cur.fetchall():
+      eid = pick_field(r, ["id", "entitlement_id"])
+      ename = norm(pick_field(r, ["entitlement_name", "name", "value"]))
+      if eid is not None and ename:
+        id_map[str(eid)] = ename
+  return id_map
 
-    try:
-        db_connection = mysql.connector.connect(**DB_CONFIG)
-        ensure_columns_exist(db_connection.
-        cursor = db_connection.cursor(dictionary=True)
-        update_cur = db_connection.cursor()
-        print("🔗 Connected to MySQL bundleBuilder.\n")
 
-        # ======================================================================
-        # 1. COMPARE BUSINESS ROLE ASSIGNMENT RULES (ROLE LEVEL)
-        # ======================================================================
-        print("🏛️ [1/3] Evaluating Suggested Business Role Assignment Rules...")
-        canonical_prod_rules, raw_prod_rules = load_all_production_rules(cursor.
-        print(f"   • Loaded {len(canonical_prod_rules):,} canonical rule definitions from production tables.")
+# ----------------------------------------------------------------------
+# 1. Business Roles & Entitlements Delta
+# ----------------------------------------------------------------------
+def sync_business_roles_delta(cur, ent_id_map):
+  print("🏛️ [1/2] Evaluating Suggested Business Roles & Entitlements Delta...")
 
-        cursor.execute("SELECT id, role_name, assignment_rule FROM Suggested_Roles")
-        suggested_roles = cursor.fetchall()
+  cur.execute("UPDATE Suggested_Roles SET already_defined = 0")
+  cur.execute(
+      "UPDATE Suggested_Role_Entitlements SET already_in_role = 0,"
+      " already_defined = 0"
+  )
 
-        role_updates = []
-        matched_role_examples = []
-        roles_already_defined = 0
-        roles_net_new = 0
+  prod_role_names = set()
+  prod_rules = set()
+  prod_bundles = []  # list of frozensets of entitlement names
 
-        for r in suggested_roles:
-            r_id = r["id"]
-            rule_str = r["assignment_rule"]
-            rule_norm = normalize_str(rule_str)
-            rule_canonical = extract_canonical_rule_set(rule_str)
+  # Sources: ApprovedRoleModel_Roles, CurrentRoleModel_Roles
+  role_sources = [
+      (
+          "ApprovedRoleModel_Roles",
+          [
+              "ApprovedRoleModel_RoleEntitlements",
+              "ApprovedRoleModel_RoleEffectiveEntitlements",
+          ],
+      ),
+      (
+          "CurrentRoleModel_Roles",
+          [
+              "CurrentRoleModel_RoleEntitlements",
+              "CurrentRoleModel_RoleEffectiveEntitlements",
+          ],
+      ),
+  ]
 
-            is_defined = False
-            if rule_norm in raw_prod_rules:
-                is_defined = True
-            elif rule_canonical and rule_canonical in canonical_prod_rules:
-                is_defined = True
+  for r_table, e_tables in role_sources:
+    if not table_exists(cur, r_table):
+      continue
 
-            if is_defined:
-                role_updates.append((1, r_id))
-                roles_already_defined += 1
-                if len(matched_role_examples) < 5:
-                    matched_role_examples.append(f"Role [BR-{r_id:04d} / {r['role_name']}] -> Rule: {rule_str}")
-            else:
-                role_updates.append((0, r_id))
-                roles_net_new += 1
+    cur.execute(f"SELECT * FROM `{r_table}`")
+    raw_roles = cur.fetchall()
 
-        sql_update_role = "UPDATE Suggested_Roles SET already_defined = %s WHERE id = %s"
-        chunk_size = 5000
-        for i in range(0, len(role_updates), chunk_size):
-            update_cur.executemany(sql_update_role, role_updates[i:i + chunk_size])
+    role_ents = defaultdict(set)
+    for etable in e_tables:
+      if not table_exists(cur, etable):
+        continue
+      cur.execute(f"SELECT * FROM `{etable}`")
+      for erow in cur.fetchall():
+        rid = str(pick_field(erow, ["role_id", "id"], "")).strip()
+        rname = norm(pick_field(erow, ["role_name", "name"]))
+        ename = norm(pick_field(erow, ["entitlement_name", "name"]))
+        if not ename:
+          eid = str(pick_field(erow, ["entitlement_id"], "")).strip()
+          ename = ent_id_map.get(eid, "")
+        if ename:
+          if rid:
+            role_ents[rid].add(ename)
+          if rname:
+            prod_role_names.add(rname)
 
-        # ======================================================================
-        # 2. COMPARE BUSINESS ROLE ENTITLEMENTS (ENTITLEMENT LEVEL)
-        # ======================================================================
-        print("\n🔑 [2/3] Comparing Business Role Entitlements...")
-        
-        approved_biz_ents_rows = []
-        if "ApprovedRoleModel_RoleEntitlements" in [t["TABLE_NAME"] for t in (cursor.execute("SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = DATABASE()"), cursor.fetchall())[-1]]:
-            cursor.execute("SELECT role_id, role_name, entitlement_id, entitlement_name FROM ApprovedRoleModel_RoleEntitlements")
-            approved_biz_ents_rows = cursor.fetchall()
+    for r in raw_roles:
+      rid = str(pick_field(r, ["id", "role_id"], "")).strip()
+      rname = norm(
+          pick_field(r, ["role_name", "name", "approved_role_name"])
+      )
+      crule = canonicalize_rule(
+          pick_field(r, ["assignment_rule", "assignmentCriteria", "rule_logic"])
+      )
+      eset = role_ents.get(rid, set())
 
-        if not approved_biz_ents_rows:
-            # Fallback to CurrentRoleModel
-            crm_tables = [t["TABLE_NAME"] for t in (cursor.execute("SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = DATABASE()"), cursor.fetchall())[-1]]
-            if "CurrentRoleModel_RoleEffectiveEntitlements" in crm_tables:
-                cursor.execute("SELECT role_id, role_name, entitlement_id, entitlement_name FROM CurrentRoleModel_RoleEffectiveEntitlements")
-                approved_biz_ents_rows = cursor.fetchall()
-            elif "CurrentRoleModel_RoleEntitlements" in crm_tables:
-                cursor.execute("SELECT role_id, role_name, entitlement_id, entitlement_name FROM CurrentRoleModel_RoleEntitlements")
-                approved_biz_ents_rows = cursor.fetchall()
+      if rname:
+        prod_role_names.add(rname)
+      if crule:
+        prod_rules.add(crule)
+      if eset:
+        prod_bundles.append(frozenset(eset))
 
-        approved_biz_set = set()
-        for r in approved_biz_ents_rows:
-            r_id = normalize_str(r.get("role_id"))
-            r_name = normalize_str(r.get("role_name"))
-            e_id = normalize_str(r.get("entitlement_id"))
-            e_name = normalize_str(r.get("entitlement_name"))
-            if r_id and e_name: approved_biz_set.add((r_id, e_name))
-            if r_name and e_name: approved_biz_set.add((r_name, e_name))
-            if r_id and e_id: approved_biz_set.add((r_id, e_id))
-            if r_name and e_id: approved_biz_set.add((r_name, e_id))
+  # Fetch Suggested Roles & Entitlements
+  cur.execute("SELECT * FROM Suggested_Roles")
+  sugg_roles = cur.fetchall()
 
-        cursor.execute("SELECT id, role_name FROM Suggested_Roles")
-        biz_role_meta = {r["id"]: {"name": normalize_str(r["role_name"])} for r in cursor.fetchall()}
+  cur.execute("SELECT * FROM Suggested_Role_Entitlements")
+  sugg_ents = cur.fetchall()
 
-        cursor.execute("SELECT id, role_id, entitlement_id, entitlement_name FROM Suggested_Role_Entitlements")
-        suggested_biz_ents = cursor.fetchall()
+  ents_by_role_id = defaultdict(list)
+  for e in sugg_ents:
+    rid = e.get("role_id")
+    eid = e.get("id")
+    ename = norm(pick_field(e, ["entitlement_name", "name"]))
+    ents_by_role_id[rid].append((eid, ename))
 
-        biz_ent_updates = []
-        biz_flagged_existing = 0
-        biz_flagged_new = 0
+  matched_roles = []
+  matched_ents = []
 
-        for e in suggested_biz_ents:
-            row_id = e["id"]
-            r_id_int = e["role_id"]
-            r_meta = biz_role_meta.get(r_id_int, {"name": ""})
+  for sr in sugg_roles:
+    s_id = sr["id"]
+    s_name = norm(pick_field(sr, ["role_name", "name"]))
+    a_name = norm(pick_field(sr, ["approved_role_name"]))
+    s_rule = canonicalize_rule(
+        pick_field(sr, ["assignment_rule", "rule_logic"])
+    )
+    s_tuples = ents_by_role_id.get(s_id, [])
+    s_set = frozenset(ename for _, ename in s_tuples if ename)
 
-            role_keys = [normalize_str(r_id_int), f"br-{r_id_int:04d}", r_meta["name"]]
-            role_keys = [k for k in role_keys if k]
-            ent_keys = [normalize_str(e.get("entitlement_name")), normalize_str(e.get("entitlement_id"))]
-            ent_keys = [k for k in ent_keys if k]
+    is_defined = False
+    if (s_name and s_name in prod_role_names) or (
+        a_name and a_name in prod_role_names
+    ):
+      is_defined = True
+    elif s_rule and s_rule in prod_rules:
+      is_defined = True
+    elif s_set and any(s_set == p_set for p_set in prod_bundles):
+      is_defined = True
 
-            is_match = any((rk, ek) in approved_biz_set for rk in role_keys for ek in ent_keys)
-            if is_match:
-                biz_ent_updates.append((1, row_id))
-                biz_flagged_existing += 1
-            else:
-                biz_ent_updates.append((0, row_id))
-                biz_flagged_new += 1
+    if is_defined:
+      matched_roles.append(s_id)
+      # Mark entitlements of defined roles
+      for row_id, _ in s_tuples:
+        matched_ents.append(row_id)
 
-        sql_update_biz_ent = "UPDATE Suggested_Role_Entitlements SET already_in_role = %s WHERE id = %s"
-        for i in range(0, len(biz_ent_updates), chunk_size):
-            update_cur.executemany(sql_update_biz_ent, biz_ent_updates[i:i + chunk_size])
+  if matched_roles:
+    placeholders = ",".join(["%s"] * len(matched_roles))
+    cur.execute(
+        f"UPDATE Suggested_Roles SET already_defined = 1 WHERE id IN"
+        f" ({placeholders})",
+        tuple(matched_roles),
+    )
 
-        # ======================================================================
-        # 3. COMPARE IT ROLE ENTITLEMENTS (IT LEVEL)
-        # ======================================================================
-        print("🛠️ [3/3] Comparing IT Role Entitlements...")
-        approved_it_rows = []
-        all_tables = [t["TABLE_NAME"] for t in (cursor.execute("SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = DATABASE()"), cursor.fetchall())[-1]]
+  if matched_ents:
+    placeholders = ",".join(["%s"] * len(matched_ents))
+    cur.execute(
+        "UPDATE Suggested_Role_Entitlements SET already_in_role = 1,"
+        f" already_defined = 1 WHERE id IN ({placeholders})",
+        tuple(matched_ents),
+    )
 
-        if "ApprovedRoleModel_AccessProfileEntitlements" in all_tables:
-            cursor.execute("SELECT access_profile_id, access_profile_name, entitlement_id, entitlement_name FROM ApprovedRoleModel_AccessProfileEntitlements")
-            approved_it_rows = cursor.fetchall()
+  print(
+      f"   ✓ Business Roles: {len(matched_roles)}/{len(sugg_roles)} marked"
+      " already_defined=1."
+  )
+  print(
+      f"   ✓ Business Role Entitlements: {len(matched_ents)}/{len(sugg_ents)}"
+      " marked already_defined=1."
+  )
 
-        if not approved_it_rows and "CurrentRoleModel_AccessProfileEntitlements" in all_tables:
-            cursor.execute("SELECT access_profile_id, access_profile_name, entitlement_id, entitlement_name FROM CurrentRoleModel_AccessProfileEntitlements")
-            approved_it_rows = cursor.fetchall()
 
-        approved_it_set = set()
-        for r in approved_it_rows:
-            ap_id = normalize_str(r.get("access_profile_id"))
-            ap_name = normalize_str(r.get("access_profile_name"))
-            e_id = normalize_str(r.get("entitlement_id"))
-            e_name = normalize_str(r.get("entitlement_name"))
-            if ap_id and e_name: approved_it_set.add((ap_id, e_name))
-            if ap_name and e_name: approved_it_set.add((ap_name, e_name))
-            if ap_id and e_id: approved_it_set.add((ap_id, e_id))
-            if ap_name and e_id: approved_it_set.add((ap_name, e_id))
+# ----------------------------------------------------------------------
+# 2. IT Roles & Access Profiles Delta
+# ----------------------------------------------------------------------
+def sync_it_roles_delta(cur, ent_id_map):
+  print("🛠️ [2/2] Evaluating Suggested IT Roles & Entitlements Delta...")
 
-        cursor.execute("SELECT id, it_role_name FROM Suggested_IT_Roles")
-        it_role_meta = {r["id"]: {"name": normalize_str(r["it_role_name"])} for r in cursor.fetchall()}
+  cur.execute("UPDATE Suggested_IT_Roles SET already_defined = 0")
+  cur.execute(
+      "UPDATE Suggested_IT_Role_Entitlements SET already_in_role = 0,"
+      " already_defined = 0"
+  )
 
-        cursor.execute("SELECT id, it_role_id, entitlement_id, entitlement_name FROM Suggested_IT_Role_Entitlements")
-        suggested_it_ents = cursor.fetchall()
+  prod_it_names = set()
+  prod_it_bundles = []
+  all_prod_it_ents = set()
 
-        it_ent_updates = []
-        it_flagged_existing = 0
-        it_flagged_new = 0
+  it_sources = [
+      ("ApprovedRoleModel_IT_Roles", ["ApprovedRoleModel_IT_Role_Entitlements"]),
+      ("ApprovedRoleModel_AccessProfiles", ["ApprovedRoleModel_AccessProfileEntitlements"]),
+      ("CurrentRoleModel_AccessProfiles", ["CurrentRoleModel_AccessProfileEntitlements"]),
+  ]
 
-        for e in suggested_it_ents:
-            row_id = e["id"]
-            it_id_int = e["it_role_id"]
-            it_meta = it_role_meta.get(it_id_int, {"name": ""})
+  for it_table, e_tables in it_sources:
+    if not table_exists(cur, it_table):
+      continue
 
-            it_keys = [normalize_str(it_id_int), f"itr-{it_id_int:04d}", it_meta["name"]]
-            it_keys = [k for k in it_keys if k]
-            ent_keys = [normalize_str(e.get("entitlement_name")), normalize_str(e.get("entitlement_id"))]
-            ent_keys = [k for k in ent_keys if k]
+    cur.execute(f"SELECT * FROM `{it_table}`")
+    raw_it = cur.fetchall()
 
-            is_match = any((ik, ek) in approved_it_set for ik in it_keys for ek in ent_keys)
-            if is_match:
-                it_ent_updates.append((1, row_id))
-                it_flagged_existing += 1
-            else:
-                it_ent_updates.append((0, row_id))
-                it_flagged_new += 1
+    it_ents = defaultdict(set)
+    for etable in e_tables:
+      if not table_exists(cur, etable):
+        continue
+      cur.execute(f"SELECT * FROM `{etable}`")
+      for erow in cur.fetchall():
+        it_id = str(
+            pick_field(
+                erow, ["it_role_id", "access_profile_id", "role_id", "id"], ""
+            )
+        ).strip()
+        rname = norm(
+            pick_field(
+                erow,
+                ["it_role_name", "access_profile_name", "role_name", "name"],
+            )
+        )
+        ename = norm(pick_field(erow, ["entitlement_name", "name"]))
+        if not ename:
+          eid = str(pick_field(erow, ["entitlement_id"], "")).strip()
+          ename = ent_id_map.get(eid, "")
+        if ename:
+          all_prod_it_ents.add(ename)
+          if it_id:
+            it_ents[it_id].add(ename)
+          if rname:
+            prod_it_names.add(rname)
 
-        sql_update_it_ent = "UPDATE Suggested_IT_Role_Entitlements SET already_in_role = %s WHERE id = %s"
-        for i in range(0, len(it_ent_updates), chunk_size):
-            update_cur.executemany(sql_update_it_ent, it_ent_updates[i:i + chunk_size])
+    for r in raw_it:
+      it_id = str(
+          pick_field(r, ["id", "it_role_id", "access_profile_id"], "")
+      ).strip()
+      rname = norm(
+          pick_field(
+              r, ["it_role_name", "access_profile_name", "name", "role_name"]
+          )
+      )
+      eset = it_ents.get(it_id, set())
+      if rname:
+        prod_it_names.add(rname)
+      if eset:
+        prod_it_bundles.append(frozenset(eset))
 
-        db_connection.commit()
+  # Fetch Suggested IT Roles & Entitlements
+  cur.execute("SELECT * FROM Suggested_IT_Roles")
+  sugg_it_roles = cur.fetchall()
 
-        # ======================================================================
-        # 4. SUMMARY REPORT
-        # ======================================================================
-        print("\n" + "=" * 85)
-        print("📊 CANONICAL COMPARISON RESULTS")
-        print("=" * 85)
-        print(f"🏛️ Business Roles (Rule Matching) : {len(suggested_roles):,} total evaluated")
-        print(f"   • ⚪ Already Defined in Prod   : {roles_already_defined:,} roles (already_defined = 1)")
-        print(f"   • ✨ Net-New Business Roles    : {roles_net_new:,} roles (already_defined = 0)")
+  cur.execute("SELECT * FROM Suggested_IT_Role_Entitlements")
+  sugg_it_ents = cur.fetchall()
 
-        if matched_role_examples:
-            print("\n   Sample Matched Roles:")
-            for ex in matched_role_examples:
-                print(f"     ✓ {ex}")
+  it_ents_by_id = defaultdict(list)
+  for e in sugg_it_ents:
+    it_id = e.get("it_role_id")
+    row_id = e.get("id")
+    ename = norm(pick_field(e, ["entitlement_name", "name"]))
+    it_ents_by_id[it_id].append((row_id, ename))
 
-        print(f"\n🔑 Business Role Permissions   : {len(suggested_biz_ents):,} total")
-        print(f"   • ⚪ Already in Approved Role  : {biz_flagged_existing:,} items (already_in_role = 1)")
-        print(f"   • ✨ Net-New Permission Grants : {biz_flagged_new:,} items (already_in_role = 0)")
+  matched_it_roles = []
+  matched_it_ents = []
 
-        print(f"\n🛠️ IT Role Permissions         : {len(suggested_it_ents):,} total")
-        print(f"   • ⚪ Already in Approved AP    : {it_flagged_existing:,} items (already_in_role = 1)")
-        print(f"   • ✨ Net-New AP Permissions    : {it_flagged_new:,} items (already_in_role = 0)")
-        print("=" * 85)
+  for sr in sugg_it_roles:
+    s_id = sr["id"]
+    s_name = norm(pick_field(sr, ["it_role_name", "name"]))
+    a_name = norm(pick_field(sr, ["approved_role_name"]))
+    tuples = it_ents_by_id.get(s_id, [])
+    s_set = frozenset(ename for _, ename in tuples if ename)
 
-        update_cur.close()
-        cursor.close()
-        db_connection.close()
-        print("✅ Comparison complete! Both role-level and entitlement-level flags are now synchronized in MySQL.\n")
+    is_defined = False
+    if (s_name and s_name in prod_it_names) or (
+        a_name and a_name in prod_it_names
+    ):
+      is_defined = True
+    elif s_set and any(
+        (s_set == p_set or s_set.issubset(p_set)) for p_set in prod_it_bundles
+    ):
+      is_defined = True
 
-    except Error as e:
-        print(f"❌ Database error during comparison: {e}")
-        sys.exit(1)
+    if is_defined:
+      matched_it_roles.append(s_id)
+      for row_id, _ in tuples:
+        matched_it_ents.append(row_id)
+    else:
+      # Also check individual permissions already active in production
+      for row_id, ename in tuples:
+        if ename and ename in all_prod_it_ents:
+          matched_it_ents.append(row_id)
+
+  if matched_it_roles:
+    placeholders = ",".join(["%s"] * len(matched_it_roles))
+    cur.execute(
+        f"UPDATE Suggested_IT_Roles SET already_defined = 1 WHERE id IN"
+        f" ({placeholders})",
+        tuple(matched_it_roles),
+    )
+
+  if matched_it_ents:
+    placeholders = ",".join(["%s"] * len(matched_it_ents))
+    cur.execute(
+        "UPDATE Suggested_IT_Role_Entitlements SET already_in_role = 1,"
+        f" already_defined = 1 WHERE id IN ({placeholders})",
+        tuple(matched_it_ents),
+    )
+
+  print(
+      f"   ✓ IT Roles: {len(matched_it_roles)}/{len(sugg_it_roles)} marked"
+      " already_defined=1."
+  )
+  print(
+      f"   ✓ IT Role Entitlements: {len(matched_it_ents)}/{len(sugg_it_ents)}"
+      " marked already_defined=1."
+  )
+
+
+def main():
+  print("----------------------------------------------------------------------")
+  print("--- EXECUTING: compare_suggested_vs_approved.py in /ComputeSimilarity")
+  print("----------------------------------------------------------------------")
+  conn = pymysql.connect(**DB_CONFIG)
+  try:
+    with conn.cursor() as cur:
+      ensure_columns(cur)
+      ent_id_map = load_entitlement_id_map(cur)
+      sync_business_roles_delta(cur, ent_id_map)
+      sync_it_roles_delta(cur, ent_id_map)
+      conn.commit()
+      print("💾 Delta comparison complete! All 4 tables updated.")
+  except Exception as e:
+    conn.rollback()
+    print(f"❌ Error during delta comparison: {e}")
+    sys.exit(1)
+  finally:
+    conn.close()
 
 
 if __name__ == "__main__":
-    run_comparison_pipeline()
+  main()
