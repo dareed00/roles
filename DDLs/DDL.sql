@@ -1,5 +1,9 @@
 -- MySQL Workbench Forward Engineering
 
+
+USE `bundleBuilder`;
+
+
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
@@ -1370,7 +1374,6 @@ AUTO_INCREMENT = 6265
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
 
-
 -- -----------------------------------------------------
 -- Table `bundleBuilder`.`Suggested_IT_Roles`
 -- -----------------------------------------------------
@@ -1378,6 +1381,7 @@ CREATE TABLE IF NOT EXISTS `bundleBuilder`.`Suggested_IT_Roles` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `it_role_name` VARCHAR(255) NOT NULL,
   `approval_status` VARCHAR(50) NOT NULL DEFAULT 'PENDING_REVIEW',
+  `already_defined` BOOLEAN NOT NULL DEFAULT 0,
   `deploy_target` VARCHAR(50) NOT NULL DEFAULT 'BOTH',
   `approved_role_name` VARCHAR(255) NULL DEFAULT NULL,
   `owner_id` VARCHAR(255) NULL DEFAULT NULL,
@@ -1391,7 +1395,7 @@ CREATE TABLE IF NOT EXISTS `bundleBuilder`.`Suggested_IT_Roles` (
   `admin_notes` TEXT NULL DEFAULT NULL,
   `role_type` VARCHAR(50) NOT NULL DEFAULT 'FUNCTIONAL_BUNDLE',
   `created_timestamp` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-  `reviewed_timestamp` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `reviewed_timestamp` TIMESTAMP NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   INDEX `idx_sitr_name` (`it_role_name` ASC) VISIBLE,
   INDEX `idx_sitr_approval` (`approval_status` ASC, `deploy_target` ASC) VISIBLE)
@@ -1412,9 +1416,11 @@ CREATE TABLE IF NOT EXISTS `bundleBuilder`.`Suggested_IT_Role_Entitlements` (
   `source_name` VARCHAR(255) NULL DEFAULT NULL,
   `assignment_count` INT NOT NULL DEFAULT '0',
   `already_in_role` TINYINT(1) NOT NULL DEFAULT '0',
+  `already_defined` BOOLEAN NOT NULL DEFAULT 0,
   `is_included` TINYINT(1) NOT NULL DEFAULT '1',
   `admin_notes` TEXT NULL DEFAULT NULL,
-  `reviewed_timestamp` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `created_timestamp` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `reviewed_timestamp` TIMESTAMP NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_sitr_ent_master` (`it_role_id` ASC) VISIBLE,
   INDEX `idx_sitre_included` (`is_included` ASC) VISIBLE,
@@ -1454,20 +1460,22 @@ COLLATE = utf8mb4_unicode_ci;
 -- -----------------------------------------------------
 -- Table `bundleBuilder`.`Suggested_Roles`
 -- -----------------------------------------------------
+
+
 CREATE TABLE IF NOT EXISTS `bundleBuilder`.`Suggested_Roles` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `role_name` VARCHAR(255) NOT NULL,
   `approval_status` VARCHAR(50) NOT NULL DEFAULT 'PENDING_REVIEW',
-  `resolution_action` VARCHAR(50) NOT NULL DEFAULT 'KEEP_AS_SUGGESTED' COMMENT 'KEEP_AS_SUGGESTED, SEPARATE, MAKE_DYNAMIC, CERTIFY, IGNORE' AFTER `approval_status`,
+  `resolution_action` VARCHAR(50) NOT NULL DEFAULT 'KEEP_AS_SUGGESTED' COMMENT 'KEEP_AS_SUGGESTED, SEPARATE, MAKE_DYNAMIC, CERTIFY, IGNORE',
    `hierarchy_type` VARCHAR(50) NOT NULL DEFAULT 'STANDARD' 
-        COMMENT 'STANDARD, HIERARCHICAL_PARENT, DYNAMIC_PARENT, DYNAMIC_SUB_TIER' AFTER `resolution_action`,
+        COMMENT 'STANDARD, HIERARCHICAL_PARENT, DYNAMIC_PARENT, DYNAMIC_SUB_TIER',
    `parent_role_id` INT NULL DEFAULT NULL 
-        COMMENT 'Self-referencing ID linking sub-dynamic tiers to their parent role' AFTER `hierarchy_type`,
+        COMMENT 'Self-referencing ID linking sub-dynamic tiers to their parent role',
    `dimension_attribute` VARCHAR(255) NULL DEFAULT NULL 
-        COMMENT 'e.g., Job_Code for dynamic sub-tiers' AFTER `parent_role_id`,
+        COMMENT 'e.g., Job_Code for dynamic sub-tiers',
     `dimension_value` VARCHAR(255) NULL DEFAULT NULL 
-        COMMENT 'e.g., 1111 or 2222 for dynamic sub-tiers' AFTER `dimension_attribute`,
-  `already_defined` TINYINT(1) NOT NULL DEFAULT '0',
+        COMMENT 'e.g., 1111 or 2222 for dynamic sub-tiers' ,
+  `already_defined` BOOLEAN NOT NULL DEFAULT 0,
   `deploy_target` VARCHAR(50) NOT NULL DEFAULT 'BOTH',
   `approved_role_name` VARCHAR(255) NULL DEFAULT NULL,
   `owner_id` VARCHAR(255) NULL DEFAULT NULL,
@@ -1481,21 +1489,19 @@ CREATE TABLE IF NOT EXISTS `bundleBuilder`.`Suggested_Roles` (
   `avg_jaccard_score` DECIMAL(5,4) NOT NULL DEFAULT '1.0000',
   `admin_notes` TEXT NULL DEFAULT NULL,
   `created_timestamp` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-  `reviewed_timestamp` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `reviewed_timestamp` TIMESTAMP NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   INDEX `idx_sr_name` (`role_name` ASC) VISIBLE,
   INDEX `idx_sr_approval` (`approval_status` ASC, `deploy_target` ASC) VISIBLE,
+  INDEX `idx_sr_parent_id` (`parent_role_id` ASC),
+  INDEX `idx_sr_res_action` (`resolution_action` ASC),
   INDEX `idx_sr_already_def` (`already_defined` ASC) VISIBLE)
-  ADD INDEX `idx_sr_parent_id` (`parent_role_id` ASC),
-    ADD INDEX `idx_sr_res_action` (`resolution_action` ASC)
 ENGINE = InnoDB
 AUTO_INCREMENT = 2317
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
 
     
-
-
 
 
 -- -----------------------------------------------------
@@ -1508,13 +1514,14 @@ CREATE TABLE IF NOT EXISTS `bundleBuilder`.`Suggested_Role_Entitlements` (
   `entitlement_name` VARCHAR(255) NOT NULL,
   `source_name` VARCHAR(255) NULL DEFAULT NULL,
   `match_type` VARCHAR(50) NOT NULL COMMENT 'EXACT or FUZZY',
-  `already_in_role` TINYINT(1) NOT NULL DEFAULT '0',
+  `already_defined` BOOLEAN NOT NULL DEFAULT 0,
   `is_included` TINYINT(1) NOT NULL DEFAULT '1',
   `jaccard_score` DECIMAL(5,4) NOT NULL,
   `missing_users_count` INT NOT NULL DEFAULT '0',
   `extra_users_count` INT NOT NULL DEFAULT '0',
   `admin_notes` TEXT NULL DEFAULT NULL,
-  `reviewed_timestamp` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `created_timestamp` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `reviewed_timestamp` TIMESTAMP NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_sre_role_master` (`role_id` ASC) VISIBLE,
   INDEX `idx_sre_included` (`is_included` ASC) VISIBLE,
@@ -1744,18 +1751,6 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 USE `bundleBuilder`;
 
 -- 1. Add Hierarchy & Dynamic Tier columns to Suggested_Roles
-ALTER TABLE `Suggested_Roles`
-    ADD COLUMN `resolution_action` VARCHAR(50) NOT NULL DEFAULT 'KEEP_AS_SUGGESTED' 
-        COMMENT 'KEEP_AS_SUGGESTED, SEPARATE, MAKE_DYNAMIC, CERTIFY, IGNORE' AFTER `approval_status`,
-    ADD COLUMN `hierarchy_type` VARCHAR(50) NOT NULL DEFAULT 'STANDARD' 
-        COMMENT 'STANDARD, HIERARCHICAL_PARENT, DYNAMIC_PARENT, DYNAMIC_SUB_TIER' AFTER `resolution_action`,
-    ADD COLUMN `parent_role_id` INT NULL DEFAULT NULL 
-        COMMENT 'Self-referencing FK pointing sub-dynamic tiers to their parent role' AFTER `hierarchy_type`,
-    ADD COLUMN `dimension_attribute` VARCHAR(255) NULL DEFAULT NULL 
-        COMMENT 'e.g., Job_Code for dynamic sub-tiers' AFTER `parent_role_id`,
-    ADD COLUMN `dimension_value` VARCHAR(255) NULL DEFAULT NULL 
-        COMMENT 'e.g., 1111 or 2222 for dynamic sub-tiers' AFTER `dimension_attribute`,
-    ADD INDEX `idx_sr_parent_id` (`parent_role_id` ASC);
 
 
 
@@ -1781,8 +1776,15 @@ CREATE TABLE IF NOT EXISTS `Ignored_Suggested_Roles` (
     `ignored_by` VARCHAR(255) NOT NULL DEFAULT 'Admin Reviewer' COMMENT 'Reviewer or Owner who made the decision',
     `ignore_reason` TEXT NULL DEFAULT NULL COMMENT 'Reviewer comment detailing why the role was ignored or separated',
     `ignored_timestamp` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    
     PRIMARY KEY (`id`),
     UNIQUE INDEX `uq_ignored_rule_sig` (`assignment_rule_signature` ASC),
     INDEX `idx_isr_role_name` (`role_name` ASC),
     INDEX `idx_isr_type` (`resolution_type` ASC)
 ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+
+
+
+
+
