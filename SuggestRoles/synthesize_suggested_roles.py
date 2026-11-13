@@ -23,8 +23,10 @@ from Utils.config import (
     open_connection,
     close_db_connection,
     MINING_LIMITS,
-    DB_CONFIG,
+    GENERAL_ROLE_FILTER,
+    format_full_assignment_rule,
 )
+
 
 
 def canonicalize_attributes(raw_attrs):
@@ -340,6 +342,11 @@ def synthesize_roles(exact_rows, exact_attrs, exact_identities, fuzzy_rows, fuzz
             suppressed_roles_cnt += 1
             continue
 
+        # 1. Clean mined attribute logic: e.g. "jobTitle IN ('A', 'B')"
+        mined_logic = role["rule_logic"].strip()
+
+        # 2. Combine with General Filter: "(cloudLifecycleState = 'active') AND (jobTitle IN ('A', 'B'))"
+        full_assignment_rule = format_full_assignment_rule(mined_logic)
         ents = role["entitlements"]
         if not ents:
             continue
@@ -356,10 +363,11 @@ def synthesize_roles(exact_rows, exact_attrs, exact_identities, fuzzy_rows, fuzz
 
         description = f"Automated Business Role granting {len(ents)} entitlements ({exact_cnt} exact, {fuzzy_cnt} fuzzy) for users matching: {r_logic}."
 
+       
         synthesized_roles.append({
             "role_name": r_name,
             "description": description,
-            "assignment_rule": r_logic,
+            "assignment_rule": full_assignment_rule,  # <-- Stores (General Filter) AND (Role Filter)
             "target_population": pop,
             "exact_count": exact_cnt,
             "fuzzy_count": fuzzy_cnt,
